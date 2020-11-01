@@ -3,9 +3,8 @@
     using System;
     using System.Threading.Tasks;
 
-    using MyMotoWorld.Data.Common;
-
     using Microsoft.EntityFrameworkCore;
+    using MyMotoWorld.Data.Common;
 
     public class DbQueryRunner : IDbQueryRunner
     {

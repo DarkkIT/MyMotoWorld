@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-
-namespace MyMotoWorld.Models
+﻿namespace MyMotoWorld.Models
 {
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+
     public class Transmission
     {
         public Transmission()
@@ -16,7 +16,7 @@ namespace MyMotoWorld.Models
         [Required]
         [MaxLength(100)]
         public string Name { get; set; }
-       
+
         public virtual ICollection<MotorBike> MotorBikes { get; set; }
     }
 }

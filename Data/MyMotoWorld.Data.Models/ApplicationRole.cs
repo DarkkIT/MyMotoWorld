@@ -3,9 +3,9 @@ namespace MyMotoWorld.Data.Models
 {
     using System;
 
-    using MyMotoWorld.Data.Common.Models;
-
     using Microsoft.AspNetCore.Identity;
+
+    using MyMotoWorld.Data.Common.Models;
 
     public class ApplicationRole : IdentityRole, IAuditInfo, IDeletableEntity
     {

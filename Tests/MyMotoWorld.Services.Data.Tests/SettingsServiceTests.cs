@@ -4,15 +4,12 @@
     using System.Linq;
     using System.Threading.Tasks;
 
+    using Microsoft.EntityFrameworkCore;
+    using Moq;
     using MyMotoWorld.Data;
     using MyMotoWorld.Data.Common.Repositories;
     using MyMotoWorld.Data.Models;
     using MyMotoWorld.Data.Repositories;
-
-    using Microsoft.EntityFrameworkCore;
-
-    using Moq;
-
     using Xunit;
 
     public class SettingsServiceTests

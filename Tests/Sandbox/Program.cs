@@ -5,21 +5,20 @@
     using System.IO;
     using System.Threading.Tasks;
 
+    using CommandLine;
+    using Microsoft.EntityFrameworkCore;
+    using Microsoft.Extensions.Configuration;
+    using Microsoft.Extensions.DependencyInjection;
+    using Microsoft.Extensions.Logging;
     using MyMotoWorld.Data;
     using MyMotoWorld.Data.Common;
     using MyMotoWorld.Data.Common.Repositories;
     using MyMotoWorld.Data.Models;
     using MyMotoWorld.Data.Repositories;
     using MyMotoWorld.Data.Seeding;
+    using MyMotoWorld.Models;
     using MyMotoWorld.Services.Data;
     using MyMotoWorld.Services.Messaging;
-
-    using CommandLine;
-
-    using Microsoft.EntityFrameworkCore;
-    using Microsoft.Extensions.Configuration;
-    using Microsoft.Extensions.DependencyInjection;
-    using Microsoft.Extensions.Logging;
 
     public static class Program
     {
@@ -82,6 +81,7 @@
             // Application services
             services.AddTransient<IEmailSender, NullMessageSender>();
             services.AddTransient<ISettingsService, SettingsService>();
+            services.AddTransient<IMorotBikesServise, MotorBikesServise>();
         }
     }
 }

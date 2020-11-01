@@ -1,7 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace MyMotoWorld.Models
+﻿namespace MyMotoWorld.Models
 {
+    using System.ComponentModel.DataAnnotations;
+
     public class Image
     {
         [Key]
@@ -10,8 +10,8 @@ namespace MyMotoWorld.Models
         [Required]
         public byte[] Name { get; set; }
 
-
         public int MotorBikeId { get; set; }
+
         public virtual MotorBike MotorBike { get; set; }
     }
 }

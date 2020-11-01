@@ -2,9 +2,9 @@
 {
     using System.Linq;
 
-    using MyMotoWorld.Data.Common.Models;
-
     using Microsoft.EntityFrameworkCore;
+
+    using MyMotoWorld.Data.Common.Models;
 
     internal static class EntityIndexesConfiguration
     {

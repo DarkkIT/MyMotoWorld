@@ -1,9 +1,8 @@
 ﻿namespace MyMotoWorld.Web.ViewModels.Settings
 {
+    using AutoMapper;
     using MyMotoWorld.Data.Models;
     using MyMotoWorld.Services.Mapping;
-
-    using AutoMapper;
 
     public class SettingViewModel : IMapFrom<Setting>, IHaveCustomMappings
     {

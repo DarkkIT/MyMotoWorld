@@ -1,0 +1,4 @@
+﻿<StaticWebAssets Version="1.0">
+  <ContentRoot BasePath="/Identity" Path="C:\Users\darkk\.nuget\packages\microsoft.aspnetcore.identity.ui\3.1.9\staticwebassets\V4\" />
+  <ContentRoot BasePath="_content/MyMotoWorld.Web" Path="D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\wwwroot\" />
+</StaticWebAssets>

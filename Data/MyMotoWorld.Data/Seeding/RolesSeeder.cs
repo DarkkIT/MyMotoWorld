@@ -4,11 +4,10 @@
     using System.Linq;
     using System.Threading.Tasks;
 
-    using MyMotoWorld.Common;
-    using MyMotoWorld.Data.Models;
-
     using Microsoft.AspNetCore.Identity;
     using Microsoft.Extensions.DependencyInjection;
+    using MyMotoWorld.Common;
+    using MyMotoWorld.Data.Models;
 
     internal class RolesSeeder : ISeeder
     {

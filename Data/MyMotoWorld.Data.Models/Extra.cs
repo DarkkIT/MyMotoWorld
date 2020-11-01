@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-
-namespace MyMotoWorld.Models
+﻿namespace MyMotoWorld.Models
 {
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+
     public class Extra
     {
         public Extra()
@@ -13,11 +13,9 @@ namespace MyMotoWorld.Models
         [Key]
         public int Id { get; set; }
 
-
         [Required]
         [MaxLength(200)]
         public string Name { get; set; }
-
 
         public virtual ICollection<MotorBikeExtra> MotorBikeExtras { get; set; }
     }

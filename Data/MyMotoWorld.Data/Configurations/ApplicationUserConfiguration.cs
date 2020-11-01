@@ -1,8 +1,8 @@
 ﻿namespace MyMotoWorld.Data.Configurations
 {
-    using MyMotoWorld.Data.Models;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.Metadata.Builders;
+    using MyMotoWorld.Data.Models;
 
     public class ApplicationUserConfiguration : IEntityTypeConfiguration<ApplicationUser>
     {

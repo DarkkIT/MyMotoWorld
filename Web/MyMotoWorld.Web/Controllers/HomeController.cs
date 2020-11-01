@@ -2,9 +2,8 @@
 {
     using System.Diagnostics;
 
-    using MyMotoWorld.Web.ViewModels;
-
     using Microsoft.AspNetCore.Mvc;
+    using MyMotoWorld.Web.ViewModels;
 
     public class HomeController : BaseController
     {

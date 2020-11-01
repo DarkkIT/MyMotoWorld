@@ -3,12 +3,11 @@
     using System;
     using System.Threading.Tasks;
 
+    using Microsoft.AspNetCore.Mvc;
     using MyMotoWorld.Data.Common.Repositories;
     using MyMotoWorld.Data.Models;
     using MyMotoWorld.Services.Data;
     using MyMotoWorld.Web.ViewModels.Settings;
-
-    using Microsoft.AspNetCore.Mvc;
 
     public class SettingsController : BaseController
     {

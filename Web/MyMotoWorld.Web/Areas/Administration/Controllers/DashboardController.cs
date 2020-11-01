@@ -1,9 +1,8 @@
 ﻿namespace MyMotoWorld.Web.Areas.Administration.Controllers
 {
+    using Microsoft.AspNetCore.Mvc;
     using MyMotoWorld.Services.Data;
     using MyMotoWorld.Web.ViewModels.Administration.Dashboard;
-
-    using Microsoft.AspNetCore.Mvc;
 
     public class DashboardController : AdministrationController
     {

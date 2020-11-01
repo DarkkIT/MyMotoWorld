@@ -12,8 +12,8 @@ using System;
 using System.Reflection;
 
 [assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap4")]
-[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("MyMotoWorld.Data", "D:\\VisualStudio\\MyMotoWorld\\Data\\MyMotoWorld.Data", "MyMotoWorld.Data.csproj", "0")]
-[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("MyMotoWorld.Web", "D:\\VisualStudio\\MyMotoWorld\\Web\\MyMotoWorld.Web", "MyMotoWorld.Web.csproj", "0")]
+[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("MyMotoWorld.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "D:\\VisualStudio\\MyMotoWorld\\Data\\MyMotoWorld.Data", "MyMotoWorld.Data.csproj", "0")]
+[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("MyMotoWorld.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "D:\\VisualStudio\\MyMotoWorld\\Web\\MyMotoWorld.Web", "MyMotoWorld.Web.csproj", "0")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("MyMotoWorld.Web.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]

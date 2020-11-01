@@ -6,11 +6,11 @@
     using System.Threading;
     using System.Threading.Tasks;
 
-    using MyMotoWorld.Data.Common.Models;
-    using MyMotoWorld.Data.Models;
-
     using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore;
+    using MyMotoWorld.Data.Common.Models;
+    using MyMotoWorld.Data.Models;
+    using MyMotoWorld.Models;
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, string>
     {
@@ -25,6 +25,18 @@
         }
 
         public virtual DbSet<Setting> Settings { get; set; }
+
+        public virtual DbSet<BikeType> BikeTypes { get; set; }
+
+        public virtual DbSet<CoolingSystem> CoolingSystems { get; set; }
+
+        public virtual DbSet<Extra> Extras { get; set; }
+
+        public virtual DbSet<Image> Images { get; set; }
+
+        public virtual DbSet<MotorBike> MotorBikes { get; set; }
+
+        public virtual DbSet<Transmission> Transmissions { get; set; }
 
         public override int SaveChanges() => this.SaveChanges(true);
 
