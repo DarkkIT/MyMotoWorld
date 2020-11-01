@@ -1,0 +1,286 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\VisualStudio\\MyMotoWorld\\Services\\MyMotoWorld.Services.Data\\MyMotoWorld.Services.Data.csproj": {}
+  },
+  "projects": {
+    "D:\\VisualStudio\\MyMotoWorld\\Data\\MyMotoWorld.Data.Common\\MyMotoWorld.Data.Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\VisualStudio\\MyMotoWorld\\Data\\MyMotoWorld.Data.Common\\MyMotoWorld.Data.Common.csproj",
+        "projectName": "MyMotoWorld.Data.Common",
+        "projectPath": "D:\\VisualStudio\\MyMotoWorld\\Data\\MyMotoWorld.Data.Common\\MyMotoWorld.Data.Common.csproj",
+        "packagesPath": "C:\\Users\\darkk\\.nuget\\packages\\",
+        "outputPath": "D:\\VisualStudio\\MyMotoWorld\\Data\\MyMotoWorld.Data.Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\darkk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "dependencies": {
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.205, )"
+            },
+            "System.ComponentModel.Annotations": {
+              "target": "Package",
+              "version": "[4.7.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\VisualStudio\\MyMotoWorld\\Data\\MyMotoWorld.Data.Models\\MyMotoWorld.Data.Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\VisualStudio\\MyMotoWorld\\Data\\MyMotoWorld.Data.Models\\MyMotoWorld.Data.Models.csproj",
+        "projectName": "MyMotoWorld.Data.Models",
+        "projectPath": "D:\\VisualStudio\\MyMotoWorld\\Data\\MyMotoWorld.Data.Models\\MyMotoWorld.Data.Models.csproj",
+        "packagesPath": "C:\\Users\\darkk\\.nuget\\packages\\",
+        "outputPath": "D:\\VisualStudio\\MyMotoWorld\\Data\\MyMotoWorld.Data.Models\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\darkk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "projectReferences": {
+              "D:\\VisualStudio\\MyMotoWorld\\Data\\MyMotoWorld.Data.Common\\MyMotoWorld.Data.Common.csproj": {
+                "projectPath": "D:\\VisualStudio\\MyMotoWorld\\Data\\MyMotoWorld.Data.Common\\MyMotoWorld.Data.Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.9, )"
+            },
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.205, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\VisualStudio\\MyMotoWorld\\Services\\MyMotoWorld.Services.Data\\MyMotoWorld.Services.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\VisualStudio\\MyMotoWorld\\Services\\MyMotoWorld.Services.Data\\MyMotoWorld.Services.Data.csproj",
+        "projectName": "MyMotoWorld.Services.Data",
+        "projectPath": "D:\\VisualStudio\\MyMotoWorld\\Services\\MyMotoWorld.Services.Data\\MyMotoWorld.Services.Data.csproj",
+        "packagesPath": "C:\\Users\\darkk\\.nuget\\packages\\",
+        "outputPath": "D:\\VisualStudio\\MyMotoWorld\\Services\\MyMotoWorld.Services.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\darkk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "projectReferences": {
+              "D:\\VisualStudio\\MyMotoWorld\\Data\\MyMotoWorld.Data.Common\\MyMotoWorld.Data.Common.csproj": {
+                "projectPath": "D:\\VisualStudio\\MyMotoWorld\\Data\\MyMotoWorld.Data.Common\\MyMotoWorld.Data.Common.csproj"
+              },
+              "D:\\VisualStudio\\MyMotoWorld\\Data\\MyMotoWorld.Data.Models\\MyMotoWorld.Data.Models.csproj": {
+                "projectPath": "D:\\VisualStudio\\MyMotoWorld\\Data\\MyMotoWorld.Data.Models\\MyMotoWorld.Data.Models.csproj"
+              },
+              "D:\\VisualStudio\\MyMotoWorld\\Services\\MyMotoWorld.Services.Mapping\\MyMotoWorld.Services.Mapping.csproj": {
+                "projectPath": "D:\\VisualStudio\\MyMotoWorld\\Services\\MyMotoWorld.Services.Mapping\\MyMotoWorld.Services.Mapping.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "dependencies": {
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.205, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\VisualStudio\\MyMotoWorld\\Services\\MyMotoWorld.Services.Mapping\\MyMotoWorld.Services.Mapping.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\VisualStudio\\MyMotoWorld\\Services\\MyMotoWorld.Services.Mapping\\MyMotoWorld.Services.Mapping.csproj",
+        "projectName": "MyMotoWorld.Services.Mapping",
+        "projectPath": "D:\\VisualStudio\\MyMotoWorld\\Services\\MyMotoWorld.Services.Mapping\\MyMotoWorld.Services.Mapping.csproj",
+        "packagesPath": "C:\\Users\\darkk\\.nuget\\packages\\",
+        "outputPath": "D:\\VisualStudio\\MyMotoWorld\\Services\\MyMotoWorld.Services.Mapping\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\darkk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            },
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.205, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

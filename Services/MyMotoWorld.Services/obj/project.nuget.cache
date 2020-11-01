@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "iVNMHBwulvTew/QPePpp1qyyud3GzfiXwqOo9CNPzmAmIw62YFWNjqU4xdnL4vKAYqCClZnx8UKuLIk60rVvFw==",
+  "success": true,
+  "projectFilePath": "D:\\VisualStudio\\MyMotoWorld\\Services\\MyMotoWorld.Services\\MyMotoWorld.Services.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\darkk\\.nuget\\packages\\stylecop.analyzers\\1.2.0-beta.205\\stylecop.analyzers.1.2.0-beta.205.nupkg.sha512",
+    "C:\\Users\\darkk\\.nuget\\packages\\stylecop.analyzers.unstable\\1.2.0.205\\stylecop.analyzers.unstable.1.2.0.205.nupkg.sha512"
+  ],
+  "logs": []
+}

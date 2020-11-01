@@ -1,0 +1,16 @@
+D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web.ViewModels\bin\Debug\netstandard2.1\MyMotoWorld.Web.ViewModels.deps.json
+D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web.ViewModels\bin\Debug\netstandard2.1\MyMotoWorld.Web.ViewModels.dll
+D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web.ViewModels\bin\Debug\netstandard2.1\MyMotoWorld.Web.ViewModels.pdb
+D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web.ViewModels\bin\Debug\netstandard2.1\MyMotoWorld.Data.Common.dll
+D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web.ViewModels\bin\Debug\netstandard2.1\MyMotoWorld.Data.Models.dll
+D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web.ViewModels\bin\Debug\netstandard2.1\MyMotoWorld.Services.Mapping.dll
+D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web.ViewModels\bin\Debug\netstandard2.1\MyMotoWorld.Data.Models.pdb
+D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web.ViewModels\bin\Debug\netstandard2.1\MyMotoWorld.Services.Mapping.pdb
+D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web.ViewModels\bin\Debug\netstandard2.1\MyMotoWorld.Data.Common.pdb
+D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web.ViewModels\obj\Debug\netstandard2.1\MyMotoWorld.Web.ViewModels.csprojAssemblyReference.cache
+D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web.ViewModels\obj\Debug\netstandard2.1\MyMotoWorld.Web.ViewModels.AssemblyInfoInputs.cache
+D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web.ViewModels\obj\Debug\netstandard2.1\MyMotoWorld.Web.ViewModels.AssemblyInfo.cs
+D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web.ViewModels\obj\Debug\netstandard2.1\MyMotoWorld.Web.ViewModels.csproj.CoreCompileInputs.cache
+D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web.ViewModels\obj\Debug\netstandard2.1\MyMotoWorld.Web.ViewModels.csproj.CopyComplete
+D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web.ViewModels\obj\Debug\netstandard2.1\MyMotoWorld.Web.ViewModels.dll
+D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web.ViewModels\obj\Debug\netstandard2.1\MyMotoWorld.Web.ViewModels.pdb
