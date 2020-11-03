@@ -457,3 +457,5 @@ D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\bin\Debug\netcoreapp3.1\Microsof
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Debug\netcoreapp3.1\MyMotoWorld.Web.csproj.CoreCompileInputs.cache
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Debug\netcoreapp3.1\MyMotoWorld.Web.MvcApplicationPartsAssemblyInfo.cs
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Debug\netcoreapp3.1\MyMotoWorld.Web.MvcApplicationPartsAssemblyInfo.cache
+D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Debug\netcoreapp3.1\Razor\Views\About\Index.cshtml.g.cs
+D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Debug\netcoreapp3.1\Razor\Views\Store\Index.cshtml.g.cs

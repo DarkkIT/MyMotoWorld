@@ -5,7 +5,8 @@
     using System.Collections.Generic;
     using System.Text;
 
-    public interface IMorotBikesServise
+    public interface IMotorBikesService
     {
+        IEnumerable<MotorBike> GetAll<MotorBike>();
     }
 }

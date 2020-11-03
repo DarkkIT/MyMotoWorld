@@ -6,37 +6,38 @@
     using Microsoft.AspNetCore.Mvc;
     using MyMotoWorld.Data.Common.Repositories;
     using MyMotoWorld.Data.Models;
+    using MyMotoWorld.Models;
     using MyMotoWorld.Services.Data;
     using MyMotoWorld.Web.ViewModels.Settings;
 
     public class SettingsController : BaseController
     {
-        private readonly ISettingsService settingsService;
+        private readonly IMotorBikesService motorBikesService;
 
-        private readonly IDeletableEntityRepository<Setting> repository;
+        private readonly IDeletableEntityRepository<MotorBike> repository;
 
-        public SettingsController(ISettingsService settingsService, IDeletableEntityRepository<Setting> repository)
+        public SettingsController(IMotorBikesService motorBikesService, IDeletableEntityRepository<MotorBike> repository)
         {
-            this.settingsService = settingsService;
+            this.motorBikesService = motorBikesService;
             this.repository = repository;
         }
 
-        public IActionResult Index()
+        public IActionResult About()
         {
-            var settings = this.settingsService.GetAll<SettingViewModel>();
-            var model = new SettingsListViewModel { Settings = settings };
+            var motorBike = this.motorBikesService.GetAll<MotorBikeViewModel>();
+            var model = new MotorBikeListViewModel { MotorBike = motorBike };
             return this.View(model);
         }
 
-        public async Task<IActionResult> InsertSetting()
-        {
-            var random = new Random();
-            var setting = new Setting { Name = $"Name_{random.Next()}", Value = $"Value_{random.Next()}" };
+        //public async Task<IActionResult> InsertSetting()
+        //{
+        //    var random = new Random();
+        //    var setting = new Setting { Name = $"Name_{random.Next()}", Value = $"Value_{random.Next()}" };
 
-            await this.repository.AddAsync(setting);
-            await this.repository.SaveChangesAsync();
+        //    await this.repository.AddAsync(setting);
+        //    await this.repository.SaveChangesAsync();
 
-            return this.RedirectToAction(nameof(this.Index));
-        }
+        //    return this.RedirectToAction(nameof(this.Index));
+        //}
     }
 }

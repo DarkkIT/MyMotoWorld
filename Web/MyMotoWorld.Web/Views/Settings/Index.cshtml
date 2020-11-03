@@ -1,4 +1,4 @@
-﻿@model MyMotoWorld.Web.ViewModels.Settings.SettingsListViewModel
+﻿@model MyMotoWorld.Web.ViewModels.Settings.MotorBikeListViewModel
 
 @{
     this.ViewData["Title"] = "Settings";
@@ -6,9 +6,9 @@
 
 <h1>@this.ViewData["Title"]</h1>
 
-@foreach (var setting in this.Model.Settings)
+@foreach (var motor in this.Model.MotorBike)
 {
-    <div>@setting.Id: @setting.NameAndValue</div>
+    <div>@motor.Id: @motor.Name</div>
 }
 
 <a asp-action="InsertSetting" class="btn btn-primary">Insert new</a>

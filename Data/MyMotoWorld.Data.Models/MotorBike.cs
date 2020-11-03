@@ -3,9 +3,10 @@
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
+    using MyMotoWorld.Data.Common.Models;
     using MyMotoWorld.Models.Parts;
 
-    public class MotorBike
+    public class MotorBike : BaseDeletableModel<int>
     {
         public MotorBike()
         {

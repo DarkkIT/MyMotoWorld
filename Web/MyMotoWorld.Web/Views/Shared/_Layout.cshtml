@@ -7,6 +7,7 @@
     <title>@this.ViewData["Title"] - @GlobalConstants.SystemName</title>
     <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" asp-append-version="true" />
     <link href="~/css/site.min.css" rel="stylesheet" asp-append-version="true" />
+    <script src="https://kit.fontawesome.com/f909b4a59b.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
@@ -24,10 +25,13 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Settings" asp-action="Index">Settings</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Store" asp-action="Index">Store</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="About" asp-action="index">About</a>
                         </li>
                     </ul>
                 </div>
@@ -44,7 +48,16 @@
     
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; @DateTime.Now.Year - @GlobalConstants.SystemName - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <article>
+                &copy; @DateTime.Now.Year - @GlobalConstants.SystemName - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </article>
+            <article>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-pinterest"></i>
+                <i class="fab fa-instagram-square"></i>
+                <i class="fab fa-linkedin"></i>
+            </article>
         </div>
     </footer>
 
