@@ -459,3 +459,6 @@ D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Debug\netcoreapp3.1\MyMotoWo
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Debug\netcoreapp3.1\MyMotoWorld.Web.MvcApplicationPartsAssemblyInfo.cache
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Debug\netcoreapp3.1\Razor\Views\About\Index.cshtml.g.cs
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Debug\netcoreapp3.1\Razor\Views\Store\Index.cshtml.g.cs
+D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Add.cshtml.g.cs
+D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Index.cshtml.g.cs
+D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Success.cshtml.g.cs

@@ -1,24 +1,39 @@
 ﻿@using MyMotoWorld.Common
+@model MyMotoWorld.Web.ViewModels.MotorBike.MotorBikeListViewModel
 @{
     this.ViewData["Title"] = "Home Page";
 }
+<head>
+    <link href="~/css/homecss.css" rel="stylesheet" asp-append-version="true" />
+</head>
+
+<div id="homebg" class="text-center">
+    <h1 class="display-4">Welcome to <span>@GlobalConstants.SystemName</span>!</h1>
+
+    <a asp-controller="Home" asp-action="Privacy"><button class="btn btn-primary">Join The World</button></a>
+
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<div class="b">
+    <h2>Somethin here ........ Somethin here</h2>
+</div>
+
+<div class="outer-grid">    
+    <div class="inner-grid">
+        @foreach (var bike in Model.MotorBikes)
+        {
+            <article>
+                <h3>@bike.Name</h3>
+                <p>@bike.Model</p>
+                <p>@bike.Price</p>
+            </article>
+        }
+    </div>
+</div>
 
 <div class="text-center">
-    <section>
-    <h1 class="display-4">Welcome to @GlobalConstants.SystemName!</h1>
-    <a asp-area="" asp-controller="Home" asp-action="About">Go Home 4</a>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-    </section>
-    <section>
-        <article>
-
-        </article>
-        <article>
-
-        </article>
-        <article>
-
-        </article>
-    </section>
-
+    <a asp-area="" asp-controller="Home" asp-action="Privacy">Go Privacy</a>
 </div>
+
+

@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-
-namespace MyMotoWorld.Models.Parts
+﻿namespace MyMotoWorld.Models.Parts
 {
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+
     public class FrontSuspension
     {
         public FrontSuspension()
@@ -10,15 +10,12 @@ namespace MyMotoWorld.Models.Parts
             this.MotorBikes = new HashSet<MotorBike>();
         }
 
-
         [Key]
         public int Id { get; set; }
-
 
         [Required]
         [MaxLength(100)]
         public string Name { get; set; }
-
 
         public virtual ICollection<MotorBike> MotorBikes { get; set; }
     }

@@ -35,7 +35,7 @@
         {
             try
             {
-                return this.RedirectToAction(nameof(Index));
+                return this.RedirectToAction(nameof(this.Index));
             }
             catch
             {
@@ -46,7 +46,7 @@
         // GET: StoreController1/Edit/5
         public IActionResult Edit(int id)
         {
-            return View();
+            return this.View();
         }
 
         // POST: StoreController1/Edit/5
@@ -56,7 +56,7 @@
         {
             try
             {
-                return this.RedirectToAction(nameof(Index));
+                return this.RedirectToAction(nameof(this.Index));
             }
             catch
             {
@@ -77,7 +77,7 @@
         {
             try
             {
-                return this.RedirectToAction(nameof(Index));
+                return this.RedirectToAction(nameof(this.Index));
             }
             catch
             {

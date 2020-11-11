@@ -3,6 +3,7 @@
     using System;
     using System.Linq;
     using System.Reflection;
+    using System.Security.Cryptography.X509Certificates;
     using System.Threading;
     using System.Threading.Tasks;
 
@@ -37,6 +38,8 @@
         public virtual DbSet<MotorBike> MotorBikes { get; set; }
 
         public virtual DbSet<Transmission> Transmissions { get; set; }
+
+        //public virtual DbSet<Sale> Sales { get; set; }
 
         public override int SaveChanges() => this.SaveChanges(true);
 

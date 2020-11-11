@@ -10,13 +10,15 @@ a.navbar-brand {
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-    font-size: 14px;
+    font-size: 14px;    
 }
+
 @media (min-width: 768px) {
     html {
         font-size: 16px;
     }
 }
+
 
 .border-top {
     border-top: 1px solid #e5e5e5;
@@ -46,12 +48,16 @@ body {
     margin-bottom: 60px;
 }
 
+body div {
+    padding-left: 0px;
+}
+
 .footer {
 position: absolute;
 bottom: 0;
 width: 100%;
 white-space: normal;
-height: 60px;
+height: 30px;
 line-height: 60px;
 }
 
@@ -61,5 +67,9 @@ footer article:nth-child(1) {
 
 footer article:nth-child(2) {
     text-align: right;
+}
+
+header nav div i {
+    width: 25px;
 }
 

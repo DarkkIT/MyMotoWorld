@@ -3,6 +3,9 @@
     this.ViewData["Title"] = "Store";
 }
 
+<head>
+    <link href="~/css/storecss.css" rel="stylesheet" asp-append-version="true" />
+</head>
 <div class="text-center">
     <section>
     <h2 class="display-4">Store @GlobalConstants.SystemName!</h2>
@@ -10,17 +13,26 @@
         Somtheing  Here ........
     </p>
     </section>
-    <section>
-        <article>
+    <div>
+        <section>
+            <article class="title-test">
+                Title here Title here Title here Title here Title here
+            </article>
+        </section>
 
-        </article>
-        <article>
-
-        </article>
-        <article>
-
-        </article>
-    </section>
+        <section>
+            <article>
+                <h3>Picture Here</h3>
+            </article>
+            <article>
+                <h3>Picture Here</h3>
+            </article>
+            <article>
+                <h3>Picture Here</h3>
+            </article>
+        </section>
+        
+    </div>
     <section>
         <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
     </section>

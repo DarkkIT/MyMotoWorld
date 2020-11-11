@@ -1,0 +1,17 @@
+﻿div div section{
+    display: inline-block;
+}
+
+div div section:nth-child(2) article {
+    display: inline-block;
+}
+
+div div section {
+    border-style: dotted;
+}
+
+.title-test {
+    background: blue;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}

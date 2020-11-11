@@ -1,14 +1,14 @@
 ﻿namespace MyMotoWorld.Services.Data
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+
     using MyMotoWorld.Data.Common.Repositories;
     using MyMotoWorld.Data.Models;
     using MyMotoWorld.Models;
-    using MyMotoWorld.Data.Common.Repositories;
-    using System;
-    using System.Collections.Generic;
-    using System.Text;
     using MyMotoWorld.Services.Mapping;
-    using System.Linq;
 
     public class MotorBikesService : IMotorBikesService
     {
@@ -19,15 +19,9 @@
             this.motorBikeRepository = motorBikeRepository;
         }
 
-        public IEnumerable<MotorBike> GetAll<MotorBike>()
+        public IEnumerable<T> GetFirstTree<T>()
         {
-            return this.motorBikeRepository.All().To<MotorBike>().ToList();
+            return this.motorBikeRepository.All().Take(3).To<T>().ToList();
         }
-
-        public int GetCount()
-        {
-            return this.motorBikeRepository.AllAsNoTracking().Count();
-        }
-
     }
 }

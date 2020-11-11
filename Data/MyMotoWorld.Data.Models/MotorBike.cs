@@ -4,6 +4,7 @@
     using System.ComponentModel.DataAnnotations;
 
     using MyMotoWorld.Data.Common.Models;
+    using MyMotoWorld.Data.Models;
     using MyMotoWorld.Models.Parts;
 
     public class MotorBike : BaseDeletableModel<int>
@@ -12,32 +13,21 @@
         {
             this.Images = new HashSet<Image>();
             this.MotorBikeExtras = new HashSet<MotorBikeExtra>();
+            //this.Sales = new HashSet<Sale>();
         }
 
-        [Key]
-        public int Id { get; set; }
-
-        [Required]
-        [MaxLength(100)]
         public string Name { get; set; }
 
-        [Required]
-        [MaxLength(100)]
         public string Model { get; set; }
 
-        [Range(0, 2_000_000)]
         public int Price { get; set; }
 
-        [Range(0, 1000)]
         public int Weight { get; set; }
 
-        [Range(0, 10000)]
         public int Length { get; set; }
 
-        [Range(0, 2000)]
         public int Height { get; set; }
 
-        [Range(0, 2000)]
         public int SeatHeight { get; set; }
 
         public int BikeTypeId { get; set; }
@@ -73,5 +63,7 @@
         public virtual ICollection<Image> Images { get; set; }
 
         public virtual ICollection<MotorBikeExtra> MotorBikeExtras { get; set; }
+
+         //public virtual ICollection<Sale> Sales { get; set; }
     }
 }

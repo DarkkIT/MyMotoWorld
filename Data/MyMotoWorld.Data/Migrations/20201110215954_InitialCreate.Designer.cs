@@ -10,8 +10,8 @@ using MyMotoWorld.Data;
 namespace MyMotoWorld.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201101123730_AddBikeModels")]
-    partial class AddBikeModels
+    [Migration("20201110215954_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -363,6 +363,12 @@ namespace MyMotoWorld.Data.Migrations
                     b.Property<int>("BikeTypeId")
                         .HasColumnType("int");
 
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedOn")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Descrition")
                         .HasColumnType("nvarchar(max)");
 
@@ -378,6 +384,9 @@ namespace MyMotoWorld.Data.Migrations
                     b.Property<int>("Height")
                         .HasColumnType("int");
 
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
                     b.Property<int>("Length")
                         .HasColumnType("int");
 
@@ -385,6 +394,9 @@ namespace MyMotoWorld.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -418,6 +430,8 @@ namespace MyMotoWorld.Data.Migrations
                     b.HasIndex("FrontBrakesId");
 
                     b.HasIndex("FrontSuspensionId");
+
+                    b.HasIndex("IsDeleted");
 
                     b.HasIndex("RearBrakesId");
 
@@ -460,7 +474,7 @@ namespace MyMotoWorld.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("CoolingSystemId")
+                    b.Property<int>("CoolingSystemId")
                         .HasColumnType("int");
 
                     b.Property<int>("EngineCapacity")
@@ -686,9 +700,11 @@ namespace MyMotoWorld.Data.Migrations
 
             modelBuilder.Entity("MyMotoWorld.Models.Parts.Engine", b =>
                 {
-                    b.HasOne("MyMotoWorld.Models.CoolingSystem", null)
+                    b.HasOne("MyMotoWorld.Models.CoolingSystem", "CoolingSystem")
                         .WithMany("Engines")
-                        .HasForeignKey("CoolingSystemId");
+                        .HasForeignKey("CoolingSystemId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

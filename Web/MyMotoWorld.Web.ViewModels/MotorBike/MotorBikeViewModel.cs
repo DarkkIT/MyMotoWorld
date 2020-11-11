@@ -1,4 +1,4 @@
-﻿namespace MyMotoWorld.Web.ViewModels.Settings
+﻿namespace MyMotoWorld.Web.ViewModels.MotorBike
 {
     using System;
     using System.Collections.Generic;
@@ -6,16 +6,15 @@
 
     using AutoMapper;
     using MyMotoWorld.Models;
+    using MyMotoWorld.Services.Mapping;
 
-    public class MotorBikeViewModel
+    public class MotorBikeViewModel : IMapFrom<MotorBike>, IHaveCustomMappings
     {
-        public int Id { get; set; }
-
         public string Name { get; set; }
 
         public string Model { get; set; }
 
-        public decimal Price { get; set; }
+        public int Price { get; set; }
 
         public string BikeType { get; set; }
 

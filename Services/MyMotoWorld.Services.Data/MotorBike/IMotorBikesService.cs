@@ -1,12 +1,13 @@
 ﻿namespace MyMotoWorld.Services.Data
 {
-    using MyMotoWorld.Models;
     using System;
     using System.Collections.Generic;
     using System.Text;
 
+    using MyMotoWorld.Models;
+
     public interface IMotorBikesService
     {
-        IEnumerable<MotorBike> GetAll<MotorBike>();
+        IEnumerable<T> GetFirstTree<T>();
     }
 }
