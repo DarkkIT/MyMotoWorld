@@ -28,7 +28,7 @@ using MyMotoWorld.Web.ViewModels;
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"07944cecd16f47f7d55d0ed10c0bdf5e304ca183", @"/Areas/Administration/Views/Dashboard/Index.cshtml")]
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5d91716792cdd750882fa7df904d5f2db26c4c59", @"/Areas/Administration/Views/_ViewImports.cshtml")]
-    public class Areas_Administration_Views_Dashboard_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<MyMotoWorld.Web.ViewModels.Administration.Dashboard.IndexViewModel>
+    public class Areas_Administration_Views_Dashboard_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<MyMotoWorld.Web.ViewModels.Administration.Dashboard.IndexSetingsViewModel>
     {
         #pragma warning disable 1998
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
@@ -69,7 +69,7 @@ Write(this.ViewData["Title"]);
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
         public global::Microsoft.AspNetCore.Mvc.Rendering.IJsonHelper Json { get; private set; }
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper<MyMotoWorld.Web.ViewModels.Administration.Dashboard.IndexViewModel> Html { get; private set; }
+        public global::Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper<MyMotoWorld.Web.ViewModels.Administration.Dashboard.IndexSetingsViewModel> Html { get; private set; }
     }
 }
 #pragma warning restore 1591

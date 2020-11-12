@@ -221,6 +221,9 @@ namespace MyMotoWorld.Data.Migrations
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<decimal>("TotalSpent")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<bool>("TwoFactorEnabled")
                         .HasColumnType("bit");
 
@@ -241,6 +244,79 @@ namespace MyMotoWorld.Data.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
+                });
+
+            modelBuilder.Entity("MyMotoWorld.Data.Models.Image", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Extension")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("MotorBikeId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IsDeleted");
+
+                    b.HasIndex("MotorBikeId");
+
+                    b.ToTable("Images");
+                });
+
+            modelBuilder.Entity("MyMotoWorld.Data.Models.Sale", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ApplicationUserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("MotorBikeId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("TotalPrice")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ApplicationUserId");
+
+                    b.HasIndex("IsDeleted");
+
+                    b.HasIndex("MotorBikeId");
+
+                    b.ToTable("Sales");
                 });
 
             modelBuilder.Entity("MyMotoWorld.Data.Models.Setting", b =>
@@ -282,35 +358,34 @@ namespace MyMotoWorld.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedOn")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Descrition")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("Liked")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(100)")
-                        .HasMaxLength(100);
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("IsDeleted");
 
                     b.ToTable("BikeTypes");
-                });
-
-            modelBuilder.Entity("MyMotoWorld.Models.CoolingSystem", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.HasKey("Id");
-
-                    b.ToTable("CoolingSystems");
                 });
 
             modelBuilder.Entity("MyMotoWorld.Models.Extra", b =>
@@ -320,6 +395,18 @@ namespace MyMotoWorld.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(200)")
@@ -327,28 +414,9 @@ namespace MyMotoWorld.Data.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("IsDeleted");
+
                     b.ToTable("Extras");
-                });
-
-            modelBuilder.Entity("MyMotoWorld.Models.Image", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("MotorBikeId")
-                        .HasColumnType("int");
-
-                    b.Property<byte[]>("Name")
-                        .IsRequired()
-                        .HasColumnType("varbinary(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("MotorBikeId");
-
-                    b.ToTable("Images");
                 });
 
             modelBuilder.Entity("MyMotoWorld.Models.MotorBike", b =>
@@ -388,21 +456,20 @@ namespace MyMotoWorld.Data.Migrations
                     b.Property<int>("Length")
                         .HasColumnType("int");
 
+                    b.Property<int>("Liked")
+                        .HasColumnType("int");
+
                     b.Property<string>("Model")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(100)")
-                        .HasMaxLength(100);
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("ModifiedOn")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(100)")
-                        .HasMaxLength(100);
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Price")
-                        .HasColumnType("int");
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("RearBrakesId")
                         .HasColumnType("int");
@@ -450,10 +517,7 @@ namespace MyMotoWorld.Data.Migrations
                     b.Property<int>("ExtraId")
                         .HasColumnType("int");
 
-                    b.Property<int>("MotorBikdeId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("MotorBikeId")
+                    b.Property<int>("MotorBikeId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -462,7 +526,38 @@ namespace MyMotoWorld.Data.Migrations
 
                     b.HasIndex("MotorBikeId");
 
-                    b.ToTable("MotorBikeExtra");
+                    b.ToTable("MotorBikeExtras");
+                });
+
+            modelBuilder.Entity("MyMotoWorld.Models.Parts.CoolingSystem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(20)")
+                        .HasMaxLength(20);
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IsDeleted");
+
+                    b.ToTable("CoolingSystems");
                 });
 
             modelBuilder.Entity("MyMotoWorld.Models.Parts.Engine", b =>
@@ -475,11 +570,23 @@ namespace MyMotoWorld.Data.Migrations
                     b.Property<int>("CoolingSystemId")
                         .HasColumnType("int");
 
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedOn")
+                        .HasColumnType("datetime2");
+
                     b.Property<int>("EngineCapacity")
                         .HasColumnType("int");
 
                     b.Property<int>("EnginePower")
                         .HasColumnType("int");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -490,7 +597,9 @@ namespace MyMotoWorld.Data.Migrations
 
                     b.HasIndex("CoolingSystemId");
 
-                    b.ToTable("Engine");
+                    b.HasIndex("IsDeleted");
+
+                    b.ToTable("Engines");
                 });
 
             modelBuilder.Entity("MyMotoWorld.Models.Parts.FrontBrake", b =>
@@ -500,6 +609,18 @@ namespace MyMotoWorld.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(100)")
@@ -507,7 +628,9 @@ namespace MyMotoWorld.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("FrontBrake");
+                    b.HasIndex("IsDeleted");
+
+                    b.ToTable("FrontBrakes");
                 });
 
             modelBuilder.Entity("MyMotoWorld.Models.Parts.FrontSuspension", b =>
@@ -517,6 +640,18 @@ namespace MyMotoWorld.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(100)")
@@ -524,7 +659,9 @@ namespace MyMotoWorld.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("FrontSuspension");
+                    b.HasIndex("IsDeleted");
+
+                    b.ToTable("FrontSuspensions");
                 });
 
             modelBuilder.Entity("MyMotoWorld.Models.Parts.RearBrake", b =>
@@ -534,6 +671,18 @@ namespace MyMotoWorld.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(100)")
@@ -541,7 +690,9 @@ namespace MyMotoWorld.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("RearBrake");
+                    b.HasIndex("IsDeleted");
+
+                    b.ToTable("RearBrakes");
                 });
 
             modelBuilder.Entity("MyMotoWorld.Models.Parts.RearSuspension", b =>
@@ -551,6 +702,18 @@ namespace MyMotoWorld.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(100)")
@@ -558,7 +721,9 @@ namespace MyMotoWorld.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("RearSuspension");
+                    b.HasIndex("IsDeleted");
+
+                    b.ToTable("RearSuspensions");
                 });
 
             modelBuilder.Entity("MyMotoWorld.Models.Transmission", b =>
@@ -629,10 +794,23 @@ namespace MyMotoWorld.Data.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("MyMotoWorld.Models.Image", b =>
+            modelBuilder.Entity("MyMotoWorld.Data.Models.Image", b =>
                 {
                     b.HasOne("MyMotoWorld.Models.MotorBike", "MotorBike")
                         .WithMany("Images")
+                        .HasForeignKey("MotorBikeId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("MyMotoWorld.Data.Models.Sale", b =>
+                {
+                    b.HasOne("MyMotoWorld.Data.Models.ApplicationUser", "ApplicationUser")
+                        .WithMany("Sales")
+                        .HasForeignKey("ApplicationUserId");
+
+                    b.HasOne("MyMotoWorld.Models.MotorBike", "MotorBike")
+                        .WithMany("Sales")
                         .HasForeignKey("MotorBikeId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
@@ -693,12 +871,14 @@ namespace MyMotoWorld.Data.Migrations
 
                     b.HasOne("MyMotoWorld.Models.MotorBike", "MotorBike")
                         .WithMany("MotorBikeExtras")
-                        .HasForeignKey("MotorBikeId");
+                        .HasForeignKey("MotorBikeId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("MyMotoWorld.Models.Parts.Engine", b =>
                 {
-                    b.HasOne("MyMotoWorld.Models.CoolingSystem", "CoolingSystem")
+                    b.HasOne("MyMotoWorld.Models.Parts.CoolingSystem", "CoolingSystem")
                         .WithMany("Engines")
                         .HasForeignKey("CoolingSystemId")
                         .OnDelete(DeleteBehavior.Restrict)

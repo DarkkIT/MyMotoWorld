@@ -1,17 +1,14 @@
-﻿namespace MyMotoWorld.Models
+﻿namespace MyMotoWorld.Data.Models
 {
-    using System.ComponentModel.DataAnnotations;
+    using MyMotoWorld.Data.Common.Models;
+    using MyMotoWorld.Models;
 
-    public class Image
+    public class Image : BaseDeletableModel<int>
     {
-        [Key]
-        public int Id { get; set; }
-
-        [Required]
-        public byte[] Name { get; set; }
+        public string Extension { get; set; }
 
         public int MotorBikeId { get; set; }
 
-        public virtual MotorBike MotorBike { get; set; }
+        public MotorBike MotorBike { get; set; }
     }
 }

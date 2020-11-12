@@ -12,6 +12,7 @@
     using MyMotoWorld.Data.Common.Models;
     using MyMotoWorld.Data.Models;
     using MyMotoWorld.Models;
+    using MyMotoWorld.Models.Parts;
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, string>
     {
@@ -25,6 +26,18 @@
         {
         }
 
+        public DbSet<RearSuspension> RearSuspensions { get; set; }
+
+        public DbSet<RearBrake> RearBrakes { get; set; }
+
+        public DbSet<FrontSuspension> FrontSuspensions { get; set; }
+
+        public DbSet<FrontBrake> FrontBrakes { get; set; }
+
+        public DbSet<Engine> Engines { get; set; }
+
+        public DbSet<Image> Images { get; set; }
+
         public virtual DbSet<Setting> Settings { get; set; }
 
         public virtual DbSet<BikeType> BikeTypes { get; set; }
@@ -33,13 +46,13 @@
 
         public virtual DbSet<Extra> Extras { get; set; }
 
-        public virtual DbSet<Image> Images { get; set; }
-
         public virtual DbSet<MotorBike> MotorBikes { get; set; }
 
         public virtual DbSet<Transmission> Transmissions { get; set; }
 
-        //public virtual DbSet<Sale> Sales { get; set; }
+        public virtual DbSet<Sale> Sales { get; set; }
+
+        public DbSet<MotorBikeExtra> MotorBikeExtras { get; set; }
 
         public override int SaveChanges() => this.SaveChanges(true);
 

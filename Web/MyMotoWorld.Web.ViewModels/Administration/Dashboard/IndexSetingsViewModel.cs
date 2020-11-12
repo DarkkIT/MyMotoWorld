@@ -1,6 +1,6 @@
 ﻿namespace MyMotoWorld.Web.ViewModels.Administration.Dashboard
 {
-    public class IndexViewModel
+    public class IndexSetingsViewModel
     {
         public int SettingsCount { get; set; }
     }

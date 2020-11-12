@@ -4,15 +4,14 @@
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    public class Engine
+    using MyMotoWorld.Data.Common.Models;
+
+    public class Engine : BaseDeletableModel<int>
     {
         public Engine()
         {
             this.MotorBikes = new HashSet<MotorBike>();
         }
-
-        [Key]
-        public int Id { get; set; }
 
         [Required]
         [MaxLength(100)]

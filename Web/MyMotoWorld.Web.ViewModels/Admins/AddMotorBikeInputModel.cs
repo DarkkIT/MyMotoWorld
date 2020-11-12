@@ -3,10 +3,11 @@
     using System.ComponentModel.DataAnnotations;
 
     using AutoMapper;
-
+    using Microsoft.AspNetCore.Http;
     using MyMotoWorld.Models;
+    using MyMotoWorld.Services.Mapping;
 
-    public class AddMotorBikeInputModel
+    public class AddMotorBikeInputModel : IMapTo<MotorBike>
     {
         [Required]
         public string Name { get; set; }
@@ -16,7 +17,7 @@
         public string Model { get; set; }
 
         [Required]
-        public int Price { get; set; }
+        public decimal Price { get; set; }
 
         [Required]
 
@@ -81,6 +82,8 @@
         [Required]
         [MaxLength(2000)]
         public string Descrition { get; set; }
+
+        public IFormFile Image { get; set; }
 
         public void CreateMappings(IProfileExpression configuration)
         {

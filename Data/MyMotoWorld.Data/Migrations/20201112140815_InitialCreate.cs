@@ -45,6 +45,7 @@
                     LockoutEnd = table.Column<DateTimeOffset>(nullable: true),
                     LockoutEnabled = table.Column<bool>(nullable: false),
                     AccessFailedCount = table.Column<int>(nullable: false),
+                    TotalSpent = table.Column<decimal>(nullable: false),
                     CreatedOn = table.Column<DateTime>(nullable: false),
                     ModifiedOn = table.Column<DateTime>(nullable: true),
                     IsDeleted = table.Column<bool>(nullable: false),
@@ -61,7 +62,11 @@
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(maxLength: 100, nullable: false),
+                    CreatedOn = table.Column<DateTime>(nullable: false),
+                    ModifiedOn = table.Column<DateTime>(nullable: true),
+                    IsDeleted = table.Column<bool>(nullable: false),
+                    DeletedOn = table.Column<DateTime>(nullable: true),
+                    Name = table.Column<string>(nullable: false),
                     Descrition = table.Column<string>(nullable: false),
                 },
                 constraints: table =>
@@ -75,6 +80,10 @@
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    CreatedOn = table.Column<DateTime>(nullable: false),
+                    ModifiedOn = table.Column<DateTime>(nullable: true),
+                    IsDeleted = table.Column<bool>(nullable: false),
+                    DeletedOn = table.Column<DateTime>(nullable: true),
                     Name = table.Column<string>(maxLength: 20, nullable: false),
                 },
                 constraints: table =>
@@ -88,6 +97,10 @@
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    CreatedOn = table.Column<DateTime>(nullable: false),
+                    ModifiedOn = table.Column<DateTime>(nullable: true),
+                    IsDeleted = table.Column<bool>(nullable: false),
+                    DeletedOn = table.Column<DateTime>(nullable: true),
                     Name = table.Column<string>(maxLength: 200, nullable: false),
                 },
                 constraints: table =>
@@ -96,55 +109,71 @@
                 });
 
             migrationBuilder.CreateTable(
-                name: "FrontBrake",
+                name: "FrontBrakes",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    CreatedOn = table.Column<DateTime>(nullable: false),
+                    ModifiedOn = table.Column<DateTime>(nullable: true),
+                    IsDeleted = table.Column<bool>(nullable: false),
+                    DeletedOn = table.Column<DateTime>(nullable: true),
                     Name = table.Column<string>(maxLength: 100, nullable: false),
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_FrontBrake", x => x.Id);
+                    table.PrimaryKey("PK_FrontBrakes", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "FrontSuspension",
+                name: "FrontSuspensions",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    CreatedOn = table.Column<DateTime>(nullable: false),
+                    ModifiedOn = table.Column<DateTime>(nullable: true),
+                    IsDeleted = table.Column<bool>(nullable: false),
+                    DeletedOn = table.Column<DateTime>(nullable: true),
                     Name = table.Column<string>(maxLength: 100, nullable: false),
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_FrontSuspension", x => x.Id);
+                    table.PrimaryKey("PK_FrontSuspensions", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "RearBrake",
+                name: "RearBrakes",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    CreatedOn = table.Column<DateTime>(nullable: false),
+                    ModifiedOn = table.Column<DateTime>(nullable: true),
+                    IsDeleted = table.Column<bool>(nullable: false),
+                    DeletedOn = table.Column<DateTime>(nullable: true),
                     Name = table.Column<string>(maxLength: 100, nullable: false),
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_RearBrake", x => x.Id);
+                    table.PrimaryKey("PK_RearBrakes", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "RearSuspension",
+                name: "RearSuspensions",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    CreatedOn = table.Column<DateTime>(nullable: false),
+                    ModifiedOn = table.Column<DateTime>(nullable: true),
+                    IsDeleted = table.Column<bool>(nullable: false),
+                    DeletedOn = table.Column<DateTime>(nullable: true),
                     Name = table.Column<string>(maxLength: 100, nullable: false),
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_RearSuspension", x => x.Id);
+                    table.PrimaryKey("PK_RearSuspensions", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -285,11 +314,15 @@
                 });
 
             migrationBuilder.CreateTable(
-                name: "Engine",
+                name: "Engines",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    CreatedOn = table.Column<DateTime>(nullable: false),
+                    ModifiedOn = table.Column<DateTime>(nullable: true),
+                    IsDeleted = table.Column<bool>(nullable: false),
+                    DeletedOn = table.Column<DateTime>(nullable: true),
                     Name = table.Column<string>(maxLength: 100, nullable: false),
                     EngineCapacity = table.Column<int>(nullable: false),
                     EnginePower = table.Column<int>(nullable: false),
@@ -297,9 +330,9 @@
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Engine", x => x.Id);
+                    table.PrimaryKey("PK_Engines", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Engine_CoolingSystems_CoolingSystemId",
+                        name: "FK_Engines_CoolingSystems_CoolingSystemId",
                         column: x => x.CoolingSystemId,
                         principalTable: "CoolingSystems",
                         principalColumn: "Id",
@@ -316,9 +349,9 @@
                     ModifiedOn = table.Column<DateTime>(nullable: true),
                     IsDeleted = table.Column<bool>(nullable: false),
                     DeletedOn = table.Column<DateTime>(nullable: true),
-                    Name = table.Column<string>(maxLength: 100, nullable: false),
-                    Model = table.Column<string>(maxLength: 100, nullable: false),
-                    Price = table.Column<int>(nullable: false),
+                    Name = table.Column<string>(nullable: true),
+                    Model = table.Column<string>(nullable: true),
+                    Price = table.Column<decimal>(nullable: false),
                     Weight = table.Column<int>(nullable: false),
                     Length = table.Column<int>(nullable: false),
                     Height = table.Column<int>(nullable: false),
@@ -342,33 +375,33 @@
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_MotorBikes_Engine_EngineId",
+                        name: "FK_MotorBikes_Engines_EngineId",
                         column: x => x.EngineId,
-                        principalTable: "Engine",
+                        principalTable: "Engines",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_MotorBikes_FrontBrake_FrontBrakesId",
+                        name: "FK_MotorBikes_FrontBrakes_FrontBrakesId",
                         column: x => x.FrontBrakesId,
-                        principalTable: "FrontBrake",
+                        principalTable: "FrontBrakes",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_MotorBikes_FrontSuspension_FrontSuspensionId",
+                        name: "FK_MotorBikes_FrontSuspensions_FrontSuspensionId",
                         column: x => x.FrontSuspensionId,
-                        principalTable: "FrontSuspension",
+                        principalTable: "FrontSuspensions",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_MotorBikes_RearBrake_RearBrakesId",
+                        name: "FK_MotorBikes_RearBrakes_RearBrakesId",
                         column: x => x.RearBrakesId,
-                        principalTable: "RearBrake",
+                        principalTable: "RearBrakes",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_MotorBikes_RearSuspension_RearSuspensionId",
+                        name: "FK_MotorBikes_RearSuspensions_RearSuspensionId",
                         column: x => x.RearSuspensionId,
-                        principalTable: "RearSuspension",
+                        principalTable: "RearSuspensions",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
@@ -385,7 +418,11 @@
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<byte[]>(nullable: false),
+                    CreatedOn = table.Column<DateTime>(nullable: false),
+                    ModifiedOn = table.Column<DateTime>(nullable: true),
+                    IsDeleted = table.Column<bool>(nullable: false),
+                    DeletedOn = table.Column<DateTime>(nullable: true),
+                    Extension = table.Column<string>(nullable: true),
                     MotorBikeId = table.Column<int>(nullable: false),
                 },
                 constraints: table =>
@@ -400,26 +437,56 @@
                 });
 
             migrationBuilder.CreateTable(
-                name: "MotorBikeExtra",
+                name: "MotorBikeExtras",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    MotorBikdeId = table.Column<int>(nullable: false),
-                    MotorBikeId = table.Column<int>(nullable: true),
+                    MotorBikeId = table.Column<int>(nullable: false),
                     ExtraId = table.Column<int>(nullable: false),
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_MotorBikeExtra", x => x.Id);
+                    table.PrimaryKey("PK_MotorBikeExtras", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_MotorBikeExtra_Extras_ExtraId",
+                        name: "FK_MotorBikeExtras_Extras_ExtraId",
                         column: x => x.ExtraId,
                         principalTable: "Extras",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_MotorBikeExtra_MotorBikes_MotorBikeId",
+                        name: "FK_MotorBikeExtras_MotorBikes_MotorBikeId",
+                        column: x => x.MotorBikeId,
+                        principalTable: "MotorBikes",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Sales",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CreatedOn = table.Column<DateTime>(nullable: false),
+                    ModifiedOn = table.Column<DateTime>(nullable: true),
+                    IsDeleted = table.Column<bool>(nullable: false),
+                    DeletedOn = table.Column<DateTime>(nullable: true),
+                    TotalPrice = table.Column<decimal>(nullable: false),
+                    MotorBikeId = table.Column<int>(nullable: false),
+                    ApplicationUserId = table.Column<string>(nullable: true),
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Sales", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Sales_AspNetUsers_ApplicationUserId",
+                        column: x => x.ApplicationUserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Sales_MotorBikes_MotorBikeId",
                         column: x => x.MotorBikeId,
                         principalTable: "MotorBikes",
                         principalColumn: "Id",
@@ -476,9 +543,44 @@
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Engine_CoolingSystemId",
-                table: "Engine",
+                name: "IX_BikeTypes_IsDeleted",
+                table: "BikeTypes",
+                column: "IsDeleted");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CoolingSystems_IsDeleted",
+                table: "CoolingSystems",
+                column: "IsDeleted");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Engines_CoolingSystemId",
+                table: "Engines",
                 column: "CoolingSystemId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Engines_IsDeleted",
+                table: "Engines",
+                column: "IsDeleted");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Extras_IsDeleted",
+                table: "Extras",
+                column: "IsDeleted");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_FrontBrakes_IsDeleted",
+                table: "FrontBrakes",
+                column: "IsDeleted");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_FrontSuspensions_IsDeleted",
+                table: "FrontSuspensions",
+                column: "IsDeleted");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Images_IsDeleted",
+                table: "Images",
+                column: "IsDeleted");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Images_MotorBikeId",
@@ -486,13 +588,13 @@
                 column: "MotorBikeId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_MotorBikeExtra_ExtraId",
-                table: "MotorBikeExtra",
+                name: "IX_MotorBikeExtras_ExtraId",
+                table: "MotorBikeExtras",
                 column: "ExtraId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_MotorBikeExtra_MotorBikeId",
-                table: "MotorBikeExtra",
+                name: "IX_MotorBikeExtras_MotorBikeId",
+                table: "MotorBikeExtras",
                 column: "MotorBikeId");
 
             migrationBuilder.CreateIndex(
@@ -536,6 +638,31 @@
                 column: "TransmissionId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_RearBrakes_IsDeleted",
+                table: "RearBrakes",
+                column: "IsDeleted");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_RearSuspensions_IsDeleted",
+                table: "RearSuspensions",
+                column: "IsDeleted");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Sales_ApplicationUserId",
+                table: "Sales",
+                column: "ApplicationUserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Sales_IsDeleted",
+                table: "Sales",
+                column: "IsDeleted");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Sales_MotorBikeId",
+                table: "Sales",
+                column: "MotorBikeId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Settings_IsDeleted",
                 table: "Settings",
                 column: "IsDeleted");
@@ -562,7 +689,10 @@
                 name: "Images");
 
             migrationBuilder.DropTable(
-                name: "MotorBikeExtra");
+                name: "MotorBikeExtras");
+
+            migrationBuilder.DropTable(
+                name: "Sales");
 
             migrationBuilder.DropTable(
                 name: "Settings");
@@ -571,10 +701,10 @@
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
-                name: "AspNetUsers");
+                name: "Extras");
 
             migrationBuilder.DropTable(
-                name: "Extras");
+                name: "AspNetUsers");
 
             migrationBuilder.DropTable(
                 name: "MotorBikes");
@@ -583,19 +713,19 @@
                 name: "BikeTypes");
 
             migrationBuilder.DropTable(
-                name: "Engine");
+                name: "Engines");
 
             migrationBuilder.DropTable(
-                name: "FrontBrake");
+                name: "FrontBrakes");
 
             migrationBuilder.DropTable(
-                name: "FrontSuspension");
+                name: "FrontSuspensions");
 
             migrationBuilder.DropTable(
-                name: "RearBrake");
+                name: "RearBrakes");
 
             migrationBuilder.DropTable(
-                name: "RearSuspension");
+                name: "RearSuspensions");
 
             migrationBuilder.DropTable(
                 name: "Transmissions");

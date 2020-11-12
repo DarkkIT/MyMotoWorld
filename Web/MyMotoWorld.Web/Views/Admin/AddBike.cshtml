@@ -7,122 +7,142 @@
 
 <h1 class="text-center">Add Bike</h1>
 
-<form method="post" class="col-lg-4 col-lg-offset-4">
+<form method="post" class="row text-center" enctype="multipart/form-data">
 
-    <div class="form-group">
+    <div asp-validation-summary="ModelOnly" class="text-danger col-md-12"></div>
+
+    <div class="col-md-4">
         <label asp-for="Name"></label>
         <input asp-for="Name" class="form-control" />
         <span asp-validation-for="Name" class="text-danger"></span>
     </div>
 
-    <div class="form-group">
+    <div class="col-md-4">
         <label asp-for="Model"></label>
         <input asp-for="Model" class="form-control" />
         <span asp-validation-for="Model" class="text-danger"></span>
     </div>
 
-    <div class="form-group">
+    <div class="col-md-4">
         <label asp-for="Price"></label>
         <input asp-for="Price" class="form-control" />
         <span asp-validation-for="Price" class="text-danger"></span>
     </div>
 
-    <div class="form-group">
+    <div class="col-md-4">
         <label asp-for="Weight"></label>
         <input asp-for="Weight" class="form-control" />
         <span asp-validation-for="Weight" class="text-danger"></span>
     </div>
 
-    <div class="form-group">
+    <div class="col-md-4">
         <label asp-for="Length"></label>
         <input asp-for="Length" class="form-control" />
         <span asp-validation-for="Length" class="text-danger"></span>
     </div>
 
-    <div class="form-group">
+    <div class="col-md-4">
         <label asp-for="Height"></label>
         <input asp-for="Height" class="form-control" />
         <span asp-validation-for="Height" class="text-danger"></span>
     </div>
 
-    <div class="form-group">
+    <div class="col-md-4">
         <label asp-for="SeatHeight"></label>
         <input asp-for="SeatHeight" class="form-control" />
         <span asp-validation-for="SeatHeight" class="text-danger"></span>
     </div>
 
-    <div class="form-group">
+    <div class="col-md-4">
         <label asp-for="BikeType"></label>
-        <input asp-for="BikeType" class="form-control" />
+        <select asp-for="BikeType" class="form-control">
+            <option value="value">Naked</option>
+            <option value="value">Cruiser</option>
+            <option value="value">Adventure</option>
+            <option value="value">Tourer</option>
+            <option value="value">Enduro</option>
+            <option value="value">Groms</option>
+            <option value="value">Sport</option>
+        </select>
         <span asp-validation-for="BikeType" class="text-danger"></span>
     </div>
 
-    <div class="form-group">
+    <div class="col-md-4">
         <label asp-for="BikeTypeDesctiption"></label>
-        <textarea asp-for="BikeTypeDesctiption" class="form-control" ></textarea>
+        <textarea asp-for="BikeTypeDesctiption" class="form-control"></textarea>
         <span asp-validation-for="BikeTypeDesctiption" class="text-danger"></span>
     </div>
 
-    <div class="form-group">
+    <div class="col-md-4">
         <label asp-for="EngineName"></label>
         <input asp-for="EngineName" class="form-control" />
         <span asp-validation-for="EngineName" class="text-danger"></span>
     </div>
 
-    <div class="form-group">
+    <div class="col-md-4">
         <label asp-for="EngineCapacity"></label>
         <input asp-for="EngineCapacity" class="form-control" />
         <span asp-validation-for="EngineCapacity" class="text-danger"></span>
     </div>
 
-    <div class="form-group">
+    <div class="col-md-4">
         <label asp-for="EnginePower"></label>
         <input asp-for="EnginePower" class="form-control" />
         <span asp-validation-for="EnginePower" class="text-danger"></span>
     </div>
 
-    <div class="form-group">
+    <div class="col-md-4">
         <label asp-for="EngineCoolingSystemName"></label>
         <input asp-for="EngineCoolingSystemName" class="form-control" />
         <span asp-validation-for="EngineCoolingSystemName" class="text-danger"></span>
     </div>
 
-    <div class="form-group">
+    <div class="col-md-4">
         <label asp-for="Transmission"></label>
         <input asp-for="Transmission" class="form-control" />
         <span asp-validation-for="Transmission" class="text-danger"></span>
     </div>
 
-    <div class="form-group">
+    <div class="col-md-4">
         <label asp-for="FrontSuspension"></label>
         <input asp-for="FrontSuspension" class="form-control" />
         <span asp-validation-for="FrontSuspension" class="text-danger"></span>
     </div>
 
-    <div class="form-group">
+    <div class="col-md-4">
         <label asp-for="RearSuspension"></label>
         <input asp-for="RearSuspension" class="form-control" />
         <span asp-validation-for="RearSuspension" class="text-danger"></span>
     </div>
 
-    <div class="form-group">
+    <div class="col-md-4">
         <label asp-for="FrontBrakes"></label>
         <input asp-for="FrontBrakes" class="form-control" />
         <span asp-validation-for="FrontBrakes" class="text-danger"></span>
     </div>
 
-    <div class="form-group">
+    <div class="col-md-4">
         <label asp-for="RearBrakes"></label>
         <input asp-for="RearBrakes" class="form-control" />
         <span asp-validation-for="RearBrakes" class="text-danger"></span>
     </div>
 
-    <div class="form-group">
+    <div class="col-md-4">
         <label asp-for="Descrition"></label>
-        <textarea asp-for="Descrition" class="form-control" ></textarea>
+        <textarea asp-for="Descrition" class="form-control"></textarea>
         <span asp-validation-for="Descrition" class="text-danger"></span>
     </div>
 
-    <input type="submit"/>
+    <div class="col-md-4">
+        <label asp-for="Image"></label>
+        <input asp-for="Image" class="form-control">
+        <span asp-validation-for="Image" class="text-danger"></span>
+    </div>
+
+    <input type="submit" class="btn btn-warning" />
 
 </form>
+
+
+
+

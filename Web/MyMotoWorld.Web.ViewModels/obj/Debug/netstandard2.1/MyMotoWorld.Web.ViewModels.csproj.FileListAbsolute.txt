@@ -10,7 +10,7 @@ D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web.ViewModels\bin\Debug\netstandard
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web.ViewModels\obj\Debug\netstandard2.1\MyMotoWorld.Web.ViewModels.csprojAssemblyReference.cache
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web.ViewModels\obj\Debug\netstandard2.1\MyMotoWorld.Web.ViewModels.AssemblyInfoInputs.cache
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web.ViewModels\obj\Debug\netstandard2.1\MyMotoWorld.Web.ViewModels.AssemblyInfo.cs
-D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web.ViewModels\obj\Debug\netstandard2.1\MyMotoWorld.Web.ViewModels.csproj.CoreCompileInputs.cache
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web.ViewModels\obj\Debug\netstandard2.1\MyMotoWorld.Web.ViewModels.csproj.CopyComplete
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web.ViewModels\obj\Debug\netstandard2.1\MyMotoWorld.Web.ViewModels.dll
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web.ViewModels\obj\Debug\netstandard2.1\MyMotoWorld.Web.ViewModels.pdb
+D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web.ViewModels\obj\Debug\netstandard2.1\MyMotoWorld.Web.ViewModels.csproj.CoreCompileInputs.cache

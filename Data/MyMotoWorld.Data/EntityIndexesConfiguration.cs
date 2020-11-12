@@ -3,7 +3,6 @@
     using System.Linq;
 
     using Microsoft.EntityFrameworkCore;
-
     using MyMotoWorld.Data.Common.Models;
 
     internal static class EntityIndexesConfiguration

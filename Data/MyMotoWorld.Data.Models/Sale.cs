@@ -1,35 +1,32 @@
-﻿//namespace MyMotoWorld.Data.Models
-//{
-//    using System;
-//    using System.Collections.Generic;
-//    using System.ComponentModel.DataAnnotations;
-//    using System.ComponentModel.DataAnnotations.Schema;
-//    using System.Linq;
-//    using System.Text;
+﻿namespace MyMotoWorld.Data.Models
+{
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Linq;
+    using System.Runtime.CompilerServices;
 
-//    using MyMotoWorld.Data;
-//    using MyMotoWorld.Data.Common.Models;
-//    using MyMotoWorld.Models;
+    using MyMotoWorld.Data.Common.Models;
+    using MyMotoWorld.Models;
 
-//    public class Sale : BaseDeletableModel<int>
-//    {
-//        public Sale()
-//        {
-//            this.MotorBikes = new HashSet<MotorBike>();
-//        }
+    public class Sale : BaseDeletableModel<int>
+    {
+        public Sale()
+        {
+            this.PurchasedBikes = new HashSet<MotorBike>();
+        }
 
-//        public int TotalPrice { get; set; }
+        public decimal TotalPrice { get; set; }
 
-//        [ForeignKey(nameof(MotorBike))]
-//        public int MotorBikeId { get; set; }
+        [NotMapped]
+        public ICollection<MotorBike> PurchasedBikes { get; set; }
 
-//        public virtual MotorBike MotorBike { get; set; }
+        public int MotorBikeId { get; set; }
 
-//        [ForeignKey(nameof(ApplicationUser))]
-//        public string ApplicationUserId { get; set; }
+        public virtual MotorBike MotorBike { get; set; }
 
-//        public virtual ApplicationUser User { get; set; }
+        public string ApplicationUserId { get; set; }
 
-//        public virtual ICollection<MotorBike> MotorBikes { get; set; }
-//    }
-//}
+        public virtual ApplicationUser ApplicationUser { get; set; }
+    }
+}

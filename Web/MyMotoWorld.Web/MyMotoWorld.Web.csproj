@@ -40,4 +40,8 @@
     <ProjectReference Include="..\MyMotoWorld.Web.Infrastructure\MyMotoWorld.Web.Infrastructure.csproj" />
     <ProjectReference Include="..\MyMotoWorld.Web.ViewModels\MyMotoWorld.Web.ViewModels.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\images\bikes\" />
+  </ItemGroup>
 </Project>

@@ -11,16 +11,18 @@
     {
         public MotorBike()
         {
-            this.Images = new HashSet<Image>();
             this.MotorBikeExtras = new HashSet<MotorBikeExtra>();
-            //this.Sales = new HashSet<Sale>();
+            this.Sales = new HashSet<Sale>();
+            this.Images = new HashSet<Image>();
         }
 
         public string Name { get; set; }
 
         public string Model { get; set; }
 
-        public int Price { get; set; }
+        public decimal Price { get; set; }
+
+        public int Liked { get; set; }
 
         public int Weight { get; set; }
 
@@ -60,10 +62,10 @@
 
         public string Descrition { get; set; }
 
-        public virtual ICollection<Image> Images { get; set; }
-
         public virtual ICollection<MotorBikeExtra> MotorBikeExtras { get; set; }
 
-         //public virtual ICollection<Sale> Sales { get; set; }
+        public virtual ICollection<Sale> Sales { get; set; }
+
+        public virtual ICollection<Image> Images { get; set; }
     }
 }

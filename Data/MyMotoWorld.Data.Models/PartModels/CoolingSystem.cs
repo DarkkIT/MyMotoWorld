@@ -1,19 +1,16 @@
-﻿namespace MyMotoWorld.Models
+﻿namespace MyMotoWorld.Models.Parts
 {
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    using MyMotoWorld.Models.Parts;
+    using MyMotoWorld.Data.Common.Models;
 
-    public class CoolingSystem
+    public class CoolingSystem : BaseDeletableModel<int>
     {
         public CoolingSystem()
         {
             this.Engines = new HashSet<Engine>();
         }
-
-        [Key]
-        public int Id { get; set; }
 
         [Required]
         [MaxLength(20)]

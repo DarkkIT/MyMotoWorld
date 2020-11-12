@@ -3,15 +3,14 @@
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    public class RearSuspension
+    using MyMotoWorld.Data.Common.Models;
+
+    public class RearSuspension : BaseDeletableModel<int>
     {
         public RearSuspension()
         {
             this.MotorBikes = new HashSet<MotorBike>();
         }
-
-        [Key]
-        public int Id { get; set; }
 
         [Required]
         [MaxLength(100)]

@@ -14,7 +14,7 @@
 
         public string Model { get; set; }
 
-        public int Price { get; set; }
+        public decimal Price { get; set; }
 
         public string BikeType { get; set; }
 

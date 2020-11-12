@@ -18,6 +18,9 @@ div h1 span {
     color: orangered;
 }
 
+#welcomelogo {
+    padding-top: 160px;
+}
 
 div#homebg {
     background: url(../images/wallpaper_road_mountains.jpg);
@@ -29,7 +32,7 @@ div#homebg {
     padding: 10rem;
     padding-left: 0px;
     padding-right: 0px;
-    margin: 0;
+    margin: 0px;
     margin-top: 0px;
 }
 
@@ -57,22 +60,11 @@ div.a {
     border: 3px solid red;
 }
 
-div.b {
-    left: 50px;
-    width: 400px;
-    height: 500px;
-    border: 3px solid blue;
-}
-
 div.c {
     position: relative;
     left: 500px;
     width: 1400px;
     height: 500px;
     border: 3px solid green;
-}
-
-div.c article {
-    
 }
 

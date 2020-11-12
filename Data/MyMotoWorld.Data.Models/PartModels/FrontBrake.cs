@@ -3,15 +3,14 @@
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    public class FrontBrake
+    using MyMotoWorld.Data.Common.Models;
+
+    public class FrontBrake : BaseDeletableModel<int>
     {
         public FrontBrake()
         {
             this.MotorBikes = new HashSet<MotorBike>();
         }
-
-        [Key]
-        public int Id { get; set; }
 
         [Required]
         [MaxLength(100)]

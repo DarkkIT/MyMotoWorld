@@ -1,5 +1,6 @@
 ﻿@using MyMotoWorld.Common
-@model MyMotoWorld.Web.ViewModels.MotorBike.MotorBikeListViewModel
+@model MyMotoWorld.Web.ViewModels.Home.IndexViewModel
+
 @{
     this.ViewData["Title"] = "Home Page";
 }
@@ -8,31 +9,29 @@
 </head>
 
 <div id="homebg" class="text-center">
-    <h1 class="display-4">Welcome to <span>@GlobalConstants.SystemName</span>!</h1>
+    <h1 id="welcomelogo" class="display-4 text-light">Welcome to <span>@GlobalConstants.SystemName</span>!</h1>
 
     <a asp-controller="Home" asp-action="Privacy"><button class="btn btn-primary">Join The World</button></a>
 
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <p class="text-light">Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
 
-<div class="b">
-    <h2>Somethin here ........ Somethin here</h2>
-</div>
-
-<div class="outer-grid">    
-    <div class="inner-grid">
-        @foreach (var bike in Model.MotorBikes)
-        {
-            <article>
-                <h3>@bike.Name</h3>
-                <p>@bike.Model</p>
-                <p>@bike.Price</p>
-            </article>
-        }
+<div class="text-center">    
+    <h2 class="display-4">You can choose between:</h2>
+    <div class="col-md-4 offset-md-4">
+        <ul class="list-grupe display-4">
+            <li class="text-primary">MotorBikes: @Model.MotorBikeCount</li>
+            <li class="text-primary">BypeTypes: @Model.BikeTypeCount</li>
+            <li class="text-primary">Engines: @Model.EngineCount</li>
+            <li class="text-primary">MotorBikes: @Model.MotorBikeCount</li>
+            <li class="text-primary">MotorBikes: @Model.MotorBikeCount</li>
+            <li class="text-primary">LikedBikes: @Model.MostLikedBike</li>
+            <li class="text-primary">LikedType: @Model.MostLikedType</li>
+        </ul>
     </div>
 </div>
 
-<div class="text-center">
+<div class="text-center display-4">
     <a asp-area="" asp-controller="Home" asp-action="Privacy">Go Privacy</a>
 </div>
 

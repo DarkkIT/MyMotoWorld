@@ -3,15 +3,14 @@
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    public class Extra
+    using MyMotoWorld.Data.Common.Models;
+
+    public class Extra : BaseDeletableModel<int>
     {
         public Extra()
         {
             this.MotorBikeExtras = new HashSet<MotorBikeExtra>();
         }
-
-        [Key]
-        public int Id { get; set; }
 
         [Required]
         [MaxLength(200)]
