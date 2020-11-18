@@ -16,6 +16,7 @@ namespace MyMotoWorld.Data.Models
             this.Claims = new HashSet<IdentityUserClaim<string>>();
             this.Logins = new HashSet<IdentityUserLogin<string>>();
             this.Sales = new HashSet<Sale>();
+            this.NewsList = new HashSet<News>();
         }
 
         public decimal TotalSpent { get; set; }
@@ -37,5 +38,7 @@ namespace MyMotoWorld.Data.Models
         public virtual ICollection<IdentityUserLogin<string>> Logins { get; set; }
 
         public virtual ICollection<Sale> Sales { get; set; }
+
+        public virtual ICollection<News> NewsList { get; set; }
     }
 }

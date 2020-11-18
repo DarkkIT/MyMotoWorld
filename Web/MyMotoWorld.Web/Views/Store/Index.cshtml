@@ -1,40 +1,90 @@
-﻿@using MyMotoWorld.Common
+﻿@model MyMotoWorld.Web.ViewModels.MotorBike.MotorBikeListViewModel;
+@using MyMotoWorld.Common
+
+
 @{
     this.ViewData["Title"] = "Store";
 }
 
 <head>
     <link href="~/css/storecss.css" rel="stylesheet" asp-append-version="true" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<div class="text-center">
-    <section>
-    <h2 class="display-4">Store @GlobalConstants.SystemName!</h2>
-    <p>
-        Somtheing  Here ........
-    </p>
-    </section>
-    <div>
-        <section>
-            <article class="title-test">
-                Title here Title here Title here Title here Title here
-            </article>
-        </section>
 
-        <section>
-            <article>
-                <h3>Picture Here</h3>
-            </article>
-            <article>
-                <h3>Picture Here</h3>
-            </article>
-            <article>
-                <h3>Picture Here</h3>
-            </article>
-        </section>
-        
+<h1 class="text-center">Moto Store</h1>
+
+<div class="row">
+
+    <div class="col-md-1 menu ml-5 m-3 mt-5">
+
+        <div class="custom-control custom-switch my-2">
+            <input type="checkbox" class="custom-control-input" id="customCheck1">
+            <label class="custom-control-label" for="customCheck1">Model</label>
+        </div>
+        <div class="custom-control custom-checkbox my-2">
+            <input type="checkbox" class="custom-control-input" id="customCheck2">
+            <label class="custom-control-label" for="customCheck2">Power</label>
+        </div>
+        <div class="custom-control custom-checkbox my-2">
+            <input type="checkbox" class="custom-control-input" id="customCheck3">
+            <label class="custom-control-label" for="customCheck3">Type</label>
+        </div>
+
+        <div class="custom-control custom-checkbox my-2">
+            <input type="checkbox" class="custom-control-input" id="customCheck4">
+            <label class="custom-control-label" for="customCheck4">Capacity</label>
+        </div>
+
+        <div class="custom-control custom-checkbox my-2">
+            <input type="checkbox" class="custom-control-input" id="customCheck5">
+            <label class="custom-control-label" for="customCheck5">Price</label>
+        </div>
+        <div class="custom-control custom-checkbox my-2">
+            <input type="checkbox" class="custom-control-input" id="customCheck6">
+            <label class="custom-control-label" for="customCheck6">The 1975</label>
+        </div>
+        <div class="custom-control custom-checkbox my-2">
+            <input type="checkbox" class="custom-control-input" id="customCheck7">
+            <label class="custom-control-label" for="customCheck7">Billie Eilish</label>
+        </div>
+
+        <div class="custom-control custom-checkbox my-2">
+            <input type="checkbox" class="custom-control-input" id="customCheck8">
+            <label class="custom-control-label" for="customCheck8">Alt-J</label>
+        </div>
+
     </div>
-    <section>
-        <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-    </section>
+
+    <div class="col-md-8 mt-5">
+
+        @foreach (var bike in Model.MotorBikes)
+        {
+            <div class="card m-3 col-md-2">
+                <div class="thumbnail">
+                    <img class="card-img" src=@bike.ImagePath alt="bike">
+                </div>
+                <div class="card-body">
+                    <span class="badge badge-success">@bike.Name</span>
+                    <h4 class="card-title mt-2">@bike.Model @bike.EngineCapacity</h4>
+                    <p class="card-text text-black-10"><i class="fas fa-euro-sign"></i>@bike.Price</p>
+                </div>
+                <div class="card-footer">
+                    <a href="#a" class="btn btn-primary">BUY</a>
+                </div>
+            </div>
+        }
+
+    </div>
+
+    <div class="col-md-2 right mt-5">
+        <div class="aside">
+            <h2>What?</h2>
+            <p>Chania is a city on the island of Crete.</p>
+            <h2>Where?</h2>
+            <p>Crete is a Greek island in the Mediterranean Sea.</p>
+            <h2>How?</h2>
+            <p>You can reach Chania airport from all over Europe.</p>
+        </div>
+    </div>
 
 </div>

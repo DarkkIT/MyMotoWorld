@@ -42,6 +42,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\images\bikes\" />
+    <Folder Include="Areas\Administration\Views\Dashboard\" />
   </ItemGroup>
 </Project>

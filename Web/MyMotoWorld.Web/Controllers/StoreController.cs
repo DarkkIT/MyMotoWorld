@@ -7,13 +7,26 @@
 
     using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.Mvc;
+    using MyMotoWorld.Services.Data;
+    using MyMotoWorld.Web.ViewModels.MotorBike;
 
     public class StoreController : Controller
     {
+        private readonly IMotorBikesService motorBikeService;
+
+        public StoreController(IMotorBikesService motorBikeService)
+        {
+            this.motorBikeService = motorBikeService;
+        }
+
         // GET: StoreController
         public IActionResult Index()
         {
-            return this.View();
+            var motorBikes = this.motorBikeService.GetAllBikes<MotorBikeViewModel>();
+
+            var viewModel = new MotorBikeListViewModel { MotorBikes = motorBikes };
+
+            return this.View(viewModel);
         }
 
         // GET: StoreController/Details/5

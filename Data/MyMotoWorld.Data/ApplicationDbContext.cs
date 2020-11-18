@@ -26,19 +26,19 @@
         {
         }
 
-        public DbSet<RearSuspension> RearSuspensions { get; set; }
+        public virtual DbSet<News> News { get; set; }
 
-        public DbSet<RearBrake> RearBrakes { get; set; }
+        public virtual DbSet<RearSuspension> RearSuspensions { get; set; }
 
-        public DbSet<FrontSuspension> FrontSuspensions { get; set; }
+        public virtual DbSet<RearBrake> RearBrakes { get; set; }
 
-        public DbSet<FrontBrake> FrontBrakes { get; set; }
+        public virtual DbSet<FrontSuspension> FrontSuspensions { get; set; }
 
-        public DbSet<Engine> Engines { get; set; }
+        public virtual DbSet<FrontBrake> FrontBrakes { get; set; }
 
-        public DbSet<Image> Images { get; set; }
+        public virtual DbSet<Engine> Engines { get; set; }
 
-        public virtual DbSet<Setting> Settings { get; set; }
+        public virtual DbSet<Image> Images { get; set; }
 
         public virtual DbSet<BikeType> BikeTypes { get; set; }
 
@@ -52,7 +52,7 @@
 
         public virtual DbSet<Sale> Sales { get; set; }
 
-        public DbSet<MotorBikeExtra> MotorBikeExtras { get; set; }
+        public virtual DbSet<MotorBikeExtra> MotorBikeExtras { get; set; }
 
         public override int SaveChanges() => this.SaveChanges(true);
 

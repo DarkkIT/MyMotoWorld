@@ -21,7 +21,12 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Data\MyMotoWorld.Data.Common\MyMotoWorld.Data.Common.csproj" />
     <ProjectReference Include="..\..\Data\MyMotoWorld.Data.Models\MyMotoWorld.Data.Models.csproj" />
+    <ProjectReference Include="..\..\Web\MyMotoWorld.Web.ViewModels\MyMotoWorld.Web.ViewModels.csproj" />
     <ProjectReference Include="..\MyMotoWorld.Services.Mapping\MyMotoWorld.Services.Mapping.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="News\" />
   </ItemGroup>
 
 </Project>

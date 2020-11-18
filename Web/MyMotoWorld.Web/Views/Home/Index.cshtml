@@ -16,23 +16,71 @@
     <p class="text-light">Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
 
-<div class="text-center">    
-    <h2 class="display-4">You can choose between:</h2>
-    <div class="col-md-4 offset-md-4">
-        <ul class="list-grupe display-4">
-            <li class="text-primary">MotorBikes: @Model.MotorBikeCount</li>
-            <li class="text-primary">BypeTypes: @Model.BikeTypeCount</li>
-            <li class="text-primary">Engines: @Model.EngineCount</li>
-            <li class="text-primary">MotorBikes: @Model.MotorBikeCount</li>
-            <li class="text-primary">MotorBikes: @Model.MotorBikeCount</li>
-            <li class="text-primary">LikedBikes: @Model.MostLikedBike</li>
-            <li class="text-primary">LikedType: @Model.MostLikedType</li>
-        </ul>
-    </div>
+<div class="position-absolute">
+    
 </div>
 
-<div class="text-center display-4">
-    <a asp-area="" asp-controller="Home" asp-action="Privacy">Go Privacy</a>
+<div class="row">
+
+    <div class="col-md-2 menu ml-5 m-3 mt-5">
+        <p class="h3">You can choose between:</p>
+        <ul class="list-grupe display-6">
+            <li>Bikes: @Model.MotorBikeCount</li>
+            <li>BikeTypes: @Model.BikeTypeCount</li>
+            <li>Engines: @Model.EngineCount</li>
+            <li>Extras: @Model.ExtrasCount</li>
+            <li>LikedBike: @Model.MostLikedBike</li>
+            <li>LikedType: @Model.MostLikedType</li>
+        </ul>
+    </div>
+
+        <div class="card m-3 mt-5 col-md-3" >
+            <div class="thumbnail">
+                <img class="card-img" src="~/images/bikes/commercial.png" alt="dog">
+            </div>
+            <div class="card-body">
+                <span class="badge badge-success">Motorcicles</span>
+                <h4 class="card-title mt-2">How to ride a bike properly</h4>
+                <p class="card-text">Find out this and many more on this our site with the thousands of others who already do it. </p>
+            </div>
+            <div class="card-footer">
+                <a href="#a" class="btn btn-primary">Read More</a>
+            </div>
+        </div>
+
+        <div class="card m-3 mt-5 col-md-3">
+            <div class="thumbnail">
+                <img class="card-img" src="~/images/bikes/1607576.jpg" alt="bike">
+            </div>
+            <div class="card-body">
+                <span class="badge badge-success">Motorcicles</span>
+                <h4 class="card-title mt-2">How to ride a bike properly</h4>
+                <p class="card-text">Find out this and many more on this our site with the thousands of others who already do it. </p>
+            </div>
+            <div class="card-footer">
+                <a href="#a" class="btn btn-primary">Read More</a>
+            </div>
+        </div>
+
+        <div class="card m-3 mt-5 col-md-3">
+            <div class="thumbnail">
+                <img class="card-img" src="~/images/bikes/1234956.jpg" alt="bike">
+            </div>
+            <div class="card-body">
+                <span class="badge badge-success">Motorcicles</span>
+                <h4 class="card-title mt-2">How to ride a bike properly</h4>
+                <p class="card-text">Find out this and many more on this our site with the thousands of others who already do it. </p>
+            </div>
+            <div class="card-footer">
+                <a href="#a" class="btn btn-primary">Read More</a>
+            </div>
+        </div>
+
 </div>
+
+
+    <div class="text-center">
+        <a asp-area="" asp-controller="Home" asp-action="Privacy">Go Privacy</a>
+    </div>
 
 

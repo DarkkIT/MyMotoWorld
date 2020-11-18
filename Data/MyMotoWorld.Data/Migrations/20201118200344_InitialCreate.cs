@@ -66,8 +66,9 @@
                     ModifiedOn = table.Column<DateTime>(nullable: true),
                     IsDeleted = table.Column<bool>(nullable: false),
                     DeletedOn = table.Column<DateTime>(nullable: true),
-                    Name = table.Column<string>(nullable: false),
+                    Name = table.Column<string>(maxLength: 200, nullable: false),
                     Descrition = table.Column<string>(nullable: false),
+                    Liked = table.Column<int>(nullable: false),
                 },
                 constraints: table =>
                 {
@@ -84,7 +85,7 @@
                     ModifiedOn = table.Column<DateTime>(nullable: true),
                     IsDeleted = table.Column<bool>(nullable: false),
                     DeletedOn = table.Column<DateTime>(nullable: true),
-                    Name = table.Column<string>(maxLength: 20, nullable: false),
+                    Name = table.Column<string>(maxLength: 100, nullable: false),
                 },
                 constraints: table =>
                 {
@@ -135,7 +136,7 @@
                     ModifiedOn = table.Column<DateTime>(nullable: true),
                     IsDeleted = table.Column<bool>(nullable: false),
                     DeletedOn = table.Column<DateTime>(nullable: true),
-                    Name = table.Column<string>(maxLength: 100, nullable: false),
+                    Name = table.Column<string>(maxLength: 200, nullable: false),
                 },
                 constraints: table =>
                 {
@@ -152,7 +153,7 @@
                     ModifiedOn = table.Column<DateTime>(nullable: true),
                     IsDeleted = table.Column<bool>(nullable: false),
                     DeletedOn = table.Column<DateTime>(nullable: true),
-                    Name = table.Column<string>(maxLength: 100, nullable: false),
+                    Name = table.Column<string>(maxLength: 200, nullable: false),
                 },
                 constraints: table =>
                 {
@@ -169,29 +170,11 @@
                     ModifiedOn = table.Column<DateTime>(nullable: true),
                     IsDeleted = table.Column<bool>(nullable: false),
                     DeletedOn = table.Column<DateTime>(nullable: true),
-                    Name = table.Column<string>(maxLength: 100, nullable: false),
+                    Name = table.Column<string>(maxLength: 200, nullable: false),
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_RearSuspensions", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Settings",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    CreatedOn = table.Column<DateTime>(nullable: false),
-                    ModifiedOn = table.Column<DateTime>(nullable: true),
-                    IsDeleted = table.Column<bool>(nullable: false),
-                    DeletedOn = table.Column<DateTime>(nullable: true),
-                    Name = table.Column<string>(nullable: true),
-                    Value = table.Column<string>(nullable: true),
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Settings", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -200,6 +183,10 @@
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    CreatedOn = table.Column<DateTime>(nullable: false),
+                    ModifiedOn = table.Column<DateTime>(nullable: true),
+                    IsDeleted = table.Column<bool>(nullable: false),
+                    DeletedOn = table.Column<DateTime>(nullable: true),
                     Name = table.Column<string>(maxLength: 100, nullable: false),
                 },
                 constraints: table =>
@@ -314,6 +301,32 @@
                 });
 
             migrationBuilder.CreateTable(
+                name: "News",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CreatedOn = table.Column<DateTime>(nullable: false),
+                    ModifiedOn = table.Column<DateTime>(nullable: true),
+                    IsDeleted = table.Column<bool>(nullable: false),
+                    DeletedOn = table.Column<DateTime>(nullable: true),
+                    Name = table.Column<string>(nullable: true),
+                    Description = table.Column<string>(nullable: true),
+                    NewsDate = table.Column<DateTime>(nullable: false),
+                    ApplicationUserId = table.Column<string>(nullable: true),
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_News", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_News_AspNetUsers_ApplicationUserId",
+                        column: x => x.ApplicationUserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Engines",
                 columns: table => new
                 {
@@ -323,7 +336,7 @@
                     ModifiedOn = table.Column<DateTime>(nullable: true),
                     IsDeleted = table.Column<bool>(nullable: false),
                     DeletedOn = table.Column<DateTime>(nullable: true),
-                    Name = table.Column<string>(maxLength: 100, nullable: false),
+                    Name = table.Column<string>(maxLength: 200, nullable: false),
                     EngineCapacity = table.Column<int>(nullable: false),
                     EnginePower = table.Column<int>(nullable: false),
                     CoolingSystemId = table.Column<int>(nullable: false),
@@ -352,6 +365,7 @@
                     Name = table.Column<string>(nullable: true),
                     Model = table.Column<string>(nullable: true),
                     Price = table.Column<decimal>(nullable: false),
+                    Liked = table.Column<int>(nullable: false),
                     Weight = table.Column<int>(nullable: false),
                     Length = table.Column<int>(nullable: false),
                     Height = table.Column<int>(nullable: false),
@@ -638,6 +652,16 @@
                 column: "TransmissionId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_News_ApplicationUserId",
+                table: "News",
+                column: "ApplicationUserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_News_IsDeleted",
+                table: "News",
+                column: "IsDeleted");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_RearBrakes_IsDeleted",
                 table: "RearBrakes",
                 column: "IsDeleted");
@@ -663,8 +687,8 @@
                 column: "MotorBikeId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Settings_IsDeleted",
-                table: "Settings",
+                name: "IX_Transmissions_IsDeleted",
+                table: "Transmissions",
                 column: "IsDeleted");
         }
 
@@ -692,10 +716,10 @@
                 name: "MotorBikeExtras");
 
             migrationBuilder.DropTable(
-                name: "Sales");
+                name: "News");
 
             migrationBuilder.DropTable(
-                name: "Settings");
+                name: "Sales");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

@@ -162,3 +162,7 @@ D:\VisualStudio\MyMotoWorld\Tests\MyMotoWorld.Services.Data.Tests\obj\Debug\netc
 D:\VisualStudio\MyMotoWorld\Tests\MyMotoWorld.Services.Data.Tests\obj\Debug\netcoreapp3.1\MyMotoWorld.Services.Data.Tests.dll
 D:\VisualStudio\MyMotoWorld\Tests\MyMotoWorld.Services.Data.Tests\obj\Debug\netcoreapp3.1\MyMotoWorld.Services.Data.Tests.pdb
 D:\VisualStudio\MyMotoWorld\Tests\MyMotoWorld.Services.Data.Tests\obj\Debug\netcoreapp3.1\MyMotoWorld.Services.Data.Tests.genruntimeconfig.cache
+D:\VisualStudio\MyMotoWorld\Tests\MyMotoWorld.Services.Data.Tests\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Features.dll
+D:\VisualStudio\MyMotoWorld\Tests\MyMotoWorld.Services.Data.Tests\bin\Debug\netcoreapp3.1\System.IO.Pipelines.dll
+D:\VisualStudio\MyMotoWorld\Tests\MyMotoWorld.Services.Data.Tests\bin\Debug\netcoreapp3.1\MyMotoWorld.Web.ViewModels.dll
+D:\VisualStudio\MyMotoWorld\Tests\MyMotoWorld.Services.Data.Tests\bin\Debug\netcoreapp3.1\MyMotoWorld.Web.ViewModels.pdb

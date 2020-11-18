@@ -14,3 +14,5 @@ D:\VisualStudio\MyMotoWorld\Services\MyMotoWorld.Services.Data\obj\Debug\netstan
 D:\VisualStudio\MyMotoWorld\Services\MyMotoWorld.Services.Data\obj\Debug\netstandard2.1\MyMotoWorld.Services.Data.csproj.CopyComplete
 D:\VisualStudio\MyMotoWorld\Services\MyMotoWorld.Services.Data\obj\Debug\netstandard2.1\MyMotoWorld.Services.Data.dll
 D:\VisualStudio\MyMotoWorld\Services\MyMotoWorld.Services.Data\obj\Debug\netstandard2.1\MyMotoWorld.Services.Data.pdb
+D:\VisualStudio\MyMotoWorld\Services\MyMotoWorld.Services.Data\bin\Debug\netstandard2.1\MyMotoWorld.Web.ViewModels.dll
+D:\VisualStudio\MyMotoWorld\Services\MyMotoWorld.Services.Data\bin\Debug\netstandard2.1\MyMotoWorld.Web.ViewModels.pdb

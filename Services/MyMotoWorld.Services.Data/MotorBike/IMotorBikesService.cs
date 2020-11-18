@@ -6,13 +6,13 @@
     using System.Threading.Tasks;
 
     using MyMotoWorld.Models;
+    using MyMotoWorld.Web.ViewModels.Admins;
+    using MyMotoWorld.Web.ViewModels.MotorBike;
 
     public interface IMotorBikesService
     {
-        IEnumerable<T> GetFirstTree<T>();
+        Task AddBikeAsync(AddMotorBikeInputModel input);
 
-        async Task AddBike<T>(MotorBike motorBike)
-        {
-        }
+        IEnumerable<MotorBikeViewModel> GetAllBikes<T>();
     }
 }

@@ -3,15 +3,15 @@
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    public class Transmission
+    using MyMotoWorld.Data.Common.Models;
+    using MyMotoWorld.Data.Common.Repositories;
+
+    public class Transmission : BaseDeletableModel<int>
     {
         public Transmission()
         {
             this.MotorBikes = new HashSet<MotorBike>();
         }
-
-        [Key]
-        public int Id { get; set; }
 
         [Required]
         [MaxLength(100)]

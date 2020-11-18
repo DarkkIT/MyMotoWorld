@@ -429,13 +429,11 @@ D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Debug\netcoreapp3.1\MyMotoWo
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Debug\netcoreapp3.1\MyMotoWorld.Web.TagHelpers.input.cache
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Debug\netcoreapp3.1\MyMotoWorld.Web.TagHelpers.output.cache
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Debug\netcoreapp3.1\MyMotoWorld.Web.RazorCoreGenerate.cache
-D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Administration\Views\Dashboard\Index.cshtml.g.cs
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Administration\Views\_ViewImports.cshtml.g.cs
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Administration\Views\_ViewStart.cshtml.g.cs
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
-D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Debug\netcoreapp3.1\Razor\Views\Settings\Index.cshtml.g.cs
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_CookieConsentPartial.cshtml.g.cs
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
@@ -462,3 +460,5 @@ D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Debug\netcoreapp3.1\Razor\Vi
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Debug\netcoreapp3.1\Razor\Views\Admin\AddBike.cshtml.g.cs
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Features.dll
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\bin\Debug\netcoreapp3.1\System.IO.Pipelines.dll
+D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Debug\netcoreapp3.1\Razor\Views\News\Index.cshtml.g.cs
+D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Debug\netcoreapp3.1\Razor\Views\Admin\AddNews.cshtml.g.cs

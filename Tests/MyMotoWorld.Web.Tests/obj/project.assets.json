@@ -3518,7 +3518,8 @@
         "dependencies": {
           "MyMotoWorld.Data.Common": "1.0.0",
           "MyMotoWorld.Data.Models": "1.0.0",
-          "MyMotoWorld.Services.Mapping": "1.0.0"
+          "MyMotoWorld.Services.Mapping": "1.0.0",
+          "MyMotoWorld.Web.ViewModels": "1.0.0"
         },
         "compile": {
           "bin/placeholder/MyMotoWorld.Services.Data.dll": {}

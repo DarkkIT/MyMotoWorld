@@ -7,32 +7,32 @@
     using MyMotoWorld.Models;
     using MyMotoWorld.Services.Mapping;
 
-    public class AddMotorBikeInputModel : IMapTo<MotorBike>
+    public class AddMotorBikeInputModel
     {
         [Required]
         public string Name { get; set; }
 
         [Required]
-        [MaxLength(50)]
+        [MaxLength(100)]
         public string Model { get; set; }
 
         [Required]
         public decimal Price { get; set; }
 
         [Required]
-
+        [Range(1, 1000)]
         public int Weight { get; set; }
 
         [Required]
-
+        [Range(1, 300)]
         public int Length { get; set; }
 
         [Required]
-
+        [Range(1, 200)]
         public int Height { get; set; }
 
         [Required]
-
+        [Range(1, 120)]
         public int SeatHeight { get; set; }
 
         [Required]
@@ -44,15 +44,15 @@
         public string BikeTypeDesctiption { get; set; }
 
         [Required]
-        [MaxLength(100)]
+        [MaxLength(200)]
         public string EngineName { get; set; }
 
         [Required]
-
+        [Range(1, 5000)]
         public int EngineCapacity { get; set; }
 
         [Required]
-
+        [Range(1, 1000)]
         public int EnginePower { get; set; }
 
         [Required]
@@ -60,23 +60,23 @@
         public string EngineCoolingSystemName { get; set; }
 
         [Required]
-        [MaxLength(100)]
+        [MaxLength(200)]
         public string Transmission { get; set; }
 
         [Required]
-        [MaxLength(100)]
+        [MaxLength(200)]
         public string FrontSuspension { get; set; }
 
         [Required]
-        [MaxLength(100)]
+        [MaxLength(200)]
         public string RearSuspension { get; set; }
 
         [Required]
-        [MaxLength(100)]
+        [MaxLength(200)]
         public string FrontBrakes { get; set; }
 
         [Required]
-        [MaxLength(100)]
+        [MaxLength(200)]
         public string RearBrakes { get; set; }
 
         [Required]
@@ -84,32 +84,5 @@
         public string Descrition { get; set; }
 
         public IFormFile Image { get; set; }
-
-        public void CreateMappings(IProfileExpression configuration)
-        {
-            configuration.CreateMap<MotorBike, AddMotorBikeInputModel>().ForMember(
-                m => m.BikeType,
-                opt => opt.MapFrom(x => x.BikeType.Name)).ForMember(
-                m => m.BikeTypeDesctiption,
-                opt => opt.MapFrom(x => x.BikeType.Descrition)).ForMember(
-                m => m.EngineName,
-                opt => opt.MapFrom(x => x.Engine.Name)).ForMember(
-                m => m.EngineCapacity,
-                opt => opt.MapFrom(x => x.Engine.EngineCapacity)).ForMember(
-                m => m.EnginePower,
-                opt => opt.MapFrom(x => x.Engine.EnginePower)).ForMember(
-                m => m.EngineCoolingSystemName,
-                opt => opt.MapFrom(x => x.Engine.CoolingSystem.Name)).ForMember(
-                m => m.Transmission,
-                opt => opt.MapFrom(x => x.Transmission.Name)).ForMember(
-                m => m.FrontSuspension,
-                opt => opt.MapFrom(x => x.FrontSuspension.Name)).ForMember(
-                m => m.RearSuspension,
-                opt => opt.MapFrom(x => x.RearSuspension.Name)).ForMember(
-                m => m.FrontBrakes,
-                opt => opt.MapFrom(x => x.FrontBrakes.Name)).ForMember(
-                m => m.RearBrakes,
-                opt => opt.MapFrom(x => x.RearBrakes.Name));
-        }
     }
 }

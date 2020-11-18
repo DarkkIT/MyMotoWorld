@@ -15,9 +15,9 @@
 
     public class AdminController : Controller
     {
-        private readonly IWebHostEnvironment webHostEnvironment;
+        private readonly IMotorBikesService motorBikesService;
 
-        public IMotorBikesService motorBikesService;
+        private readonly IWebHostEnvironment webHostEnvironment;
 
         public AdminController(IWebHostEnvironment webHostEnvironment, IMotorBikesService motorBikesService)
         {
@@ -43,9 +43,30 @@
                 return this.View();
             }
 
-            using (FileStream fs = new FileStream(this.webHostEnvironment.WebRootPath + ("/images/bikes/" + input.Model + ".png"), FileMode.Create))
+            if (input.Image != null)
             {
-                await input.Image.CopyToAsync(fs);
+                using (FileStream fs = new FileStream(this.webHostEnvironment.WebRootPath + ("/images/bikes/" + input.Model + ".png"), FileMode.Create))
+                {
+                    await input.Image.CopyToAsync(fs);
+                }
+            }
+
+            await this.motorBikesService.AddBikeAsync(input);
+
+            return this.RedirectToAction(nameof(this.Success));
+        }
+
+        public IActionResult AddNews()
+        {
+            return this.View();
+        }
+
+        [HttpPost]
+        public IActionResult AddNews(AddNewsInputModel input)
+        {
+            if (!this.ModelState.IsValid)
+            {
+                return this.View();
             }
 
             return this.RedirectToAction(nameof(this.Success));

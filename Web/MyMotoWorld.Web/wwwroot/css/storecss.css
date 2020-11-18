@@ -1,17 +1,53 @@
-﻿div div section{
-    display: inline-block;
+﻿* {
+    box-sizing: border-box;
 }
 
-div div section:nth-child(2) article {
-    display: inline-block;
+.row::after {
+    content: "";
+    clear: both;
+    display: block;
 }
 
-div div section {
-    border-style: dotted;
+[class*="col-"] {
+    float: left;
+    padding: 0px;
 }
 
-.title-test {
-    background: blue;
-    padding-top: 100px;
-    padding-bottom: 100px;
+html {
+    font-family: "Lucida Sans", sans-serif;
 }
+
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    padding: 8px;
+    margin-bottom: 7px;
+    background-color: #33b5e5;
+    color: #ffffff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+    .menu li:hover {
+        background-color: #0099cc;
+    }
+
+.aside {
+    background-color: white;
+    padding: 15px;
+    color: black;
+    text-align: center;
+    font-size: 14px;
+    border: 3px solid #282727;
+}
+
+.card {
+    border: none;
+}
+
+    .card:hover {
+        transform: scale(1.1);
+    }

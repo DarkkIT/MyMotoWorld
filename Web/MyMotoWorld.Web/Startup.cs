@@ -17,6 +17,7 @@
     using MyMotoWorld.Data.Repositories;
     using MyMotoWorld.Data.Seeding;
     using MyMotoWorld.Services.Data;
+    using MyMotoWorld.Services.Data.Home;
     using MyMotoWorld.Services.Mapping;
     using MyMotoWorld.Services.Messaging;
     using MyMotoWorld.Web.ViewModels;
@@ -62,8 +63,8 @@
 
             // Application services
             services.AddTransient<IEmailSender, NullMessageSender>();
-            services.AddTransient<ISettingsService, SettingsService>();
             services.AddTransient<IMotorBikesService, MotorBikesService>();
+            services.AddTransient<IGetCountService, GetCountService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

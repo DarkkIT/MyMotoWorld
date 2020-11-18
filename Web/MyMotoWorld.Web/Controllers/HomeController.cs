@@ -8,36 +8,23 @@
     using MyMotoWorld.Data.Common.Repositories;
     using MyMotoWorld.Models;
     using MyMotoWorld.Services.Data;
+    using MyMotoWorld.Services.Data.Home;
     using MyMotoWorld.Web.ViewModels;
-    using MyMotoWorld.Web.ViewModels.Administration.Dashboard;
     using MyMotoWorld.Web.ViewModels.Home;
     using MyMotoWorld.Web.ViewModels.MotorBike;
-    using MyMotoWorld.Web.ViewModels.Settings;
 
     public class HomeController : BaseController
     {
-        private readonly IMotorBikesService motorBikesService;
-        private readonly ApplicationDbContext db;
+        private readonly IGetCountService getCountService;
 
-        public HomeController(IMotorBikesService motorBikesService, ApplicationDbContext db)
+        public HomeController(IGetCountService getCountService)
         {
-            this.motorBikesService = motorBikesService;
-            this.db = db;
+            this.getCountService = getCountService;
         }
 
         public IActionResult Index()
         {
-            var viewModel = new IndexViewModel
-            {
-                BikeTypeCount = this.db.BikeTypes.Count(),
-                EngineCount = this.db.Engines.Count(),
-                ExtrasCount = this.db.Extras.Count(),
-                MotorBikeCount = this.db.MotorBikes.Count(),
-                MostLikedBike = this.db.MotorBikes.OrderByDescending(x => x.Liked).FirstOrDefault().Model,
-                //MostLikedBike = "name",
-                MostLikedType = this.db.BikeTypes.OrderByDescending(x => x.Liked).FirstOrDefault().Name,
-                //MostLikedType = "name",
-            };
+            var viewModel = this.getCountService.GetCounts();
 
             return this.View(viewModel);
         }
@@ -47,7 +34,6 @@
             return this.View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return this.View(

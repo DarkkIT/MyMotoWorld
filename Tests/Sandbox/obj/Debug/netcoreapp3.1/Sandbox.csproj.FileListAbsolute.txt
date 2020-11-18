@@ -91,3 +91,7 @@ D:\VisualStudio\MyMotoWorld\Tests\Sandbox\obj\Debug\netcoreapp3.1\Sandbox.csproj
 D:\VisualStudio\MyMotoWorld\Tests\Sandbox\obj\Debug\netcoreapp3.1\Sandbox.dll
 D:\VisualStudio\MyMotoWorld\Tests\Sandbox\obj\Debug\netcoreapp3.1\Sandbox.pdb
 D:\VisualStudio\MyMotoWorld\Tests\Sandbox\obj\Debug\netcoreapp3.1\Sandbox.genruntimeconfig.cache
+D:\VisualStudio\MyMotoWorld\Tests\Sandbox\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Features.dll
+D:\VisualStudio\MyMotoWorld\Tests\Sandbox\bin\Debug\netcoreapp3.1\System.IO.Pipelines.dll
+D:\VisualStudio\MyMotoWorld\Tests\Sandbox\bin\Debug\netcoreapp3.1\MyMotoWorld.Web.ViewModels.dll
+D:\VisualStudio\MyMotoWorld\Tests\Sandbox\bin\Debug\netcoreapp3.1\MyMotoWorld.Web.ViewModels.pdb
