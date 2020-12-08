@@ -1,6 +1,7 @@
 ﻿namespace MyMotoWorld.Web.ViewModels.MotorBike
 {
     using System.Collections.Generic;
+    using System.Linq;
 
     using AutoMapper;
     using MyMotoWorld.Models;
@@ -48,6 +49,8 @@
 
         public string Descrition { get; set; }
 
+        public double AvarageVote { get; set; }
+
         public string MainImagePath => "/images/bikes/" + this.Model + this.EngineCapacity + "-1" + ".jpg";
 
         public string SecondImagePath => "/images/bikes/" + this.Model + this.EngineCapacity + "-2" + ".jpg";
@@ -78,7 +81,9 @@
                 m => m.CoolingSystem,
                 opt => opt.MapFrom(x => x.Engine.CoolingSystem.Name)).ForMember(
                 m => m.BikeType,
-                opt => opt.MapFrom(x => x.BikeType.Name));
+                opt => opt.MapFrom(x => x.BikeType.Name)).ForMember(
+                m => m.AvarageVote,
+                opt => opt.MapFrom(x => x.Votes.Average(x => x.Value)));
         }
     }
 }

@@ -14,6 +14,7 @@
             this.MotorBikeExtras = new HashSet<MotorBikeExtra>();
             this.Sales = new HashSet<Sale>();
             this.Images = new HashSet<Image>();
+            this.Votes = new HashSet<Vote>();
         }
 
         public string Name { get; set; }
@@ -67,5 +68,7 @@
         public virtual ICollection<Sale> Sales { get; set; }
 
         public virtual ICollection<Image> Images { get; set; }
+
+        public virtual ICollection<Vote> Votes { get; set; }
     }
 }

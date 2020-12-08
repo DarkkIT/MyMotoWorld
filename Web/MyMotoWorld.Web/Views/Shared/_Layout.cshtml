@@ -6,19 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@this.ViewData["Title"] - @GlobalConstants.SystemName</title>
     <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" asp-append-version="true" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ultra&display=swap" rel="stylesheet">
     <link href="~/css/site.min.css" rel="stylesheet" asp-append-version="true" />
     <script src="https://kit.fontawesome.com/f909b4a59b.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body class="mb-0">
     <header>
-        <nav class="navbar navbar-expand-sm navbar-light bg-light border-bottom box-shadow mb-0">
+        <nav  class="navbar navbar-expand-sm bg-light border-bottom box-shadow mb-0">
             <div class="container-fluid">
                 <a id="logo" class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">@GlobalConstants.SystemName</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse ml-2">
                     <partial name="_LoginPartial" />
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
@@ -39,7 +41,7 @@
                         @if (this.User.Identity.IsAuthenticated)
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-info" asp-area="" asp-controller="Admin" asp-action="Index"><i class="fas fa-wrench"></i>Admin</a>
+                                <a class="nav-link text-danger" asp-area="" asp-controller="Admin" asp-action="Index"><i class="fas fa-wrench"></i>Admin</a>
                             </li>
                         }
                     </ul>
@@ -48,21 +50,82 @@
         </nav>
     </header>
 
-    @this.RenderBody()
 
-    <footer class="border-top footer text-muted mb-0">
-        <div class="container-fluid">
-            <article>
-                &copy; @DateTime.Now.Year - @GlobalConstants.SystemName - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-            </article>
-            <article>
-                <i class="fab fa-facebook ml-2"></i>
-                <i class="fab fa-twitter ml-2"></i>
-                <i class="fab fa-pinterest ml-2"></i>
-                <i class="fab fa-instagram-square ml-2"></i>
-                <i class="fab fa-linkedin ml-2"></i>
-            </article>
+        @this.RenderBody()
+
+<hr />
+    <footer id="footertop" class="footer font-small blue pt-4">
+
+        <div class="container-fluid text-center text-md-left">
+
+            <!-- Grid row -->
+            <div class="row">
+
+                <!-- Grid column -->
+                <div class="col-md-3 mt-5 ml-5">
+
+                    <!-- Content -->
+                    <h5 class="text-uppercase">Stay in touch</h5>
+                    <p>Be alweys motivated for new adventures</p>
+
+                </div>
+                <!-- Grid column -->
+
+                <hr class="clearfix w-100 d-md-none pb-3">
+
+                <!-- Grid column -->
+                <div class="col-md-2 mb-md-0 mb-3">
+                    <hr />
+                    <ul class="list-unstyled">
+                        <li>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index"><i class="fas fa-home mr-2"></i>Home</a>
+                        </li>
+                        <li>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="About" asp-action="index"><i class="fas fa-list mr-2"></i>About</a>
+                        </li>
+                    </ul>
+                    <hr />
+                </div>
+
+                <div class="col-md-2 mb-md-0 mb-3">
+                    <hr />
+                    <ul class="list-unstyled">
+                        <li>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Store" asp-action="Index"><i class="fas fa-store mr-2"></i>Store</a>
+                        </li>
+                        <li>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="News" asp-action="Index"><i class="fas fa-globe-europe mr-2"></i>News</a>
+                        </li>
+                    </ul>
+                    <hr />
+                </div>
+
+                <div class="col-md-2 mb-md-0 mb-3">
+                    <hr />
+                    <ul class="list-unstyled">
+                        <li>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy"><i class="fas fa-book-reader mr-2"></i>Privacy</a>
+                        </li>
+                        <li>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Contacts"><i class="fas fa-book-reader mr-2"></i>Contacts</a>
+                        </li>
+                    </ul>
+                    <hr />
+                </div>
+
+                <div>
+                    <img src="~/images/logos/suzuki-logo-300x300.png" class="w-50 h-75 ml-4 mt-2" alt="Responsive image" />
+                </div>
+
+            </div>
+
         </div>
+
+        <div id="footerbotom" class="footer-copyright text-center py-3 mb-0">
+            © @DateTime.UtcNow.Year Copyright:
+            <a class="text-black-50"  asp-controller="Home" asp-action="Index"> MyMotoWorld.com</a>
+        </div>
+
     </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js" asp-append-version="true"></script>

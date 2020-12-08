@@ -58,19 +58,21 @@ bottom: 0;
 width: 100%;
 white-space: normal;
 height: 30px;
-line-height: 60px;
-}
-
-footer article:nth-child(1) {
-    float: left; 
-}
-
-footer article:nth-child(2) {
-    text-align: right;
+line-height: 0px;
 }
 
 header nav div i {
     width: 25px;
+}
+
+
+
+#footerbotom {
+    background: #2176ff;
+}
+
+#logo {
+    font-family: Ultra, serif;
 }
 
 

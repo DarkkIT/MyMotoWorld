@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using System.Text;
 
     using AutoMapper;
@@ -26,6 +27,8 @@
 
         public int Liked { get; set; }
 
+        public double AvarageVote { get; set; }
+
         public string MainImagePath => "/images/bikes/" + this.Model + this.EngineCapacity + "-1" + ".jpg";
 
         public void CreateMappings(IProfileExpression configuration)
@@ -36,7 +39,9 @@
                 m => m.EnginePower,
                 opt => opt.MapFrom(x => x.Engine.EnginePower)).ForMember(
                 m => m.BikeType,
-                opt => opt.MapFrom(x => x.BikeType.Name));
+                opt => opt.MapFrom(x => x.BikeType.Name)).ForMember(
+                m => m.AvarageVote,
+                opt => opt.MapFrom(x => x.Votes.Average(x => x.Value)));
         }
     }
 }

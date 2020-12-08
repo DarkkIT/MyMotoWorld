@@ -26,6 +26,8 @@
         {
         }
 
+        public virtual DbSet<Vote> Votes { get; set; }
+
         public virtual DbSet<News> News { get; set; }
 
         public virtual DbSet<RearSuspension> RearSuspensions { get; set; }

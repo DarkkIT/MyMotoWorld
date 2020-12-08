@@ -19,6 +19,7 @@
     using MyMotoWorld.Services.Data;
     using MyMotoWorld.Services.Data.Home;
     using MyMotoWorld.Services.Data.News;
+    using MyMotoWorld.Services.Data.Votes;
     using MyMotoWorld.Services.Mapping;
     using MyMotoWorld.Services.Messaging;
     using MyMotoWorld.Web.ViewModels;
@@ -56,6 +57,10 @@
                         options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute());
                     }).AddRazorRuntimeCompilation();
             services.AddRazorPages();
+            services.AddAntiforgery(options =>
+            {
+                options.HeaderName = "X-CSRT-TOKEN";
+            });
 
             services.AddSingleton(this.configuration);
 
@@ -69,6 +74,7 @@
             services.AddTransient<IMotorBikesService, MotorBikesService>();
             services.AddTransient<IGetCountService, GetCountService>();
             services.AddTransient<INewsService, NewsService>();
+            services.AddTransient<IVoteService, VoteService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

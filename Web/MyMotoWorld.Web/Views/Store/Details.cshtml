@@ -24,6 +24,19 @@
             <p class="card-text text-black-10"><i class="fas fa-euro-sign"></i>@this.Model.Price</p>
         </div>
 
+        <div>
+            <ul class="row list-unstyled mt-3">
+
+                <li class="star-fill ml-2" data-vote="1"><i class="fas fa-star"></i></li>
+                <li class="star-fill ml-2" data-vote="2"><i class="fas fa-star"></i></li>
+                <li class="star-fill ml-2" data-vote="3"><i class="fas fa-star"></i></li>
+                <li class="star-fill ml-2" data-vote="4"><i class="fas fa-star"></i></li>
+                <li class="star-fill ml-2" data-vote="5"><i class="fas fa-star"></i></li>
+                <li class="ml-2"><span id="avarageVoteValue">@Model.AvarageVote.ToString("0.0")</span><span> / 5</span> </li>
+
+            </ul>
+        </div>
+
         <div class="mr-5">
             <a class="btn btn-primary btn-lg" asp-area="" asp-controller="Store" asp-action="AddToCard">Add to Card</a>
         </div>
@@ -132,9 +145,11 @@
     <div class="card mb-3">
         <div class="card-body">
             <h5 class="card-title">SUZUKI PROTECTION PLAN</h5>
-            <p class="card-text">Suzuki Protection Plan is a comprehensive plan that covers all major components, 
-            parts and electrical/computer systems along with all seals and gaskets and shocks on your Suzuki Motorcycle or ATV. 
-            Only normal wear or maintenance items are not covered. We’ve built Suzuki Protection Plan around coverage, not exclusions.</p>
+            <p class="card-text">
+                Suzuki Protection Plan is a comprehensive plan that covers all major components,
+                parts and electrical/computer systems along with all seals and gaskets and shocks on your Suzuki Motorcycle or ATV.
+                Only normal wear or maintenance items are not covered. We’ve built Suzuki Protection Plan around coverage, not exclusions.
+            </p>
             <p class="card-text"><small class="text-muted"></small></p>
         </div>
     </div>
@@ -148,4 +163,32 @@
     </div>
 
 </div>
+<form method="post" id="antiForgeryForm"></form>
+@section Scripts{
+    <script>
+
+        $("li[data-vote]").each(function (el) {
+            $(this).click(function () {
+                var vote = $(this).attr("data-vote");
+                var value = parseInt(vote);
+                var motorBikeId = @Model.Id;
+                var antiForgeryToken = $('#antiForgeryForm input[name=__RequestVerificationToken]').val();
+                var data = { motorBikeId: motorBikeId, value: value };
+                $.ajax({
+                    type: "POST",
+                    url: "/api/Votes",
+                    data: JSON.stringify(data),
+                    headers: { 'X-CSRT-TOKEN': antiForgeryToken },
+                    success: function (data) {
+                        $('#avarageVoteValue').html(data.avarageVotes.toFixed(1));
+                    },
+                    contentType: 'application/json',
+                });
+
+            })
+
+        });
+
+    </script>
+}
 

@@ -362,6 +362,37 @@ namespace MyMotoWorld.Data.Migrations
                     b.ToTable("Sales");
                 });
 
+            modelBuilder.Entity("MyMotoWorld.Data.Models.Vote", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("MotorBikeId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<byte>("Value")
+                        .HasColumnType("tinyint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MotorBikeId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Votes");
+                });
+
             modelBuilder.Entity("MyMotoWorld.Models.BikeType", b =>
                 {
                     b.Property<int>("Id")
@@ -847,6 +878,19 @@ namespace MyMotoWorld.Data.Migrations
                         .HasForeignKey("MotorBikeId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("MyMotoWorld.Data.Models.Vote", b =>
+                {
+                    b.HasOne("MyMotoWorld.Models.MotorBike", "MotorBike")
+                        .WithMany("Votes")
+                        .HasForeignKey("MotorBikeId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("MyMotoWorld.Data.Models.ApplicationUser", "User")
+                        .WithMany("Votes")
+                        .HasForeignKey("UserId");
                 });
 
             modelBuilder.Entity("MyMotoWorld.Models.MotorBike", b =>

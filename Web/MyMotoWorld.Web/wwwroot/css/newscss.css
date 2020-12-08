@@ -2,8 +2,11 @@
     transform: scale(1.01);
 }
 
-#newsdescription {
+#newsdesctiption {
     height: 200px;
     overflow: hidden;
 }
 
+#newstitle {
+    font-family: Ultra, serif;
+}

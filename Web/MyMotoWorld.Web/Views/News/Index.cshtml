@@ -5,44 +5,40 @@
 }
 
 <head>
-    <link href="~/css/newscss.css" rel="stylesheet" asp-append-version="true" />
+    <link href="/css/newscss.css" rel="stylesheet" asp-append-version="true" />
+    <link href="https://fonts.googleapis.com/css2?family=Ultra&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<h1 class="text-center">News</h1>
+<h1 id="newstitle" class="text-center mt-4">News</h1>
 
 
-<div class="row">
+<div class="col-md-10">
 
-    <div>
+    @foreach (var news in Model.NewsList)
+    {
+        <a class="text-dark" asp-controller="News" asp-action="NewsDetails" asp-route-id="@news.Id">
 
-        @foreach (var news in Model.NewsList)
-        {
-            <a class="text-dark" asp-controller="News" asp-action="NewsDetails" asp-route-id="@news.Id">
-
-                <div id="news" class="row m-5 col-md-6">
-
-                    <div class="thumbnail col-md-4">
-                        <img class="card-img" src=@news.MainImagePath alt="news">
+            <div class="ml-5 mt-5">
+                
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="imgAbt">
+                            <img width="500" src="@news.MainImagePath" />
+                        </div>
                     </div>
-                    <div class="col-md-3">
-                        <span class="badge badge-success">News</span>
-                        <h4 class="card-title mt-2">@news.Name</h4>
-                        <p id="newsdescription">@news.Description</p>
+                    <div class="col-md-4">
+                        <h2 class="mb-2">@news.Name</h2>
+                        <p id="newsdesctiption">@news.Description</p>
                     </div>
-
                 </div>
+            </div>
 
-            </a>
-        }
-
-    </div>
-
-    <div>
-
-    </div>
+        </a>
+    }
 
 </div>
+
 
 <hr />
 

@@ -2,11 +2,41 @@
     this.ViewData["Title"] = "AdminArea";
 }
 
+<head>
+    <link href="~/css/admincss.css" rel="stylesheet" asp-append-version="true" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+
 <h1 class="text-center">Admin Area</h1>
 
-<div class="text-center">
-    <a asp-controller="Admin" asp-action="AddBike"><button class="btn btn-primary">Add Bike</button></a>
-    <a asp-controller="Home" asp-action="Index"><button class="btn btn-primary">Go Home</button></a>
-    <a asp-controller="Home" asp-action="Privacy"><button class="btn btn-primary">Go Privacy</button></a>
-    <a asp-controller="Admin" asp-action="AddNews"><button class="btn btn-primary">Add News</button></a>
+<div class="ml-5 mt-5 mr-5 mb-5">
+    <div class="col-md-2 ml-5">
+        <h5>Manаge MotorBikes</h5>
+        <a class="btn btn-primary mr-5 mt-2 custom" asp-controller="Admin" asp-action="AddBike">Add Bike</a>
+        <a class="btn btn-primary mr-5 mt-2 custom" asp-controller="Admin" asp-action="EditBike">Edit Bike</a>
+        <a class="btn btn-danger mr-5 mt-2 custom" asp-controller="Admin" asp-action="DeleteBike">Delete Bike</a>
+
+    </div>
+
+    <hr />
+
+    <div class="col-md-2 ml-5 mt-3">
+        <h5>Manаge News</h5>
+        <a class="btn btn-primary mr-5 mt-2 custom" asp-controller="Admin" asp-action="AddNews">Add News</a>
+        <a class="btn btn-primary mr-5 mt-2 custom" asp-controller="Admin" asp-action="EditNews">Edit News</a>
+        <a class="btn btn-danger mr-5 mt-2 custom" asp-controller="Admin" asp-action="DeleteNews">Delete News</a>
+
+    </div>
+
+    <hr />
+
+    <div class="col-md-2 ml-5 mt-3">
+        <h5>Other links</h5>
+        <a class="btn btn-primary mr-5 mt-2 custom" asp-controller="Home" asp-action="Index">Go Home</a>
+        <a class="btn btn-primary mr-5 mt-2 custom" asp-controller="Home" asp-action="Privacy">Go Privacy</a>
+        <a class="btn btn-primary mr-5 mt-2 custom" asp-controller="About" asp-action="Index">Go About</a>
+
+    </div>
+
 </div>
