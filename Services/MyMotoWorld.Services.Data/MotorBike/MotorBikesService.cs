@@ -135,11 +135,23 @@
             await this.motorBikeRepository.SaveChangesAsync();
         }
 
-        public IEnumerable<MotorBikeViewModel> GetAllBikes<T>()
+        public IEnumerable<MotorBikeViewModel> GetAllBikes<T>(int page, int itemsPerPage)
         {
-            var model = this.motorBikeRepository.All().To<MotorBikeViewModel>().ToList();
+            var model = this.motorBikeRepository.All().OrderByDescending(x => x.Id).Skip((page - 1) * itemsPerPage).Take(itemsPerPage).To<MotorBikeViewModel>().ToList();
 
             return model;
+        }
+
+        public MotorBikeFullInfoViewModel GetById<T>(int id)
+        {
+            var model = this.motorBikeRepository.All().To<MotorBikeFullInfoViewModel>().FirstOrDefault(x => x.Id == id);
+
+            return model;
+        }
+
+        public int GetCount()
+        {
+            return this.motorBikeRepository.All().Count();
         }
     }
 }

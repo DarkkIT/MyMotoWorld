@@ -18,6 +18,7 @@
     using MyMotoWorld.Data.Seeding;
     using MyMotoWorld.Services.Data;
     using MyMotoWorld.Services.Data.Home;
+    using MyMotoWorld.Services.Data.News;
     using MyMotoWorld.Services.Mapping;
     using MyMotoWorld.Services.Messaging;
     using MyMotoWorld.Web.ViewModels;
@@ -34,6 +35,8 @@
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAntiforgery(o => o.SuppressXFrameOptionsHeader = true);
+
             services.AddDbContext<ApplicationDbContext>(
                 options => options.UseSqlServer(this.configuration.GetConnectionString("DefaultConnection")));
 
@@ -65,6 +68,7 @@
             services.AddTransient<IEmailSender, NullMessageSender>();
             services.AddTransient<IMotorBikesService, MotorBikesService>();
             services.AddTransient<IGetCountService, GetCountService>();
+            services.AddTransient<INewsService, NewsService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

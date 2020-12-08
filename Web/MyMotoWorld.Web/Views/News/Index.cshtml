@@ -1,7 +1,49 @@
-﻿@{
+﻿@model MyMotoWorld.Web.ViewModels.News.NewsListViewModel;
+
+@{
     this.ViewData["Title"] = "News";
 }
 
-<div class="text-center">
-    <h1>News</h1>
+<head>
+    <link href="~/css/newscss.css" rel="stylesheet" asp-append-version="true" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<h1 class="text-center">News</h1>
+
+
+<div class="row">
+
+    <div>
+
+        @foreach (var news in Model.NewsList)
+        {
+            <a class="text-dark" asp-controller="News" asp-action="NewsDetails" asp-route-id="@news.Id">
+
+                <div id="news" class="row m-5 col-md-6">
+
+                    <div class="thumbnail col-md-4">
+                        <img class="card-img" src=@news.MainImagePath alt="news">
+                    </div>
+                    <div class="col-md-3">
+                        <span class="badge badge-success">News</span>
+                        <h4 class="card-title mt-2">@news.Name</h4>
+                        <p id="newsdescription">@news.Description</p>
+                    </div>
+
+                </div>
+
+            </a>
+        }
+
+    </div>
+
+    <div>
+
+    </div>
+
 </div>
+
+<hr />
+
+<partial name="_PagingPartial" model="@Model" />

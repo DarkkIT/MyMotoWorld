@@ -7,7 +7,7 @@
 
 <h1 class="text-center">Add Bike</h1>
 
-<form method="post" class="col-md-7 offset-4 text-center">
+<form method="post" class="col-md-7 offset-4 text-center" enctype="multipart/form-data">
 
     <div asp-validation-summary="ModelOnly" class="text-danger col-md-12"></div>
 
@@ -135,17 +135,10 @@
 
     <div class="col-md-7">
         <label asp-for="Image"></label>
-        <input asp-for="Image" class="form-control">
+        <input asp-for="Image" class="form-control"/>
         <span asp-validation-for="Image" class="text-danger"></span>
     </div>
 
-    @*<div class="col-md-7">
-        <div class="custom-file">
-            <label asp-for="Image"></label>
-            <input type="file" class="custom-file-input" id="inputGroupFile02">
-            <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choose file</label>
-        </div>
-    </div>*@
 
     <input type="submit" class="btn btn-primary" />
 

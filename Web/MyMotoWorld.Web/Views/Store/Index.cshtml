@@ -3,7 +3,7 @@
 
 
 @{
-    this.ViewData["Title"] = "Store";
+    this.ViewData["Title"] = "All Bikes, page" + Model.PageNumber;
 }
 
 <head>
@@ -15,7 +15,7 @@
 
 <div class="row">
 
-    <div class="col-md-1 menu ml-5 m-3 mt-5">
+    <div class="col-md-2 menu ml-5 m-3 mt-5">
 
         <div class="custom-control custom-switch my-2">
             <input type="checkbox" class="custom-control-input" id="customCheck1">
@@ -55,24 +55,26 @@
 
     </div>
 
-    <div class="col-md-8 mt-5">
+    <div class="col-md-7 mt-5 row">
 
         @foreach (var bike in Model.MotorBikes)
         {
-            <div class="card m-3 col-md-2">
-                <div class="thumbnail">
-                    <img class="card-img" src=@bike.ImagePath alt="bike">
+            <a class="text-dark" asp-controller="Store" asp-action="Details" asp-route-id="@bike.Id">
+                <div class="card m-4 col-md-3">
+                    <div id="newsimage" class="thumbnail">
+                        <img class="card-img" src=@bike.MainImagePath alt="bike">
+                    </div>
+                    <div class="card-body">
+                        <span class="badge badge-success">@bike.Name</span>
+                        <h4 class="card-title mt-2">@bike.Model @bike.EngineCapacity</h4>
+                        <p class="card-text text-black-10"><i class="fas fa-euro-sign"></i>@bike.Price</p>
+                    </div>
+                    <div class="card-footer">
+                        <a class="btn btn-link" asp-controller="Store" asp-action="AddLike">Like</a>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <span class="badge badge-success">@bike.Name</span>
-                    <h4 class="card-title mt-2">@bike.Model @bike.EngineCapacity</h4>
-                    <p class="card-text text-black-10"><i class="fas fa-euro-sign"></i>@bike.Price</p>
-                </div>
-                <div class="card-footer">
-                    <a href="#a" class="btn btn-primary">BUY</a>
-                </div>
-            </div>
-        }
+            </a>
+         }
 
     </div>
 
@@ -88,3 +90,7 @@
     </div>
 
 </div>
+
+<hr/>
+
+<partial name="_PagingPartial" model="@Model"/>

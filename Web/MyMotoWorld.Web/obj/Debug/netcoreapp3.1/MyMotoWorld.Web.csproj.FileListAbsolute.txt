@@ -450,9 +450,6 @@ D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Debug\netcoreapp3.1\MyMotoWo
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Debug\netcoreapp3.1\MyMotoWorld.Web.pdb
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Debug\netcoreapp3.1\MyMotoWorld.Web.genruntimeconfig.cache
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
-D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Debug\netcoreapp3.1\MyMotoWorld.Web.csproj.CoreCompileInputs.cache
-D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Debug\netcoreapp3.1\MyMotoWorld.Web.MvcApplicationPartsAssemblyInfo.cs
-D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Debug\netcoreapp3.1\MyMotoWorld.Web.MvcApplicationPartsAssemblyInfo.cache
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Debug\netcoreapp3.1\Razor\Views\About\Index.cshtml.g.cs
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Debug\netcoreapp3.1\Razor\Views\Store\Index.cshtml.g.cs
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Index.cshtml.g.cs
@@ -462,3 +459,10 @@ D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\bin\Debug\netcoreapp3.1\Microsof
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\bin\Debug\netcoreapp3.1\System.IO.Pipelines.dll
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Debug\netcoreapp3.1\Razor\Views\News\Index.cshtml.g.cs
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Debug\netcoreapp3.1\Razor\Views\Admin\AddNews.cshtml.g.cs
+D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Debug\netcoreapp3.1\Razor\Views\Store\Details.cshtml.g.cs
+D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\bin\Debug\netcoreapp3.1\System.Net.WebSockets.WebSocketProtocol.dll
+D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Debug\netcoreapp3.1\MyMotoWorld.Web.csproj.CoreCompileInputs.cache
+D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Debug\netcoreapp3.1\MyMotoWorld.Web.MvcApplicationPartsAssemblyInfo.cs
+D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Debug\netcoreapp3.1\MyMotoWorld.Web.MvcApplicationPartsAssemblyInfo.cache
+D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_PagingPartial.cshtml.g.cs
+D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Debug\netcoreapp3.1\Razor\Views\News\NewsDetails.cshtml.g.cs

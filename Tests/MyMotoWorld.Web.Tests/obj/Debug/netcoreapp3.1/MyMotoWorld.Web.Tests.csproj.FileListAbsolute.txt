@@ -526,3 +526,4 @@ D:\VisualStudio\MyMotoWorld\Tests\MyMotoWorld.Web.Tests\obj\Debug\netcoreapp3.1\
 D:\VisualStudio\MyMotoWorld\Tests\MyMotoWorld.Web.Tests\obj\Debug\netcoreapp3.1\MyMotoWorld.Web.Tests.pdb
 D:\VisualStudio\MyMotoWorld\Tests\MyMotoWorld.Web.Tests\obj\Debug\netcoreapp3.1\MyMotoWorld.Web.Tests.genruntimeconfig.cache
 D:\VisualStudio\MyMotoWorld\Tests\MyMotoWorld.Web.Tests\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Features.dll
+D:\VisualStudio\MyMotoWorld\Tests\MyMotoWorld.Web.Tests\bin\Debug\netcoreapp3.1\System.Net.WebSockets.WebSocketProtocol.dll

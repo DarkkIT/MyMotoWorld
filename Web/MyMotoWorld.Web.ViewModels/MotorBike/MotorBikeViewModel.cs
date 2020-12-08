@@ -26,7 +26,7 @@
 
         public int Liked { get; set; }
 
-        public string ImagePath => "/images/bikes/" + this.Model + this.EngineCapacity + ".jpg";
+        public string MainImagePath => "/images/bikes/" + this.Model + this.EngineCapacity + "-1" + ".jpg";
 
         public void CreateMappings(IProfileExpression configuration)
         {
@@ -34,7 +34,9 @@
                 m => m.EngineCapacity,
                 opt => opt.MapFrom(x => x.Engine.EngineCapacity)).ForMember(
                 m => m.EnginePower,
-                opt => opt.MapFrom(x => x.Engine.EnginePower));
+                opt => opt.MapFrom(x => x.Engine.EnginePower)).ForMember(
+                m => m.BikeType,
+                opt => opt.MapFrom(x => x.BikeType.Name));
         }
     }
 }

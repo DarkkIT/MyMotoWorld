@@ -25,8 +25,4 @@
     <ProjectReference Include="..\MyMotoWorld.Services.Mapping\MyMotoWorld.Services.Mapping.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="News\" />
-  </ItemGroup>
-
 </Project>

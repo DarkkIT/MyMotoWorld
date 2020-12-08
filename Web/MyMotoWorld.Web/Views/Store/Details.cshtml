@@ -1,0 +1,151 @@
+﻿@model MyMotoWorld.Web.ViewModels.MotorBike.MotorBikeFullInfoViewModel;
+@using MyMotoWorld.Common
+
+@{
+    this.ViewData["Title"] = "Details";
+}
+
+
+<div class="container">
+
+    <div>
+        <h1 class="text-center">@Model.Name</h1>
+        <h2 class="text-center">@Model.Model</h2>
+    </div>
+
+    <div class="thumbnail">
+        <img class="card-img" src=@this.Model.MainImagePath alt="bike">
+    </div>
+
+    <div class="row justify-content-between">
+
+        <div class="ml-5">
+            <h4 class="card-title mt-2">@this.Model.Model @Model.EngineCapacity</h4>
+            <p class="card-text text-black-10"><i class="fas fa-euro-sign"></i>@this.Model.Price</p>
+        </div>
+
+        <div class="mr-5">
+            <a class="btn btn-primary btn-lg" asp-area="" asp-controller="Store" asp-action="AddToCard">Add to Card</a>
+        </div>
+
+    </div>
+
+    <div class="row justify-content-end">
+        <a class="nav-link text-dark mr-5" asp-area="" asp-controller="Store" asp-action="AddToFavorit">AddToFavorit<i class="far fa-star ml-1"></i></a>
+    </div>
+
+    <div class="card-columns mt-5">
+
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">SUZUKI PROTECTION PLAN</h5>
+                <p class="card-text">
+                    Suzuki Protection Plan is a comprehensive plan that covers all major components,
+                    parts and electrical/computer systems along with all seals and gaskets and shocks on your Suzuki Motorcycle or ATV.
+                    Only normal wear or maintenance items are not covered. We’ve built Suzuki Protection Plan around coverage, not exclusions.
+                </p>
+                <p class="card-text"><small class="text-muted"></small></p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title text-center">ENGINE</h5>
+                <p class="card-text">@Model.EngineName</p>
+                <p class="card-text"><small class="text-muted">For Passions</small></p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title text-center">TRANSMISSION</h5>
+                <p class="card-text">@Model.Transmission</p>
+                <p class="card-text"><small class="text-muted">For Passions</small></p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title text-center">FRONT SUSPENSION</h5>
+                <p class="card-text">@Model.FrontSuspension</p>
+                <p class="card-text"><small class="text-muted">For Passions</small></p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title text-center">FRONT BREAKS</h5>
+                <p class="card-text">@Model.FrontBrakes</p>
+                <p class="card-text"><small class="text-muted">For Passions</small></p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img class="card-img" src=/images/bikes/logo.png alt="bike">
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title text-center">REAR SUSPENSION</h5>
+                <p class="card-text">@Model.RearSuspension</p>
+                <p class="card-text"><small class="text-muted">For Passions</small></p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title text-center">REAR BRAKES</h5>
+                <p class="card-text">@Model.RearBrakes</p>
+                <p class="card-text"><small class="text-muted">For Passions</small></p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title text-center">BIKE TYPE</h5>
+                <p class="card-text">@Model.BikeType</p>
+                <p class="card-text"><small class="text-muted">For Passions</small></p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title text-center">COOLING SYSTEM</h5>
+                <p class="card-text">@Model.CoolingSystem</p>
+                <p class="card-text"><small class="text-muted">For Passions</small></p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title text-center">ABOUT</h5>
+                <p class="card-text">@Model.Descrition</p>
+                <p class="card-text"><small class="text-muted">For Passions</small></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="thumbnail">
+        <img class="card-img" src=@this.Model.SecondImagePath alt="bike">
+    </div>
+
+    <div class="card mb-3">
+        <div class="card-body">
+            <h5 class="card-title">SUZUKI PROTECTION PLAN</h5>
+            <p class="card-text">Suzuki Protection Plan is a comprehensive plan that covers all major components, 
+            parts and electrical/computer systems along with all seals and gaskets and shocks on your Suzuki Motorcycle or ATV. 
+            Only normal wear or maintenance items are not covered. We’ve built Suzuki Protection Plan around coverage, not exclusions.</p>
+            <p class="card-text"><small class="text-muted"></small></p>
+        </div>
+    </div>
+
+    <div class="container my-4">
+        <hr>
+
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://youtu.be/cZr1MEmIQN8" allowfullscreen></iframe>
+        </div>
+    </div>
+
+</div>
+

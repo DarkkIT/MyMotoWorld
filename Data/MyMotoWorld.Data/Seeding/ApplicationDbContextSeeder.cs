@@ -27,6 +27,7 @@
                           {
                               new RolesSeeder(),
                               new MotorBikeSeeder(),
+                              new NewsSeeder(),
                           };
 
             foreach (var seeder in seeders)

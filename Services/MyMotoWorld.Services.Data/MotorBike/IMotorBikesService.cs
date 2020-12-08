@@ -13,6 +13,10 @@
     {
         Task AddBikeAsync(AddMotorBikeInputModel input);
 
-        IEnumerable<MotorBikeViewModel> GetAllBikes<T>();
+        IEnumerable<MotorBikeViewModel> GetAllBikes<T>(int page, int itemsPerPage);
+
+        MotorBikeFullInfoViewModel GetById<T>(int id);
+
+        int GetCount();
     }
 }

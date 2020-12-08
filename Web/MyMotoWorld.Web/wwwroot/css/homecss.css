@@ -39,8 +39,7 @@ div#homebg {
 div a button:hover {
     background: #e38e34;
 }
-
-div a button {
+#joinWorldButton {
     background: orangered;
     color: white;
     border: none;
@@ -83,13 +82,13 @@ div.c {
     margin-bottom: 7px;
     background-color: #FFFFFF;
     color: #282727;
-    border: 3px solid #282727;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    font-family: Cooper Black;
+    font-size: 20px;
 }
 
-    .menu li:hover {
-        background-color: #DCDCDC;
-    }
+.menu li:hover {
+    background-color: #FFFFFF;
+}
 
 .aside {
     background-color: #33b5e5;
@@ -99,20 +98,29 @@ div.c {
     font-size: 14px;
 }
 
-.card-body {
-    padding: 0rem;
+.card {
+    font-family: Verdana Pro;
+}
+
+#newsHomeCard {
+    height: 550px;
+    overflow: hidden;
 }
 
 .card {
     border: none;
 }
 
-.menu:hover {
+.menu ul li:hover {
     transform: scale(1.1);
 }
 
 .card:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
+}
+
+.card-footer {
+    background: #FFFFFF;
 }
 
 

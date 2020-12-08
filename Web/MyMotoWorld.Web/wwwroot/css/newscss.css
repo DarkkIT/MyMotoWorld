@@ -1,0 +1,9 @@
+﻿#news :hover {
+    transform: scale(1.01);
+}
+
+#newsdescription {
+    height: 200px;
+    overflow: hidden;
+}
+

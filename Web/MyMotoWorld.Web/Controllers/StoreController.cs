@@ -7,6 +7,7 @@
 
     using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.Mvc;
+    using MyMotoWorld.Common;
     using MyMotoWorld.Services.Data;
     using MyMotoWorld.Web.ViewModels.MotorBike;
 
@@ -19,12 +20,11 @@
             this.motorBikeService = motorBikeService;
         }
 
-        // GET: StoreController
-        public IActionResult Index()
+        public IActionResult Index(int id = 1)
         {
-            var motorBikes = this.motorBikeService.GetAllBikes<MotorBikeViewModel>();
+            var motorBikes = this.motorBikeService.GetAllBikes<MotorBikeViewModel>(id, 6);
 
-            var viewModel = new MotorBikeListViewModel { MotorBikes = motorBikes };
+            var viewModel = new MotorBikeListViewModel { MotorBikes = motorBikes, PageNumber = id, MotorBikeCount = this.motorBikeService.GetCount(), ItemsPerPage = GlobalConstants.ItemsPerPage };
 
             return this.View(viewModel);
         }
@@ -32,70 +32,9 @@
         // GET: StoreController/Details/5
         public IActionResult Details(int id)
         {
-            return this.View();
-        }
+            var viewModel = this.motorBikeService.GetById<MotorBikeFullInfoViewModel>(id);
 
-        // GET: StoreController/Create
-        public IActionResult Create()
-        {
-            return this.View();
-        }
-
-        // POST: StoreController1/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult Create(IFormCollection collection)
-        {
-            try
-            {
-                return this.RedirectToAction(nameof(this.Index));
-            }
-            catch
-            {
-                return this.View();
-            }
-        }
-
-        // GET: StoreController1/Edit/5
-        public IActionResult Edit(int id)
-        {
-            return this.View();
-        }
-
-        // POST: StoreController1/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                return this.RedirectToAction(nameof(this.Index));
-            }
-            catch
-            {
-                return this.View();
-            }
-        }
-
-        // GET: StoreController1/Delete/5
-        public IActionResult Delete(int id)
-        {
-            return this.View();
-        }
-
-        // POST: StoreController1/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return this.RedirectToAction(nameof(this.Index));
-            }
-            catch
-            {
-                return this.View();
-            }
+            return this.View(viewModel);
         }
     }
 }

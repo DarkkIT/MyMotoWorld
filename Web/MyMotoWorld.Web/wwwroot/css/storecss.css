@@ -48,6 +48,10 @@ html {
     border: none;
 }
 
-    .card:hover {
-        transform: scale(1.1);
-    }
+.card div:nth-child(1) {
+    height: 190px;
+    overflow: hidden;
+}
+.card:hover {
+    transform: scale(1.1);
+}

@@ -1,5 +1,5 @@
 ﻿@using MyMotoWorld.Common
-@model MyMotoWorld.Web.ViewModels.Home.IndexViewModel
+@model MyMotoWorld.Web.ViewModels.Home.CombinedViewModel;
 
 @{
     this.ViewData["Title"] = "Home Page";
@@ -11,76 +11,60 @@
 <div id="homebg" class="text-center">
     <h1 id="welcomelogo" class="display-4 text-light">Welcome to <span>@GlobalConstants.SystemName</span>!</h1>
 
-    <a asp-controller="Home" asp-action="Privacy"><button class="btn btn-primary">Join The World</button></a>
+    <a id="joinWorldButton" class="btn btn-primary" asp-controller="News" asp-action="Index">Join The World</a>
 
     <p class="text-light">Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
 
 <div class="position-absolute">
-    
+
 </div>
 
-<div class="row">
+<div class="row justify-content-md-center">
+
+    @foreach (var news in Model.NewsInfo.NewsList)
+    {
+        <div id="newsHomeCard" class="card m-3 mt-5 col-md-3">
+            <div class="thumbnail">
+                <img class="card-img" src=@news.MainImagePath alt="news">
+            </div>
+            <div class="card-body">
+                <span class="badge badge-success">News</span>
+                <h4 class="card-title mt-2">@news.Name</h4>
+                <p class="card-text">@news.Description</p>
+            </div>
+
+            <div class="card-footer row justify-content-md-end">
+                <a class="btn btn-success" asp-controller="News" asp-action="NewsDetails" asp-route-id="@news.Id">Read More</a>
+            </div>
+
+        </div>
+    }
+
+</div>
+
+<div class="row justify-content-md-center">
 
     <div class="col-md-2 menu ml-5 m-3 mt-5">
-        <p class="h3">You can choose between:</p>
-        <ul class="list-grupe display-6">
-            <li>Bikes: @Model.MotorBikeCount</li>
-            <li>BikeTypes: @Model.BikeTypeCount</li>
-            <li>Engines: @Model.EngineCount</li>
-            <li>Extras: @Model.ExtrasCount</li>
-            <li>LikedBike: @Model.MostLikedBike</li>
-            <li>LikedType: @Model.MostLikedType</li>
+        <ul class="list-grupe display-6 font-weight-bold">
+            <li>@Model.BikeInfo.MotorBikeCount - Bikes</li>
+            <li>@Model.BikeInfo.BikeTypeCount - BikeTypes</li>
+            <li>@Model.BikeInfo.EngineCount - Engines</li>
+            <li>@Model.BikeInfo.ExtrasCount - Extras</li>
+            <li>@Model.BikeInfo.MostLikedBike - MostLikedBike</li>
+            <li>@Model.BikeInfo.MostLikedType - MostLikedType</li>
         </ul>
     </div>
 
-        <div class="card m-3 mt-5 col-md-3" >
-            <div class="thumbnail">
-                <img class="card-img" src="~/images/bikes/commercial.png" alt="dog">
-            </div>
-            <div class="card-body">
-                <span class="badge badge-success">Motorcicles</span>
-                <h4 class="card-title mt-2">How to ride a bike properly</h4>
-                <p class="card-text">Find out this and many more on this our site with the thousands of others who already do it. </p>
-            </div>
-            <div class="card-footer">
-                <a href="#a" class="btn btn-primary">Read More</a>
-            </div>
-        </div>
-
-        <div class="card m-3 mt-5 col-md-3">
-            <div class="thumbnail">
-                <img class="card-img" src="~/images/bikes/1607576.jpg" alt="bike">
-            </div>
-            <div class="card-body">
-                <span class="badge badge-success">Motorcicles</span>
-                <h4 class="card-title mt-2">How to ride a bike properly</h4>
-                <p class="card-text">Find out this and many more on this our site with the thousands of others who already do it. </p>
-            </div>
-            <div class="card-footer">
-                <a href="#a" class="btn btn-primary">Read More</a>
-            </div>
-        </div>
-
-        <div class="card m-3 mt-5 col-md-3">
-            <div class="thumbnail">
-                <img class="card-img" src="~/images/bikes/1234956.jpg" alt="bike">
-            </div>
-            <div class="card-body">
-                <span class="badge badge-success">Motorcicles</span>
-                <h4 class="card-title mt-2">How to ride a bike properly</h4>
-                <p class="card-text">Find out this and many more on this our site with the thousands of others who already do it. </p>
-            </div>
-            <div class="card-footer">
-                <a href="#a" class="btn btn-primary">Read More</a>
-            </div>
-        </div>
+    <div class="mt-5">
+        <img class="img" src="~/images/commercial/Anything is possible.png" alt="image">
+    </div>
 
 </div>
 
 
-    <div class="text-center">
-        <a asp-area="" asp-controller="Home" asp-action="Privacy">Go Privacy</a>
-    </div>
+<div class="text-center">
+    <a asp-area="" asp-controller="Home" asp-action="Privacy">Go Privacy</a>
+</div>
 
 
