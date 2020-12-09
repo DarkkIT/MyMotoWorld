@@ -17,6 +17,8 @@
 
         IEnumerable<MotorBikeViewModel> GetAllBikes<T>(int page, int itemsPerPage);
 
+        IEnumerable<MotorBikeViewModel> GetAllFavoriteBikes<T>(int page, int itemsPerPage, string userId);
+
         IEnumerable<MotorBikeViewModel> GetAllBikesWithDeleted<T>(int page, int itemsPerPage);
 
         MotorBikeFullInfoViewModel GetById<T>(int id);
@@ -26,5 +28,7 @@
         Task DeleteBike(int id);
 
         Task UnDeleteBike(int id);
+
+        Task AddBikeToFavorit(int id, string userId);
         }
 }

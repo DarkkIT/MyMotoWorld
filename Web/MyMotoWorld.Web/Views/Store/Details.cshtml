@@ -31,7 +31,7 @@
 
         <div>
             <ul class="row list-unstyled mt-3">
-                @if (Model.AvarageVote > 0.4)
+                @if (Model.AverageVote > 0.4)
                 {
                     <li id="star" class="star-fill ml-2" data-vote="1"><i class="fas fa-star fa-2x" style="color: #e8cd1c"></i></li>
                 }
@@ -40,7 +40,7 @@
                     <li id="star" class="star-fill ml-2" data-vote="1"><i class="fas fa-star fa-2x"></i></li>
                 }
 
-                @if (Model.AvarageVote > 1.4)
+                @if (Model.AverageVote > 1.4)
                 {
                     <li id="star" class="star-fill ml-2" data-vote="2"><i class="fas fa-star fa-2x" style="color: #e8cd1c"></i></li>
                 }
@@ -49,7 +49,7 @@
                     <li id="star" class="star-fill ml-2" data-vote="2"><i class="fas fa-star fa-2x"></i></li>
                 }
 
-                @if (Model.AvarageVote > 2.4)
+                @if (Model.AverageVote > 2.4)
                 {
                     <li id="star" class="star-fill ml-2" data-vote="3"><i class="fas fa-star fa-2x" style="color: #e8cd1c"></i></li>
                 }
@@ -58,7 +58,7 @@
                     <li id="star" class="star-fill ml-2" data-vote="3"><i class="fas fa-star fa-2x"></i></li>
                 }
 
-                @if (Model.AvarageVote > 3.4)
+                @if (Model.AverageVote > 3.4)
                 {
                     <li id="star" class="star-fill ml-2" data-vote="4"><i class="fas fa-star fa-2x" style="color: #e8cd1c"></i></li>
                 }
@@ -67,7 +67,7 @@
                     <li id="star" class="star-fill ml-2" data-vote="4"><i class="fas fa-star fa-2x"></i></li>
                 }
 
-                @if (Model.AvarageVote > 4.8)
+                @if (Model.AverageVote > 4.8)
                 {
                     <li id="star" class="star-fill ml-2" data-vote="5"><i class="fas fa-star fa-2x" style="color: #e8cd1c"></i></li>
                 }
@@ -78,7 +78,7 @@
 
 
 
-                <li class="ml-2"><span id="avarageVoteValue" style="font-size: 25px; font-family: Ultra">@Model.AvarageVote.ToString("0.0")</span><span style="font-family: Ultra"> / 5</span> </li>
+                <li class="ml-2"><span id="avarageVoteValue" style="font-size: 25px; font-family: Ultra">@Model.AverageVote.ToString("0.0")</span><span style="font-family: Ultra"> / 5</span> </li>
 
             </ul>
         </div>
@@ -90,7 +90,7 @@
     </div>
 
     <div class="row justify-content-end">
-        <a class="nav-link text-dark mr-5" asp-area="" asp-controller="Store" asp-action="AddToFavorit">AddToFavorit<i class="far fa-star ml-1"></i></a>
+        <a class="nav-link text-dark mr-5" asp-area="" asp-controller="Store" asp-action="AddToFavorite" asp-route-id="@Model.Id">AddToFavorite<i class="far fa-star ml-1"></i></a>
     </div>
 
     <div class="card-columns mt-5">
@@ -237,4 +237,5 @@
 
     </script>
 }
+
 

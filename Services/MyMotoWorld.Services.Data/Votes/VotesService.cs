@@ -6,16 +6,16 @@
     using MyMotoWorld.Data.Common.Repositories;
     using MyMotoWorld.Data.Models;
 
-    public class VoteService : IVoteService
+    public class VotesService : IVotesService
     {
         private readonly IRepository<Vote> voteRepository;
 
-        public VoteService(IRepository<Vote> voteRepository)
+        public VotesService(IRepository<Vote> voteRepository)
         {
             this.voteRepository = voteRepository;
         }
 
-        public double GetAvarageVotes(int motorBikeId)
+        public double GetAverageVotes(int motorBikeId)
         {
             double avarageVotes = this.voteRepository.All().Where(x => x.MotorBikeId == motorBikeId).Average(x => x.Value);
 

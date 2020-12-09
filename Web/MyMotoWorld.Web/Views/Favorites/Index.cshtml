@@ -1,0 +1,24 @@
+﻿@model MyMotoWorld.Web.ViewModels.MotorBike.MotorBikeListViewModel;
+
+@{
+    this.ViewData["Title"] = "Favorites";
+}
+
+<div class="row justify-content-center col-md-10">
+
+    @foreach (var bike in Model.MotorBikes)
+    {
+        <a class="text-dark" asp-controller="Store" asp-action="Details" asp-route-id="@bike.Id">
+
+            <div class="card col-md-3 m-4" style="width: 18rem;">
+                <img class="card-img-top" src="@bike.MainImagePath" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">@bike.Name @bike.Model</h5>
+                    <p class="card-text">Some Text</p>
+                    <a class="btn btn-success" asp-controller="News" asp-action="NewsDetails" asp-route-id="@bike.Id">UnFavorite</a>
+                </div>
+            </div>
+        </a>
+    }
+
+</div>

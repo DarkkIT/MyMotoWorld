@@ -15,7 +15,7 @@
 
     <table class="table">
         <thead>
-            <tr>
+            <tr class="font-weight-bold">
                 <th scope="col">Image</th>
                 <th scope="col">Id</th>
                 <th scope="col">Name</th>
@@ -34,24 +34,43 @@
         {
             <tbody>
 
-                <tr>
+                <tr class="">
                     <td><img src="@bike.MainImagePath" style="max-height: 60px;" alt="image" /></td>
                     <td>@bike.Id</td>
-                    <td>@bike.Name</td>
+                    <td class="font-weight-bold">@bike.Name</td>
                     <td>@bike.Model</td>
                     <td>@bike.EngineCapacity</td>
                     <td>@bike.Price</td>
-                    <td>@bike.IsDeleted</td>
+                    <td class="font-weight-bold">@bike.IsDeleted</td>
                     <td>@bike.DeletedOn</td>
                     <td>
                         <a class="btn btn-success" asp-controller="Admin" asp-action="EditBike" asp-route-id="@bike.Id">Edit Bike</a>
                     </td>
-                    <td>
-                        <a class="btn btn-primary" asp-controller="Admin" asp-action="UnDeleteBike" asp-route-id="@bike.Id">UnDelete</a>
-                    </td>
-                    <td>
-                        <a class="btn btn-danger" asp-controller="Admin" asp-action="DeleteBike" asp-route-id="@bike.Id">Delete</a>
-                    </td>
+                    @if (bike.IsDeleted)
+                    {
+                        <td>
+                            <a class="btn btn-primary" asp-controller="Admin" asp-action="UnDeleteBike" asp-route-id="@bike.Id">UnDelete</a>
+                        </td>
+                    }
+                    else
+                    {
+                        <td>
+                            <a class="btn btn-primary disabled" asp-controller="Admin" asp-action="UnDeleteBike" asp-route-id="@bike.Id">UnDelete</a>
+                        </td>
+                    }
+                    @if (bike.IsDeleted)
+                    {
+                        <td>
+                            <a class="btn btn-danger disabled" asp-controller="Admin" asp-action="DeleteBike" asp-route-id="@bike.Id">Delete</a>
+                        </td>
+                    }
+                    else
+                    {
+                        <td>
+                            <a class="btn btn-danger" asp-controller="Admin" asp-action="DeleteBike" asp-route-id="@bike.Id">Delete</a>
+                        </td>
+                    }
+
                 </tr>
 
             </tbody>

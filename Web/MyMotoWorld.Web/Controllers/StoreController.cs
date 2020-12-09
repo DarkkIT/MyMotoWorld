@@ -1,11 +1,8 @@
 ﻿namespace MyMotoWorld.Web.Controllers
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
+    using System.Security.Claims;
     using System.Threading.Tasks;
 
-    using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.Mvc;
     using MyMotoWorld.Common;
     using MyMotoWorld.Services.Data;
@@ -29,12 +26,20 @@
             return this.View(viewModel);
         }
 
-        // GET: StoreController/Details/5
         public IActionResult Details(int id)
         {
             var viewModel = this.motorBikeService.GetById<MotorBikeFullInfoViewModel>(id);
 
             return this.View(viewModel);
+        }
+
+        public async Task<IActionResult> AddToFavorite(int id)
+        {
+            var userId = this.User.FindFirst(ClaimTypes.NameIdentifier).Value;
+
+            await this.motorBikeService.AddBikeToFavorit(id, userId);
+
+            return this.RedirectToAction(nameof(this.Details), new { id = id });
         }
     }
 }

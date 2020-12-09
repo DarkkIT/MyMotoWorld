@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Security.Claims;
     using System.Security.Cryptography.X509Certificates;
     using System.Text;
     using System.Threading.Tasks;
@@ -26,6 +27,7 @@
         private readonly IDeletableEntityRepository<RearBrake> rearBreakRepository;
         private readonly IDeletableEntityRepository<Engine> engineRepositiry;
         private readonly IDeletableEntityRepository<CoolingSystem> coolingSystemRepository;
+        private readonly IDeletableEntityRepository<FavoriteBikes> favoriteBikesRepository;
 
         public MotorBikesService(
             IDeletableEntityRepository<MotorBike> motorBikeRepository,
@@ -36,7 +38,8 @@
             IDeletableEntityRepository<FrontBrake> frontBreakRepository,
             IDeletableEntityRepository<RearBrake> rearBreakRepository,
             IDeletableEntityRepository<Engine> engineRepositiry,
-            IDeletableEntityRepository<CoolingSystem> coolingSystemRepository)
+            IDeletableEntityRepository<CoolingSystem> coolingSystemRepository,
+            IDeletableEntityRepository<FavoriteBikes> favoriteBikesRepository)
         {
             this.motorBikeRepository = motorBikeRepository;
             this.bikeTypeRepository = bikeTypeRepository;
@@ -47,6 +50,7 @@
             this.rearBreakRepository = rearBreakRepository;
             this.engineRepositiry = engineRepositiry;
             this.coolingSystemRepository = coolingSystemRepository;
+            this.favoriteBikesRepository = favoriteBikesRepository;
         }
 
         public async Task AddBikeAsync(AddMotorBikeInputModel input)
@@ -201,6 +205,20 @@
         public int GetCount()
         {
             return this.motorBikeRepository.All().Count();
+        }
+
+        public async Task AddBikeToFavorit(int id, string userId)
+        {
+            await this.favoriteBikesRepository.AddAsync(new FavoriteBikes { MotorBikeId = id, UserId = userId });
+
+            await this.favoriteBikesRepository.SaveChangesAsync();
+        }
+
+        public IEnumerable<MotorBikeViewModel> GetAllFavoriteBikes<T>(int page, int itemsPerPage, string userId)
+        {
+            var model = this.motorBikeRepository.All().Where(x => x.FavoriteBikes.Any(x => x.UserId == userId)).Skip((page - 1) * itemsPerPage).Take(itemsPerPage).To<MotorBikeViewModel>().ToList();
+
+            return model;
         }
     }
 }

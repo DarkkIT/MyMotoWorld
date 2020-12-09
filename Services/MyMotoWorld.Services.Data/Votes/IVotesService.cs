@@ -2,10 +2,10 @@
 {
     using System.Threading.Tasks;
 
-    public interface IVoteService
+    public interface IVotesService
     {
         Task SetVoteAsync(int motorBikeId, string userId, byte value);
 
-        double GetAvarageVotes(int motorBikeId);
+        double GetAverageVotes(int motorBikeId);
     }
 }

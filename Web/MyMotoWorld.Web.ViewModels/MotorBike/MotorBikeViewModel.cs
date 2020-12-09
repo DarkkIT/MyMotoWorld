@@ -25,7 +25,7 @@
 
         public int EngineCapacity { get; set; }
 
-        public int Liked { get; set; }
+        public int Likes { get; set; }
 
         public bool IsDeleted { get; set; }
 

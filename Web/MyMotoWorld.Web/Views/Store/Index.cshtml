@@ -16,43 +16,50 @@
 <div class="row">
 
     <div class="col-md-2 menu ml-5 m-3 mt-5">
+        <div class="ml-5">
+            <h1>Filters</h1>
+        </div>
+        <div class="ml-5">
+            <div class="custom-control custom-checkbox my-2">
+                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                <label class="custom-control-label" for="customCheck1">Model</label>
+            </div>
+            <div class="custom-control custom-checkbox my-2">
+                <input type="checkbox" class="custom-control-input" id="customCheck2">
+                <label class="custom-control-label" for="customCheck2">Power</label>
+            </div>
+            <div class="custom-control custom-checkbox my-2">
+                <input type="checkbox" class="custom-control-input" id="customCheck3">
+                <label class="custom-control-label" for="customCheck3">Type</label>
+            </div>
 
-        <div class="custom-control custom-switch my-2">
-            <input type="checkbox" class="custom-control-input" id="customCheck1">
-            <label class="custom-control-label" for="customCheck1">Model</label>
-        </div>
-        <div class="custom-control custom-checkbox my-2">
-            <input type="checkbox" class="custom-control-input" id="customCheck2">
-            <label class="custom-control-label" for="customCheck2">Power</label>
-        </div>
-        <div class="custom-control custom-checkbox my-2">
-            <input type="checkbox" class="custom-control-input" id="customCheck3">
-            <label class="custom-control-label" for="customCheck3">Type</label>
-        </div>
+            <div class="custom-control custom-checkbox my-2">
+                <input type="checkbox" class="custom-control-input" id="customCheck4">
+                <label class="custom-control-label" for="customCheck4">Capacity</label>
+            </div>
 
-        <div class="custom-control custom-checkbox my-2">
-            <input type="checkbox" class="custom-control-input" id="customCheck4">
-            <label class="custom-control-label" for="customCheck4">Capacity</label>
-        </div>
+            <div class="custom-control custom-checkbox my-2">
+                <input type="checkbox" class="custom-control-input" id="customCheck5">
+                <label class="custom-control-label" for="customCheck5">Price</label>
+            </div>
 
-        <div class="custom-control custom-checkbox my-2">
-            <input type="checkbox" class="custom-control-input" id="customCheck5">
-            <label class="custom-control-label" for="customCheck5">Price</label>
-        </div>
-        <div class="custom-control custom-checkbox my-2">
-            <input type="checkbox" class="custom-control-input" id="customCheck6">
-            <label class="custom-control-label" for="customCheck6">The 1975</label>
-        </div>
-        <div class="custom-control custom-checkbox my-2">
-            <input type="checkbox" class="custom-control-input" id="customCheck7">
-            <label class="custom-control-label" for="customCheck7">Billie Eilish</label>
-        </div>
+            <div class="custom-control custom-checkbox my-2">
+                <input type="checkbox" class="custom-control-input" id="customCheck6">
+                <label class="custom-control-label" for="customCheck6">Rating</label>
+            </div>
 
-        <div class="custom-control custom-checkbox my-2">
-            <input type="checkbox" class="custom-control-input" id="customCheck8">
-            <label class="custom-control-label" for="customCheck8">Alt-J</label>
-        </div>
+            <div class="custom-control custom-checkbox my-2">
+                <input type="checkbox" class="custom-control-input" id="customCheck7">
+                <label class="custom-control-label" for="customCheck7">Likes</label>
+            </div>
 
+            <div class="custom-control custom-checkbox my-2">
+                <input type="checkbox" class="custom-control-input" id="customCheck8">
+                <label class="custom-control-label" for="customCheck8">Colore</label>
+            </div>
+
+            <a class="btn btn-success" asp-controller="News" asp-action="NewsDetails" asp-route-id="">Searche</a>
+        </div>
     </div>
 
     <div class="col-md-7 mt-5 row">

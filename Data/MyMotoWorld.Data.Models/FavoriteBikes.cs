@@ -1,11 +1,10 @@
 ﻿namespace MyMotoWorld.Data.Models
 {
+    using MyMotoWorld.Data.Common.Models;
     using MyMotoWorld.Models;
 
-    public class FavoriteBikes
+    public class FavoriteBikes : BaseDeletableModel<int>
     {
-        public int Id { get; set; }
-
         public int MotorBikeId { get; set; }
 
         public virtual MotorBike MotorBike { get; set; }

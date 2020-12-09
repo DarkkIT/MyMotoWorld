@@ -51,7 +51,7 @@
 
         public string Descrition { get; set; }
 
-        public double AvarageVote { get; set; }
+        public double AverageVote { get; set; }
 
         public string MainImagePath => "/images/bikes/" + this.Model + this.EngineCapacity + "-1" + ".jpg";
 
@@ -84,7 +84,7 @@
                 opt => opt.MapFrom(x => x.Engine.CoolingSystem.Name)).ForMember(
                 m => m.BikeType,
                 opt => opt.MapFrom(x => x.BikeType.Name)).ForMember(
-                m => m.AvarageVote,
+                m => m.AverageVote,
                 opt => opt.MapFrom(x => x.Votes.Average(x => x.Value))).ForMember(
                 m => m.BikeTypeDesctiption,
                 opt => opt.MapFrom(x => x.BikeType.Descrition));

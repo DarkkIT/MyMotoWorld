@@ -1,9 +1,9 @@
 ﻿namespace MyMotoWorld.Data.Models
 {
-    public class FavoriteNews
-    {
-        public int Id { get; set; }
+    using MyMotoWorld.Data.Common.Models;
 
+    public class FavoriteNews : BaseDeletableModel<int>
+    {
         public int NewsId { get; set; }
 
         public virtual News News { get; set; }

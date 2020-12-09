@@ -12,33 +12,35 @@
 
 <h1 id="newstitle" class="text-center mt-4">News</h1>
 
+<div class="row justify-content-center">
 
-<div class="col-md-10">
+    <div class="col-md-10">
 
-    @foreach (var news in Model.NewsList)
-    {
-        <a class="text-dark" asp-controller="News" asp-action="NewsDetails" asp-route-id="@news.Id">
+        @foreach (var news in Model.NewsList)
+        {
+            <a class="text-dark" asp-controller="News" asp-action="NewsDetails" asp-route-id="@news.Id">
 
-            <div id="news" class="ml-5 mt-5">
-                
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="imgAbt">
-                            <img width="500" src="@news.MainImagePath" />
+                <div id="news" class="ml-5 mt-5">
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="imgAbt">
+                                <img width="700" src="@news.MainImagePath" />
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <h2 class="mb-2">@news.Name</h2>
+                            <p id="newsdesctiption">@news.Description</p>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <h2 class="mb-2">@news.Name</h2>
-                        <p id="newsdesctiption">@news.Description</p>
-                    </div>
                 </div>
-            </div>
 
-        </a>
-    }
+            </a>
+        }
+
+    </div>
 
 </div>
-
 
 <hr />
 

@@ -40,12 +40,32 @@
                     <td>
                         <a class="btn btn-success" asp-controller="Admin" asp-action="EditNews" asp-route-id="@news.Id">Edit News</a>
                     </td>
-                    <td>
-                        <a class="btn btn-danger" asp-controller="Admin" asp-action="UnDeleteNews" asp-route-id="@news.Id">UnDelete</a>
-                    </td>
-                    <td>
-                        <a class="btn btn-danger" asp-controller="Admin" asp-action="DeleteNews" asp-route-id="@news.Id">Delete</a>
-                    </td>
+                    @if (@news.IsDeleted)
+                    {
+                        <td>
+                            <a class="btn btn-primary" asp-controller="Admin" asp-action="UnDeleteNews" asp-route-id="@news.Id">UnDelete</a>
+                        </td>
+                    }
+                    else
+                    {
+                        <td>
+                            <a class="btn btn-primary disabled" asp-controller="Admin" asp-action="UnDeleteNews" asp-route-id="@news.Id">UnDelete</a>
+                        </td>
+                    }
+
+                    @if (@news.IsDeleted)
+                    {
+                        <td>
+                            <a class="btn btn-danger disabled" asp-controller="Admin" asp-action="DeleteNews" asp-route-id="@news.Id">Delete</a>
+                        </td>
+                    }
+                    else
+                    {
+                        <td>
+                            <a class="btn btn-danger" asp-controller="Admin" asp-action="DeleteNews" asp-route-id="@news.Id">Delete</a>
+                        </td>
+                    }
+
                 </tr>
 
             </tbody>
