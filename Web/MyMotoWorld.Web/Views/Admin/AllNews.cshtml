@@ -1,0 +1,49 @@
+﻿@model MyMotoWorld.Web.ViewModels.News.NewsListViewModel;
+@using MyMotoWorld.Common
+
+@{
+    this.ViewData["Title"] = "EditAllNews";
+}
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<h1 class="text-center">All News</h1>
+
+<div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Image</th>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+
+        @foreach (var news in Model.NewsList)
+        {
+            <tbody>
+
+                <tr>
+                    <td><img src="@news.MainImagePath" style="max-height: 60px;" alt="image" /></td>
+                    <td>@news.Id</td>
+                    <td>@news.Name</td>
+                    <td>
+                        <a class="btn btn-success" asp-controller="Admin" asp-action="EditNews" asp-route-id="@news.Id">Edit News</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-danger" asp-controller="Admin" asp-action="DeleteNews" asp-route-id="@news.Id">Delete</a>
+                    </td>
+                </tr>
+
+            </tbody>
+        }
+    </table>
+</div>
+
+
+

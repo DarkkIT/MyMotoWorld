@@ -1,55 +1,56 @@
-﻿@using MyMotoWorld.Web.ViewModels.Admins
-@model AddMotorBikeInputModel
+﻿@model MyMotoWorld.Web.ViewModels.MotorBike.MotorBikeFullInfoViewModel;
 
 @{
-    this.ViewData["Title"] = "AddBike";
+    this.ViewData["Title"] = "EditBike";
 }
 
-<h1 class="text-center">Add Bike</h1>
+<div class="row justify-content-center">
+    <img src="@Model.MainImagePath" style="max-height: 335px;" alt="Image" />
+</div>
 
-<form method="post" class="col-md-7 offset-4 text-center" enctype="multipart/form-data">
+<form method="post" class="col-md-7 offset-4 text-center" enctype="application/x-www-form-urlencoded">
 
     <div asp-validation-summary="ModelOnly" class="text-danger col-md-12"></div>
 
     <div class="col-md-7">
         <label asp-for="Name"></label>
-        <input asp-for="Name" class="form-control" value="Suzuki"/>
+        <input asp-for="Name" class="form-control" value="@Model.Name" />
         <span asp-validation-for="Name" class="text-danger"></span>
     </div>
 
     <div class="col-md-7">
         <label asp-for="Model"></label>
-        <input asp-for="Model" class="form-control" />
+        <input asp-for="Model" class="form-control" value="@Model.Model" />
         <span asp-validation-for="Model" class="text-danger"></span>
     </div>
 
     <div class="col-md-7">
         <label asp-for="Price"></label>
-        <input asp-for="Price" class="form-control" />
+        <input asp-for="Price" class="form-control" value="@Model.Price" />
         <span asp-validation-for="Price" class="text-danger"></span>
     </div>
 
     <div class="col-md-7">
         <label asp-for="Weight"></label>
-        <input asp-for="Weight" class="form-control" />
+        <input asp-for="Weight" class="form-control" value="@Model.Weight" />
         <span asp-validation-for="Weight" class="text-danger"></span>
     </div>
 
     <div class="col-md-7">
         <label asp-for="Length"></label>
-        <input asp-for="Length" class="form-control" />
+        <input asp-for="Length" class="form-control" value="@Model.Length" />
         <span asp-validation-for="Length" class="text-danger"></span>
     </div>
 
     <div class="col-md-7">
         <label asp-for="Height"></label>
-        <input asp-for="Height" class="form-control" />
+        <input asp-for="Height" class="form-control" value="@Model.Height" />
         <span asp-validation-for="Height" class="text-danger"></span>
     </div>
 
     <div class="col-md-7">
         <label asp-for="SeatHeight"></label>
-        <input asp-for="SeatHeight" class="form-control" />
+        <input asp-for="SeatHeight" class="form-control" value="@Model.SeatHeight" />
         <span asp-validation-for="SeatHeight" class="text-danger"></span>
     </div>
 
@@ -69,81 +70,70 @@
 
     <div class="col-md-7">
         <label asp-for="BikeTypeDesctiption"></label>
-        <textarea asp-for="BikeTypeDesctiption" class="form-control"></textarea>
+        <input asp-for="BikeTypeDesctiption" class="form-control" value="@Model.BikeTypeDesctiption" />
         <span asp-validation-for="BikeTypeDesctiption" class="text-danger"></span>
     </div>
 
     <div class="col-md-7">
         <label asp-for="EngineName"></label>
-        <input asp-for="EngineName" class="form-control" />
+        <input asp-for="EngineName" class="form-control" value="@Model.EngineName" />
         <span asp-validation-for="EngineName" class="text-danger"></span>
     </div>
 
     <div class="col-md-7">
         <label asp-for="EngineCapacity"></label>
-        <input asp-for="EngineCapacity" class="form-control" />
+        <input asp-for="EngineCapacity" class="form-control" value="@Model.EngineCapacity" />
         <span asp-validation-for="EngineCapacity" class="text-danger"></span>
     </div>
 
     <div class="col-md-7">
         <label asp-for="EnginePower"></label>
-        <input asp-for="EnginePower" class="form-control" />
+        <input asp-for="EnginePower" class="form-control" value="@Model.EnginePower" />
         <span asp-validation-for="EnginePower" class="text-danger"></span>
     </div>
 
     <div class="col-md-7">
         <label asp-for="CoolingSystem"></label>
-        <input asp-for="CoolingSystem" class="form-control" />
+        <input asp-for="CoolingSystem" class="form-control" value="@Model.CoolingSystem" />
         <span asp-validation-for="CoolingSystem" class="text-danger"></span>
     </div>
 
     <div class="col-md-7">
         <label asp-for="Transmission"></label>
-        <input asp-for="Transmission" class="form-control" />
+        <input asp-for="Transmission" class="form-control" value="@Model.Transmission" />
         <span asp-validation-for="Transmission" class="text-danger"></span>
     </div>
 
     <div class="col-md-7">
         <label asp-for="FrontSuspension"></label>
-        <input asp-for="FrontSuspension" class="form-control" />
+        <input asp-for="FrontSuspension" class="form-control" value="@Model.FrontSuspension" />
         <span asp-validation-for="FrontSuspension" class="text-danger"></span>
     </div>
 
     <div class="col-md-7">
         <label asp-for="RearSuspension"></label>
-        <input asp-for="RearSuspension" class="form-control" />
+        <input asp-for="RearSuspension" class="form-control" value="@Model.RearSuspension" />
         <span asp-validation-for="RearSuspension" class="text-danger"></span>
     </div>
 
     <div class="col-md-7">
         <label asp-for="FrontBrakes"></label>
-        <input asp-for="FrontBrakes" class="form-control" />
+        <input asp-for="FrontBrakes" class="form-control" value="@Model.FrontBrakes" />
         <span asp-validation-for="FrontBrakes" class="text-danger"></span>
     </div>
 
     <div class="col-md-7">
         <label asp-for="RearBrakes"></label>
-        <input asp-for="RearBrakes" class="form-control" />
+        <input asp-for="RearBrakes" class="form-control" value="@Model.RearBrakes" />
         <span asp-validation-for="RearBrakes" class="text-danger"></span>
     </div>
 
     <div class="col-md-7">
         <label asp-for="Descrition"></label>
-        <textarea asp-for="Descrition" class="form-control"></textarea>
+        <input asp-for="Descrition" class="form-control" value="@Model.Descrition" />
         <span asp-validation-for="Descrition" class="text-danger"></span>
     </div>
 
-    <div class="col-md-7">
-        <label asp-for="Image"></label>
-        <input asp-for="Image" class="form-control"/>
-        <span asp-validation-for="Image" class="text-danger"></span>
-    </div>
-
-
-    <input type="submit" class="btn btn-primary mt-4" />
+    <input type="submit" class="btn btn-primary mt-4" value="Update" />
 
 </form>
-
-
-
-

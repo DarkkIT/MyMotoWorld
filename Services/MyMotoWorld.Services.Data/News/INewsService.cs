@@ -10,6 +10,8 @@
     {
         Task AddNewsAsync(AddNewsInputModel input);
 
+        Task EditNewsAsync(EditNewsInputModel input, int id);
+
         IEnumerable<NewsViewModel> GetAllNews<T>(int page, int itemsPerPage);
 
         int GetCount();
@@ -17,5 +19,7 @@
         IEnumerable<NewsViewModel> GetLastThreeNews<T>();
 
         NewsViewModel GetById<T>(int id);
+
+        bool DeleteNews(int id);
     }
 }

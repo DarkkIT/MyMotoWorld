@@ -117,9 +117,9 @@
                 motorBike.RearBrakes = new RearBrake { Name = input.RearBrakes };
             }
 
-            if (!this.coolingSystemRepository.All().Any(x => x.Name == input.EngineCoolingSystemName))
+            if (!this.coolingSystemRepository.All().Any(x => x.Name == input.CoolingSystem))
             {
-                await this.coolingSystemRepository.AddAsync(new CoolingSystem { Name = input.EngineCoolingSystemName });
+                await this.coolingSystemRepository.AddAsync(new CoolingSystem { Name = input.CoolingSystem });
             }
 
             if (this.engineRepositiry.All().Any(x => x.Name == input.EngineName))
@@ -128,10 +128,51 @@
             }
             else
             {
-                motorBike.Engine = new Engine { Name = input.EngineName, EngineCapacity = input.EngineCapacity, EnginePower = input.EnginePower, CoolingSystem = this.coolingSystemRepository.All().Where(x => x.Name == input.EngineCoolingSystemName).First() };
+                motorBike.Engine = new Engine { Name = input.EngineName, EngineCapacity = input.EngineCapacity, EnginePower = input.EnginePower, CoolingSystem = this.coolingSystemRepository.All().Where(x => x.Name == input.CoolingSystem).First() };
             }
 
             await this.motorBikeRepository.AddAsync(motorBike);
+            await this.motorBikeRepository.SaveChangesAsync();
+        }
+
+        public bool DeleteBike(int id)
+        {
+            var bike = this.motorBikeRepository.All().FirstOrDefault(x => x.Id == id);
+            if (bike != null)
+            {
+                this.motorBikeRepository.Delete(bike);
+                this.motorBikeRepository.SaveChangesAsync();
+
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public async Task EditBikeAsync(EditBikeInputModel input, int id)
+        {
+            var bike = this.motorBikeRepository.All().FirstOrDefault(x => x.Id == id);
+
+            bike.Name = input.Name;
+            bike.Model = input.Model;
+            bike.Price = input.Price;
+            bike.Weight = input.Weight;
+            bike.Length = input.Length;
+            bike.Height = input.Height;
+            bike.SeatHeight = input.SeatHeight;
+            bike.BikeType = new BikeType { Name = input.BikeType };
+            bike.BikeType.Descrition = input.BikeTypeDesctiption;
+            bike.Engine = new Engine { Name = input.EngineName, EnginePower = input.EnginePower, EngineCapacity = input.EngineCapacity, CoolingSystem = new CoolingSystem { Name = input.CoolingSystem } };
+            bike.Transmission = new Transmission { Name = input.Transmission };
+            bike.FrontSuspension = new FrontSuspension { Name = input.FrontSuspension };
+            bike.RearSuspension = new RearSuspension { Name = input.RearSuspension };
+            bike.FrontBrakes = new FrontBrake { Name = input.FrontBrakes };
+            bike.RearBrakes = new RearBrake { Name = input.RearBrakes };
+            bike.Descrition = input.Descrition;
+            bike.ModifiedOn = DateTime.UtcNow;
+
             await this.motorBikeRepository.SaveChangesAsync();
         }
 

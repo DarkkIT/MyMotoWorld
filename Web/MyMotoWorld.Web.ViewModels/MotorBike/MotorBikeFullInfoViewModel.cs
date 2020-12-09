@@ -29,6 +29,8 @@
 
         public string BikeType { get; set; }
 
+        public string BikeTypeDesctiption { get; set; }
+
         public int EnginePower { get; set; }
 
         public string EngineName { get; set; }
@@ -83,7 +85,9 @@
                 m => m.BikeType,
                 opt => opt.MapFrom(x => x.BikeType.Name)).ForMember(
                 m => m.AvarageVote,
-                opt => opt.MapFrom(x => x.Votes.Average(x => x.Value)));
+                opt => opt.MapFrom(x => x.Votes.Average(x => x.Value))).ForMember(
+                m => m.BikeTypeDesctiption,
+                opt => opt.MapFrom(x => x.BikeType.Descrition));
         }
     }
 }

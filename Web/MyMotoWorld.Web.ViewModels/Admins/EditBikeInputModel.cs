@@ -4,7 +4,7 @@
 
     using Microsoft.AspNetCore.Http;
 
-    public class AddMotorBikeInputModel
+    public class EditBikeInputModel
     {
         [Required]
         [MaxLength(200)]
@@ -81,7 +81,5 @@
         [Required]
         [MaxLength(2000)]
         public string Descrition { get; set; }
-
-        public IFormFile Image { get; set; }
     }
 }

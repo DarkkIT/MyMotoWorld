@@ -5,6 +5,11 @@
     this.ViewData["Title"] = "Details";
 }
 
+<head>
+    <link href="~/css/storeditailscss.css" rel="stylesheet" asp-append-version="true" />
+    <link href="https://fonts.googleapis.com/css2?family=Ultra&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 
 <div class="container">
 
@@ -26,13 +31,54 @@
 
         <div>
             <ul class="row list-unstyled mt-3">
+                @if (Model.AvarageVote > 0.4)
+                {
+                    <li id="star" class="star-fill ml-2" data-vote="1"><i class="fas fa-star fa-2x" style="color: #e8cd1c"></i></li>
+                }
+                else
+                {
+                    <li id="star" class="star-fill ml-2" data-vote="1"><i class="fas fa-star fa-2x"></i></li>
+                }
 
-                <li class="star-fill ml-2" data-vote="1"><i class="fas fa-star"></i></li>
-                <li class="star-fill ml-2" data-vote="2"><i class="fas fa-star"></i></li>
-                <li class="star-fill ml-2" data-vote="3"><i class="fas fa-star"></i></li>
-                <li class="star-fill ml-2" data-vote="4"><i class="fas fa-star"></i></li>
-                <li class="star-fill ml-2" data-vote="5"><i class="fas fa-star"></i></li>
-                <li class="ml-2"><span id="avarageVoteValue">@Model.AvarageVote.ToString("0.0")</span><span> / 5</span> </li>
+                @if (Model.AvarageVote > 1.4)
+                {
+                    <li id="star" class="star-fill ml-2" data-vote="2"><i class="fas fa-star fa-2x" style="color: #e8cd1c"></i></li>
+                }
+                else
+                {
+                    <li id="star" class="star-fill ml-2" data-vote="2"><i class="fas fa-star fa-2x"></i></li>
+                }
+
+                @if (Model.AvarageVote > 2.4)
+                {
+                    <li id="star" class="star-fill ml-2" data-vote="3"><i class="fas fa-star fa-2x" style="color: #e8cd1c"></i></li>
+                }
+                else
+                {
+                    <li id="star" class="star-fill ml-2" data-vote="3"><i class="fas fa-star fa-2x"></i></li>
+                }
+
+                @if (Model.AvarageVote > 3.4)
+                {
+                    <li id="star" class="star-fill ml-2" data-vote="4"><i class="fas fa-star fa-2x" style="color: #e8cd1c"></i></li>
+                }
+                else
+                {
+                    <li id="star" class="star-fill ml-2" data-vote="4"><i class="fas fa-star fa-2x"></i></li>
+                }
+
+                @if (Model.AvarageVote > 4.8)
+                {
+                    <li id="star" class="star-fill ml-2" data-vote="5"><i class="fas fa-star fa-2x" style="color: #e8cd1c"></i></li>
+                }
+                else
+                {
+                    <li id="star" class="star-fill ml-2" data-vote="5"><i class="fas fa-star fa-2x"></i></li>
+                }
+
+
+
+                <li class="ml-2"><span id="avarageVoteValue" style="font-size: 25px; font-family: Ultra">@Model.AvarageVote.ToString("0.0")</span><span style="font-family: Ultra"> / 5</span> </li>
 
             </ul>
         </div>

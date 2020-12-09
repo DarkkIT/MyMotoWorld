@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.IO;
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
@@ -32,6 +33,33 @@
             };
 
             await this.newsRepository.AddAsync(news);
+            await this.newsRepository.SaveChangesAsync();
+        }
+
+        public bool DeleteNews(int id)
+        {
+            var bike = this.newsRepository.All().FirstOrDefault(x => x.Id == id);
+            if (bike != null)
+            {
+                this.newsRepository.Delete(bike);
+                this.newsRepository.SaveChangesAsync();
+
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public async Task EditNewsAsync(EditNewsInputModel input, int id)
+        {
+            var news = this.newsRepository.All().FirstOrDefault(x => x.Id == id);
+
+            news.Name = input.Name;
+            news.Description = input.Description;
+            news.NewsDate = input.NewsDate;
+
             await this.newsRepository.SaveChangesAsync();
         }
 

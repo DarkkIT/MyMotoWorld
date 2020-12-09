@@ -1,0 +1,55 @@
+﻿@model MyMotoWorld.Web.ViewModels.MotorBike.MotorBikeListViewModel;
+@using MyMotoWorld.Common
+
+@{
+    this.ViewData["Title"] = "EditAllBikes";
+}
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<h1 class="text-center">All Bikes</h1>
+
+<div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Image</th>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Model</th>
+                <th scope="col">EnginCapacity</th>
+                <th scope="col">Price</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+
+        @foreach (var bike in Model.MotorBikes)
+        {
+            <tbody>
+
+                <tr>
+                    <td><img src="@bike.MainImagePath" style="max-height: 60px;" alt="image" /></td>
+                    <td>@bike.Id</td>
+                    <td>@bike.Name</td>
+                    <td>@bike.Model</td>
+                    <td>@bike.EngineCapacity</td>
+                    <td>@bike.Price</td>
+                    <td>
+                        <a class="btn btn-success" asp-controller="Admin" asp-action="EditBike" asp-route-id="@bike.Id">Edit Bike</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-danger" asp-controller="Admin" asp-action="DeleteBike" asp-route-id="@bike.Id">Delete</a>
+                    </td>
+                </tr>
+
+            </tbody>
+        }
+    </table>
+</div>
+
+
+
