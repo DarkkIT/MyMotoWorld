@@ -135,20 +135,21 @@
             await this.motorBikeRepository.SaveChangesAsync();
         }
 
-        public bool DeleteBike(int id)
+        public async Task DeleteBike(int id)
         {
-            var bike = this.motorBikeRepository.All().FirstOrDefault(x => x.Id == id);
-            if (bike != null)
-            {
-                this.motorBikeRepository.Delete(bike);
-                this.motorBikeRepository.SaveChangesAsync();
+            var bike = this.motorBikeRepository.AllAsNoTracking().FirstOrDefault(x => x.Id == id);
 
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            this.motorBikeRepository.Delete(bike);
+            await this.motorBikeRepository.SaveChangesAsync();
+        }
+
+        public async Task UnDeleteBike(int id)
+        {
+            var bike = this.motorBikeRepository.AllWithDeleted().FirstOrDefault(x => x.Id == id);
+
+            bike.IsDeleted = false;
+            bike.DeletedOn = null;
+            await this.motorBikeRepository.SaveChangesAsync();
         }
 
         public async Task EditBikeAsync(EditBikeInputModel input, int id)
@@ -179,6 +180,13 @@
         public IEnumerable<MotorBikeViewModel> GetAllBikes<T>(int page, int itemsPerPage)
         {
             var model = this.motorBikeRepository.All().OrderByDescending(x => x.Id).Skip((page - 1) * itemsPerPage).Take(itemsPerPage).To<MotorBikeViewModel>().ToList();
+
+            return model;
+        }
+
+        public IEnumerable<MotorBikeViewModel> GetAllBikesWithDeleted<T>(int page, int itemsPerPage)
+        {
+            var model = this.motorBikeRepository.AllWithDeleted().OrderByDescending(x => x.Id).Skip((page - 1) * itemsPerPage).Take(itemsPerPage).To<MotorBikeViewModel>().ToList();
 
             return model;
         }

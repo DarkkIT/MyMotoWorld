@@ -13,7 +13,7 @@
 </head>
 <body class="mb-0">
     <header>
-        <nav  class="navbar navbar-expand-sm bg-light border-bottom box-shadow mb-0">
+        <nav class="navbar navbar-expand-sm bg-light border-bottom box-shadow mb-0">
             <div class="container-fluid">
                 <a id="logo" class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">@GlobalConstants.SystemName</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -22,6 +22,16 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse ml-2">
                     <partial name="_LoginPartial" />
+
+                    <ul class="float-left navbar-nav">
+                        @if (this.User.Identity.IsAuthenticated)
+                        {
+                            <li>
+                                <a class="nav-link text-dark ml-5" asp-area="" asp-controller="Home" asp-action="Favorites"><i class="far fa-star"></i>Favorites</a>
+                            </li>
+                        }
+                    </ul>
+
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index"><i class="fas fa-home"></i>Home</a>
@@ -45,15 +55,16 @@
                             </li>
                         }
                     </ul>
+
                 </div>
             </div>
         </nav>
     </header>
 
 
-        @this.RenderBody()
+    @this.RenderBody()
 
-<hr />
+    <hr />
     <footer id="footertop" class="footer font-small blue pt-4">
 
         <div class="container-fluid text-center text-md-left">
@@ -123,7 +134,7 @@
 
         <div id="footerbotom" class="footer-copyright text-center py-3 mb-0">
             © @DateTime.UtcNow.Year Copyright:
-            <a class="text-black-50"  asp-controller="Home" asp-action="Index"> MyMotoWorld.com</a>
+            <a class="text-black-50" asp-controller="Home" asp-action="Index"> MyMotoWorld.com</a>
         </div>
 
     </footer>

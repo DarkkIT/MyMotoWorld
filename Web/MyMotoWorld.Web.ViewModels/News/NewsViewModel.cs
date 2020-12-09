@@ -20,6 +20,10 @@
 
         public string ImageName { get; set; }
 
+        public bool IsDeleted { get; set; }
+
+        public DateTime DeletedOn { get; set; }
+
         public string MainImagePath => "/images/news/" + this.ImageName + ".jpg";
 
         public void CreateMappings(IProfileExpression configuration)

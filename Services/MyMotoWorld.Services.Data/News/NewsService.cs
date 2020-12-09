@@ -36,20 +36,21 @@
             await this.newsRepository.SaveChangesAsync();
         }
 
-        public bool DeleteNews(int id)
+        public async Task DeleteNews(int id)
         {
-            var bike = this.newsRepository.All().FirstOrDefault(x => x.Id == id);
-            if (bike != null)
-            {
-                this.newsRepository.Delete(bike);
-                this.newsRepository.SaveChangesAsync();
+            var news = this.newsRepository.AllAsNoTracking().FirstOrDefault(x => x.Id == id);
 
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            this.newsRepository.Delete(news);
+            await this.newsRepository.SaveChangesAsync();
+        }
+
+        public async Task UnDeleteNews(int id)
+        {
+            var news = this.newsRepository.AllWithDeleted().FirstOrDefault(x => x.Id == id);
+
+            news.IsDeleted = false;
+            news.DeletedOn = null;
+            await this.newsRepository.SaveChangesAsync();
         }
 
         public async Task EditNewsAsync(EditNewsInputModel input, int id)
@@ -66,6 +67,13 @@
         public IEnumerable<NewsViewModel> GetAllNews<T>(int page, int itemsPerPage)
         {
             var model = this.newsRepository.All().OrderByDescending(x => x.Id).Skip((page - 1) * itemsPerPage).Take(itemsPerPage).To<NewsViewModel>().ToList();
+
+            return model;
+        }
+
+        public IEnumerable<NewsViewModel> GetAllNewsWithDeleted<T>(int page, int itemsPerPage)
+        {
+            var model = this.newsRepository.AllWithDeleted().OrderByDescending(x => x.Id).Skip((page - 1) * itemsPerPage).Take(itemsPerPage).To<NewsViewModel>().ToList();
 
             return model;
         }

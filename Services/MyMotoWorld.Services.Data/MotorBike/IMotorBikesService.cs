@@ -17,10 +17,14 @@
 
         IEnumerable<MotorBikeViewModel> GetAllBikes<T>(int page, int itemsPerPage);
 
+        IEnumerable<MotorBikeViewModel> GetAllBikesWithDeleted<T>(int page, int itemsPerPage);
+
         MotorBikeFullInfoViewModel GetById<T>(int id);
 
         int GetCount();
 
-        bool DeleteBike(int id);
+        Task DeleteBike(int id);
+
+        Task UnDeleteBike(int id);
         }
 }

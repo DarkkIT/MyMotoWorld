@@ -22,7 +22,10 @@
                 <th scope="col">Model</th>
                 <th scope="col">EnginCapacity</th>
                 <th scope="col">Price</th>
+                <th scope="col">IsDeleted</th>
+                <th scope="col">DeletedOn</th>
                 <th scope="col">Edit</th>
+                <th scope="col">UnDelete</th>
                 <th scope="col">Delete</th>
             </tr>
         </thead>
@@ -38,8 +41,13 @@
                     <td>@bike.Model</td>
                     <td>@bike.EngineCapacity</td>
                     <td>@bike.Price</td>
+                    <td>@bike.IsDeleted</td>
+                    <td>@bike.DeletedOn</td>
                     <td>
                         <a class="btn btn-success" asp-controller="Admin" asp-action="EditBike" asp-route-id="@bike.Id">Edit Bike</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-primary" asp-controller="Admin" asp-action="UnDeleteBike" asp-route-id="@bike.Id">UnDelete</a>
                     </td>
                     <td>
                         <a class="btn btn-danger" asp-controller="Admin" asp-action="DeleteBike" asp-route-id="@bike.Id">Delete</a>

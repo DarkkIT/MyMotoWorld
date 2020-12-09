@@ -15,6 +15,7 @@
             this.Sales = new HashSet<Sale>();
             this.Images = new HashSet<Image>();
             this.Votes = new HashSet<Vote>();
+            this.FavoriteBikes = new HashSet<FavoriteBikes>();
         }
 
         public string Name { get; set; }
@@ -70,5 +71,7 @@
         public virtual ICollection<Image> Images { get; set; }
 
         public virtual ICollection<Vote> Votes { get; set; }
+
+        public virtual ICollection<FavoriteBikes> FavoriteBikes { get; set; }
     }
 }

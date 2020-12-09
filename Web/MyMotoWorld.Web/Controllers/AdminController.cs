@@ -101,7 +101,7 @@
 
         public IActionResult AllBikes()
         {
-            var motorBikes = this.motorBikesService.GetAllBikes<MotorBikeViewModel>(1, 1000);
+            var motorBikes = this.motorBikesService.GetAllBikesWithDeleted<MotorBikeViewModel>(1, 1000);
             var viewModel = new MotorBikeListViewModel { MotorBikes = motorBikes, PageNumber = 1, MotorBikeCount = this.motorBikesService.GetCount(), ItemsPerPage = GlobalConstants.ItemsPerPage };
 
             return this.View(viewModel);
@@ -129,7 +129,7 @@
 
         public IActionResult AllNews()
         {
-            var newses = this.newsService.GetAllNews<NewsViewModel>(1, 1000);
+            var newses = this.newsService.GetAllNewsWithDeleted<NewsViewModel>(1, 1000);
             var viewModel = new NewsListViewModel { NewsList = newses, PageNumber = 1, MotorBikeCount = this.newsService.GetCount(), ItemsPerPage = GlobalConstants.ItemsPerPage };
 
             return this.View(viewModel);
@@ -155,24 +155,32 @@
             return this.RedirectToAction(nameof(this.Success));
         }
 
-        public IActionResult DeleteBike(int id)
+        public async Task<IActionResult> DeleteBike(int id)
         {
-            if (this.motorBikesService.DeleteBike(id))
-            {
-                return this.RedirectToAction(nameof(this.Success));
-            }
+            await this.motorBikesService.DeleteBike(id);
 
             return this.RedirectToAction(nameof(this.AllBikes));
         }
 
-        public IActionResult DeleteNews(int id)
+        public async Task<IActionResult> DeleteNews(int id)
         {
-            if (this.newsService.DeleteNews(id))
-            {
-                return this.RedirectToAction(nameof(this.Success));
-            }
+            await this.newsService.DeleteNews(id);
+
+            return this.RedirectToAction(nameof(this.AllNews));
+        }
+
+        public async Task<IActionResult> UnDeleteBike(int id)
+        {
+            await this.motorBikesService.UnDeleteBike(id);
 
             return this.RedirectToAction(nameof(this.AllBikes));
+        }
+
+        public async Task<IActionResult> UnDeleteNews(int id)
+        {
+            await this.newsService.UnDeleteNews(id);
+
+            return this.RedirectToAction(nameof(this.AllNews));
         }
     }
 }

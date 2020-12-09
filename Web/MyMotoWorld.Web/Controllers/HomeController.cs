@@ -59,5 +59,10 @@
         {
             return this.View();
         }
+
+        public IActionResult Favorites()
+        {
+            return this.View();
+        }
     }
 }

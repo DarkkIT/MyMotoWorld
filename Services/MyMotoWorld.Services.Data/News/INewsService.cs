@@ -14,12 +14,16 @@
 
         IEnumerable<NewsViewModel> GetAllNews<T>(int page, int itemsPerPage);
 
+        IEnumerable<NewsViewModel> GetAllNewsWithDeleted<T>(int page, int itemsPerPage);
+
         int GetCount();
 
         IEnumerable<NewsViewModel> GetLastThreeNews<T>();
 
         NewsViewModel GetById<T>(int id);
 
-        bool DeleteNews(int id);
+        Task DeleteNews(int id);
+
+        Task UnDeleteNews(int id);
     }
 }

@@ -18,6 +18,8 @@ namespace MyMotoWorld.Data.Models
             this.Sales = new HashSet<Sale>();
             this.NewsList = new HashSet<News>();
             this.Votes = new HashSet<Vote>();
+            this.FavoriteBikes = new HashSet<FavoriteBikes>();
+            this.FavoriteNews = new HashSet<FavoriteNews>();
         }
 
         public decimal TotalSpent { get; set; }
@@ -43,5 +45,9 @@ namespace MyMotoWorld.Data.Models
         public virtual ICollection<News> NewsList { get; set; }
 
         public virtual ICollection<Vote> Votes { get; set; }
+
+        public virtual ICollection<FavoriteBikes> FavoriteBikes { get; set; }
+
+        public virtual ICollection<FavoriteNews> FavoriteNews { get; set; }
     }
 }

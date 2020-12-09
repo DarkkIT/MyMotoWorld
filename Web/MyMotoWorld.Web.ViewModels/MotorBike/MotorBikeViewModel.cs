@@ -27,6 +27,10 @@
 
         public int Liked { get; set; }
 
+        public bool IsDeleted { get; set; }
+
+        public DateTime DeletedOn { get; set; }
+
         public double AvarageVote { get; set; }
 
         public string MainImagePath => "/images/bikes/" + this.Model + this.EngineCapacity + "-1" + ".jpg";

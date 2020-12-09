@@ -26,6 +26,10 @@
         {
         }
 
+        public virtual DbSet<FavoriteBikes> FavoriteBikes { get; set; }
+
+        public virtual DbSet<FavoriteNews> FavoriteNews { get; set; }
+
         public virtual DbSet<Vote> Votes { get; set; }
 
         public virtual DbSet<News> News { get; set; }
