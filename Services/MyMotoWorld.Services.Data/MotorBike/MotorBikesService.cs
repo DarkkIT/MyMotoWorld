@@ -27,7 +27,7 @@
         private readonly IDeletableEntityRepository<RearBrake> rearBreakRepository;
         private readonly IDeletableEntityRepository<Engine> engineRepositiry;
         private readonly IDeletableEntityRepository<CoolingSystem> coolingSystemRepository;
-        private readonly IDeletableEntityRepository<FavoriteBikes> favoriteBikesRepository;
+        private readonly IRepository<FavoriteBikes> favoriteBikesRepository;
 
         public MotorBikesService(
             IDeletableEntityRepository<MotorBike> motorBikeRepository,
@@ -39,7 +39,7 @@
             IDeletableEntityRepository<RearBrake> rearBreakRepository,
             IDeletableEntityRepository<Engine> engineRepositiry,
             IDeletableEntityRepository<CoolingSystem> coolingSystemRepository,
-            IDeletableEntityRepository<FavoriteBikes> favoriteBikesRepository)
+            IRepository<FavoriteBikes> favoriteBikesRepository)
         {
             this.motorBikeRepository = motorBikeRepository;
             this.bikeTypeRepository = bikeTypeRepository;
@@ -210,6 +210,20 @@
         public async Task AddBikeToFavorit(int id, string userId)
         {
             await this.favoriteBikesRepository.AddAsync(new FavoriteBikes { MotorBikeId = id, UserId = userId });
+
+            var bike = this.motorBikeRepository.All().FirstOrDefault(x => x.Id == id);
+
+            await this.motorBikeRepository.SaveChangesAsync();
+            await this.favoriteBikesRepository.SaveChangesAsync();
+        }
+
+        public async Task RemoveBikeFromFavorit(int id, string userId)
+        {
+            var favorite = this.favoriteBikesRepository.AllAsNoTracking().FirstOrDefault(x => x.MotorBikeId == id && x.UserId == userId);
+
+            this.favoriteBikesRepository.Delete(favorite);
+
+            var bike = this.motorBikeRepository.All().FirstOrDefault(x => x.Id == id);
 
             await this.favoriteBikesRepository.SaveChangesAsync();
         }

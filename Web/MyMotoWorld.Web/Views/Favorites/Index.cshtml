@@ -4,7 +4,13 @@
     this.ViewData["Title"] = "Favorites";
 }
 
-<div class="row justify-content-center col-md-10">
+
+@if (Model.MotorBikes == null)
+{
+    <p class="mt-5">No favorite bikes addet yet</p>
+}
+
+<div class="row col-md-12 justify-content-center">
 
     @foreach (var bike in Model.MotorBikes)
     {
@@ -15,10 +21,11 @@
                 <div class="card-body">
                     <h5 class="card-title">@bike.Name @bike.Model</h5>
                     <p class="card-text">Some Text</p>
-                    <a class="btn btn-success" asp-controller="News" asp-action="NewsDetails" asp-route-id="@bike.Id">UnFavorite</a>
+                    <a class="btn btn-success" asp-controller="Favorites" asp-action="RemoveFavorite" asp-route-id="@bike.Id">UnFavorite</a>
                 </div>
             </div>
         </a>
     }
 
 </div>
+

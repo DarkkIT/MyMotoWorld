@@ -90,7 +90,15 @@
     </div>
 
     <div class="row justify-content-end">
-        <a class="nav-link text-dark mr-5" asp-area="" asp-controller="Store" asp-action="AddToFavorite" asp-route-id="@Model.Id">AddToFavorite<i class="far fa-star ml-1"></i></a>
+        @if (!Model.IsAddetToFavorit)
+        {
+            <a class="nav-link text-dark mr-5" asp-area="" asp-controller="Store" asp-action="AddToFavorite" asp-route-id="@Model.Id">Add To Favorite<i class="fas fa-star ml-1"></i></a>
+        }
+        else
+        {
+            <a class="nav-link text-dark mr-5 disabled" asp-area="" asp-controller="Store" asp-action="AddToFavorite" asp-route-id="@Model.Id">Added To Favorite<i class="fas fa-star ml-1" style="color: #e8cd1c"></i></a>
+        }
+
     </div>
 
     <div class="card-columns mt-5">
@@ -200,15 +208,17 @@
         </div>
     </div>
 
-    <div class="container my-4">
+    <div class="">
         <hr>
 
         <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" src="https://youtu.be/cZr1MEmIQN8" allowfullscreen></iframe>
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/WTbTw0zd2kU" allowfullscreen></iframe>
         </div>
     </div>
 
 </div>
+
+<hr />
 <form method="post" id="antiForgeryForm"></form>
 @section Scripts{
     <script>

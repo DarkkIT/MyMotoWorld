@@ -2,7 +2,7 @@
 {
     using System.Diagnostics;
     using System.Linq;
-
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
     using MyMotoWorld.Data;
     using MyMotoWorld.Data.Common.Repositories;
@@ -60,6 +60,7 @@
             return this.View();
         }
 
+        [Authorize]
         public IActionResult Favorites()
         {
             return this.View();

@@ -30,5 +30,7 @@
         Task UnDeleteBike(int id);
 
         Task AddBikeToFavorit(int id, string userId);
-        }
+
+        Task RemoveBikeFromFavorit(int id, string userId);
+    }
 }

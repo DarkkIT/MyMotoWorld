@@ -53,6 +53,8 @@
 
         public double AverageVote { get; set; }
 
+        public bool IsAddetToFavorit { get; set; }
+
         public string MainImagePath => "/images/bikes/" + this.Model + this.EngineCapacity + "-1" + ".jpg";
 
         public string SecondImagePath => "/images/bikes/" + this.Model + this.EngineCapacity + "-2" + ".jpg";

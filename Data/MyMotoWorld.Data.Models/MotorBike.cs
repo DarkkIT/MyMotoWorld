@@ -36,6 +36,8 @@
 
         public int BikeTypeId { get; set; }
 
+        public bool IsAddetToFavorit { get; set; }
+
         public virtual BikeType BikeType { get; set; }
 
         public int TransmissionId { get; set; }

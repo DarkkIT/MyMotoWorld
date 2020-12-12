@@ -32,5 +32,15 @@
 
             return this.View(viewModel);
         }
+
+        [Authorize]
+        public async Task<IActionResult> RemoveFavorite(int id)
+        {
+            var userId = this.User.FindFirst(ClaimTypes.NameIdentifier).Value;
+
+            await this.motorBikeService.RemoveBikeFromFavorit(id, userId);
+
+            return this.RedirectToAction(nameof(this.Index));
+        }
     }
 }
