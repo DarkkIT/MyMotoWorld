@@ -10,8 +10,8 @@ using MyMotoWorld.Data;
 namespace MyMotoWorld.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201212214911_ChangeFavoriteBikeEntity")]
-    partial class ChangeFavoriteBikeEntity
+    [Migration("20201214082509_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

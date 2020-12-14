@@ -313,6 +313,7 @@
                     Name = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true),
                     NewsDate = table.Column<DateTime>(nullable: false),
+                    ImageName = table.Column<string>(nullable: true),
                     ApplicationUserId = table.Column<string>(nullable: true),
                 },
                 constraints: table =>
@@ -353,6 +354,36 @@
                 });
 
             migrationBuilder.CreateTable(
+                name: "FavoriteNews",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CreatedOn = table.Column<DateTime>(nullable: false),
+                    ModifiedOn = table.Column<DateTime>(nullable: true),
+                    IsDeleted = table.Column<bool>(nullable: false),
+                    DeletedOn = table.Column<DateTime>(nullable: true),
+                    NewsId = table.Column<int>(nullable: false),
+                    UserId = table.Column<string>(nullable: true),
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_FavoriteNews", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_FavoriteNews_News_NewsId",
+                        column: x => x.NewsId,
+                        principalTable: "News",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_FavoriteNews_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "MotorBikes",
                 columns: table => new
                 {
@@ -371,6 +402,7 @@
                     Height = table.Column<int>(nullable: false),
                     SeatHeight = table.Column<int>(nullable: false),
                     BikeTypeId = table.Column<int>(nullable: false),
+                    IsAddetToFavorit = table.Column<bool>(nullable: false),
                     TransmissionId = table.Column<int>(nullable: false),
                     EngineId = table.Column<int>(nullable: false),
                     FrontSuspensionId = table.Column<int>(nullable: false),
@@ -422,6 +454,34 @@
                         name: "FK_MotorBikes_Transmissions_TransmissionId",
                         column: x => x.TransmissionId,
                         principalTable: "Transmissions",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "FavoriteBikes",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CreatedOn = table.Column<DateTime>(nullable: false),
+                    ModifiedOn = table.Column<DateTime>(nullable: true),
+                    MotorBikeId = table.Column<int>(nullable: false),
+                    UserId = table.Column<string>(nullable: true),
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_FavoriteBikes", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_FavoriteBikes_MotorBikes_MotorBikeId",
+                        column: x => x.MotorBikeId,
+                        principalTable: "MotorBikes",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_FavoriteBikes_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -507,6 +567,35 @@
                         onDelete: ReferentialAction.Restrict);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Votes",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CreatedOn = table.Column<DateTime>(nullable: false),
+                    ModifiedOn = table.Column<DateTime>(nullable: true),
+                    MotorBikeId = table.Column<int>(nullable: false),
+                    UserId = table.Column<string>(nullable: true),
+                    Value = table.Column<byte>(nullable: false),
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Votes", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Votes_MotorBikes_MotorBikeId",
+                        column: x => x.MotorBikeId,
+                        principalTable: "MotorBikes",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Votes_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -580,6 +669,31 @@
                 name: "IX_Extras_IsDeleted",
                 table: "Extras",
                 column: "IsDeleted");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_FavoriteBikes_MotorBikeId",
+                table: "FavoriteBikes",
+                column: "MotorBikeId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_FavoriteBikes_UserId",
+                table: "FavoriteBikes",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_FavoriteNews_IsDeleted",
+                table: "FavoriteNews",
+                column: "IsDeleted");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_FavoriteNews_NewsId",
+                table: "FavoriteNews",
+                column: "NewsId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_FavoriteNews_UserId",
+                table: "FavoriteNews",
+                column: "UserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_FrontBrakes_IsDeleted",
@@ -690,6 +804,16 @@
                 name: "IX_Transmissions_IsDeleted",
                 table: "Transmissions",
                 column: "IsDeleted");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Votes_MotorBikeId",
+                table: "Votes",
+                column: "MotorBikeId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Votes_UserId",
+                table: "Votes",
+                column: "UserId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -710,28 +834,37 @@
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
+                name: "FavoriteBikes");
+
+            migrationBuilder.DropTable(
+                name: "FavoriteNews");
+
+            migrationBuilder.DropTable(
                 name: "Images");
 
             migrationBuilder.DropTable(
                 name: "MotorBikeExtras");
 
             migrationBuilder.DropTable(
-                name: "News");
+                name: "Sales");
 
             migrationBuilder.DropTable(
-                name: "Sales");
+                name: "Votes");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
+                name: "News");
+
+            migrationBuilder.DropTable(
                 name: "Extras");
 
             migrationBuilder.DropTable(
-                name: "AspNetUsers");
+                name: "MotorBikes");
 
             migrationBuilder.DropTable(
-                name: "MotorBikes");
+                name: "AspNetUsers");
 
             migrationBuilder.DropTable(
                 name: "BikeTypes");
