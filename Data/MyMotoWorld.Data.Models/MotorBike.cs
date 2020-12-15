@@ -18,20 +18,29 @@
             this.FavoriteBikes = new HashSet<FavoriteBikes>();
         }
 
+        [Required]
+        [MaxLength(200)]
         public string Name { get; set; }
 
+        [Required]
+        [MaxLength(200)]
         public string Model { get; set; }
 
+        [Required]
         public decimal Price { get; set; }
 
         public int Liked { get; set; }
 
+        [Required]
         public int Weight { get; set; }
 
+        [Required]
         public int Length { get; set; }
 
+        [Required]
         public int Height { get; set; }
 
+        [Required]
         public int SeatHeight { get; set; }
 
         public int BikeTypeId { get; set; }

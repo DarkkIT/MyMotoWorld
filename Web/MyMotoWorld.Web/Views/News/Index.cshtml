@@ -6,26 +6,30 @@
 
 <head>
     <link href="/css/newscss.css" rel="stylesheet" asp-append-version="true" />
+    <link href="~/css/weatherwidgetcss.css" rel="stylesheet" asp-append-version="true" />
     <link href="https://fonts.googleapis.com/css2?family=Ultra&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<h1 id="newstitle" class="text-center mt-4">News</h1>
 
-<div class="row justify-content-center">
 
-    <div class="col-md-10">
+
+<div class="row">
+
+    <div class="col-8">
+
+        <h1 id="newstitle" class="text-center mt-4">News</h1>
 
         @foreach (var news in Model.NewsList)
         {
             <a class="text-dark" asp-controller="News" asp-action="NewsDetails" asp-route-id="@news.Id">
 
-                <div id="news" class="ml-5 mt-5">
+                <div id="news" class="ml-5 mt-5 mb-5">
 
                     <div class="row">
                         <div class="col-md-6">
                             <div class="imgAbt">
-                                <img width="700" src="@news.MainImagePath" />
+                                <img width="600" src="@news.MainImagePath" />
                             </div>
                         </div>
                         <div class="col-md-5">
@@ -38,10 +42,56 @@
             </a>
         }
 
+        <partial name="_PagingPartial" model="@Model" />
+
+    </div>
+
+    <div class="col-4 float-md-left mt-5">
+
+        <div class="row justify-content-center">
+
+            <div id="989beb3ca417c470c546f29c4cf51204" class="ww-informers-box-854753">
+                <p class="ww-informers-box-854754">
+                    <a href="https://world-weather.info/">world-weather.info</a>
+                    <br>
+                    <a href="https://world-weather.info/forecast/usa/portland_2/">https://world-weather.info/forecast/usa/portland_2/</a>
+                </p>
+            </div>
+
+            <style></style>
+
+        </div>
+
+        <div class="row justify-content-center">
+
+            <div class="card m-2" style="width: 18rem;">
+                <img class="card-img-top" src="..." alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row justify-content-center">
+
+            <div class="card m-2" style="width: 18rem;">
+                <img class="card-img-top" src="..." alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+
+        </div>
+
     </div>
 
 </div>
 
 <hr />
 
-<partial name="_PagingPartial" model="@Model" />
+<script async type="text/javascript" charset="utf-8" src="https://world-weather.info/wwinformer.php?userid=989beb3ca417c470c546f29c4cf51204"></script>

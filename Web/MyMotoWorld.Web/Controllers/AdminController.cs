@@ -1,23 +1,19 @@
 ﻿namespace MyMotoWorld.Web.Controllers
 {
-    using System;
-    using System.Collections.Generic;
     using System.IO;
-    using System.Linq;
     using System.Threading.Tasks;
 
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Mvc;
-    using Microsoft.EntityFrameworkCore.Metadata.Internal;
     using MyMotoWorld.Common;
-    using MyMotoWorld.Models;
     using MyMotoWorld.Services.Data;
     using MyMotoWorld.Services.Data.News;
     using MyMotoWorld.Web.ViewModels.Admins;
     using MyMotoWorld.Web.ViewModels.MotorBike;
     using MyMotoWorld.Web.ViewModels.News;
 
+    [Authorize(Roles = "Master")]
     public class AdminController : Controller
     {
         private readonly IMotorBikesService motorBikesService;
@@ -31,20 +27,17 @@
             this.newsService = newsService;
         }
 
-        [Authorize]
         public IActionResult Index()
         {
             return this.View();
         }
 
-        [Authorize]
         public IActionResult AddBike()
         {
             return this.View();
         }
 
         [HttpPost]
-        [Authorize]
         public async Task<IActionResult> AddBike(AddMotorBikeInputModel input)
         {
             if (!this.ModelState.IsValid)
@@ -65,14 +58,12 @@
             return this.RedirectToAction(nameof(this.Success));
         }
 
-        [Authorize]
         public IActionResult AddNews()
         {
             return this.View();
         }
 
         [HttpPost]
-        [Authorize]
         public async Task<IActionResult> AddNews(AddNewsInputModel input)
         {
             if (!this.ModelState.IsValid)
@@ -93,7 +84,6 @@
             return this.RedirectToAction(nameof(this.Success));
         }
 
-        [Authorize]
         public IActionResult Success()
         {
             return this.View();

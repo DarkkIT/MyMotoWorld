@@ -58,5 +58,10 @@
 
             return this.RedirectToAction(nameof(this.Details), new { id = id });
         }
+
+        public IActionResult Chat()
+        {
+            return this.View();
+        }
     }
 }

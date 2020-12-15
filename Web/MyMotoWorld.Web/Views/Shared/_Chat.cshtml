@@ -1,0 +1,72 @@
+﻿@{
+    this.ViewData["Title"] = "Chat";
+}
+<!DOCTYPE html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="~/css/chatcss.css" rel="stylesheet" asp-append-version="true" />
+</head>
+
+
+<button class="open-button" onclick="openForm()">Chat</button>
+
+<div class="chat-popup" id="myForm">
+    <div id="message-holder" class="form-container">
+        <h1>Chat</h1>
+
+        <div id="messagesList" style="font-size: 28px;">
+        </div>
+
+        <input id="messageInput" placeholder="Type message.." type="text" required />
+
+
+        <button id="sendButton" class="btn">Send</button>
+        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+    </div>
+    
+</div>
+
+@section Scripts {
+    <script>
+        var connection =
+            new signalR.HubConnectionBuilder()
+                .withUrl("/store/chat")
+                .build();
+
+        connection.on("NewMessage",
+            function (message) {
+                var chatInfo = `<div>[${message.user}] ${escapeHtml(message.text)}</div>`;
+                $("#messagesList").append(chatInfo);
+            });
+
+        $("#sendButton").click(function () {
+            var message = $("#messageInput").val();
+            connection.invoke("Send", message);
+            $("#messageInput").val("");
+        });
+
+        connection.start().catch(function (err) {
+            return console.error(err.toString());
+        });
+
+        function escapeHtml(unsafe) {
+            return unsafe
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+    </script>
+}
+
+<script>
+    function openForm() {
+        document.getElementById("myForm").style.display = "block";
+    }
+
+    function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+    }
+</script>

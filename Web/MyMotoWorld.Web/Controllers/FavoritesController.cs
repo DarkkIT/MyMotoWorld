@@ -1,8 +1,5 @@
 ﻿namespace MyMotoWorld.Web.Controllers
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
     using System.Security.Claims;
     using System.Threading.Tasks;
 
@@ -12,6 +9,7 @@
     using MyMotoWorld.Services.Data;
     using MyMotoWorld.Web.ViewModels.MotorBike;
 
+    [Authorize]
     public class FavoritesController : Controller
     {
         private readonly IMotorBikesService motorBikeService;
@@ -21,7 +19,6 @@
             this.motorBikeService = motorBikeService;
         }
 
-        [Authorize]
         public IActionResult Index(int id = 1)
         {
             var userId = this.User.FindFirst(ClaimTypes.NameIdentifier).Value;
@@ -33,7 +30,6 @@
             return this.View(viewModel);
         }
 
-        [Authorize]
         public async Task<IActionResult> RemoveFavorite(int id)
         {
             var userId = this.User.FindFirst(ClaimTypes.NameIdentifier).Value;

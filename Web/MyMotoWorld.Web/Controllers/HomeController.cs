@@ -1,19 +1,13 @@
 ﻿namespace MyMotoWorld.Web.Controllers
 {
     using System.Diagnostics;
-    using System.Linq;
 
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
-    using MyMotoWorld.Data;
-    using MyMotoWorld.Data.Common.Repositories;
-    using MyMotoWorld.Models;
-    using MyMotoWorld.Services.Data;
     using MyMotoWorld.Services.Data.Home;
     using MyMotoWorld.Services.Data.News;
     using MyMotoWorld.Web.ViewModels;
     using MyMotoWorld.Web.ViewModels.Home;
-    using MyMotoWorld.Web.ViewModels.MotorBike;
     using MyMotoWorld.Web.ViewModels.News;
 
     public class HomeController : BaseController

@@ -3,10 +3,16 @@
 }
 
 #newsdesctiption {
-    height: 290px;
+    height: 240px;
     overflow: hidden;
 }
 
 #newstitle {
     font-family: Ultra, serif;
+}
+
+div.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
 }
