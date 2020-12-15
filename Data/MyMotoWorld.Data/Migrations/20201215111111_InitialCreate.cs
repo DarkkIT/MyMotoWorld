@@ -76,6 +76,30 @@
                 });
 
             migrationBuilder.CreateTable(
+                name: "ContactMassage",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CreatedOn = table.Column<DateTime>(nullable: false),
+                    ModifiedOn = table.Column<DateTime>(nullable: true),
+                    IsDeleted = table.Column<bool>(nullable: false),
+                    DeletedOn = table.Column<DateTime>(nullable: true),
+                    Name = table.Column<string>(maxLength: 75, nullable: false),
+                    Email = table.Column<string>(nullable: false),
+                    Subject = table.Column<string>(maxLength: 200, nullable: false),
+                    Massage = table.Column<string>(maxLength: 5000, nullable: false),
+                    AnswerMassage = table.Column<string>(nullable: true),
+                    Status = table.Column<string>(nullable: false),
+                    SendDate = table.Column<DateTime>(nullable: false),
+                    AnswerDate = table.Column<DateTime>(nullable: true),
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ContactMassage", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "CoolingSystems",
                 columns: table => new
                 {
@@ -310,8 +334,8 @@
                     ModifiedOn = table.Column<DateTime>(nullable: true),
                     IsDeleted = table.Column<bool>(nullable: false),
                     DeletedOn = table.Column<DateTime>(nullable: true),
-                    Name = table.Column<string>(nullable: true),
-                    Description = table.Column<string>(nullable: true),
+                    Name = table.Column<string>(nullable: false),
+                    Description = table.Column<string>(nullable: false),
                     NewsDate = table.Column<DateTime>(nullable: false),
                     ImageName = table.Column<string>(nullable: true),
                     ApplicationUserId = table.Column<string>(nullable: true),
@@ -322,6 +346,36 @@
                     table.ForeignKey(
                         name: "FK_News_AspNetUsers_ApplicationUserId",
                         column: x => x.ApplicationUserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "UserMassage",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CreatedOn = table.Column<DateTime>(nullable: false),
+                    ModifiedOn = table.Column<DateTime>(nullable: true),
+                    IsDeleted = table.Column<bool>(nullable: false),
+                    DeletedOn = table.Column<DateTime>(nullable: true),
+                    ContactMassageId = table.Column<int>(nullable: false),
+                    UserId = table.Column<string>(nullable: true),
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UserMassage", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_UserMassage_ContactMassage_ContactMassageId",
+                        column: x => x.ContactMassageId,
+                        principalTable: "ContactMassage",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_UserMassage_AspNetUsers_UserId",
+                        column: x => x.UserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
@@ -393,8 +447,8 @@
                     ModifiedOn = table.Column<DateTime>(nullable: true),
                     IsDeleted = table.Column<bool>(nullable: false),
                     DeletedOn = table.Column<DateTime>(nullable: true),
-                    Name = table.Column<string>(nullable: true),
-                    Model = table.Column<string>(nullable: true),
+                    Name = table.Column<string>(maxLength: 200, nullable: false),
+                    Model = table.Column<string>(maxLength: 200, nullable: false),
                     Price = table.Column<decimal>(nullable: false),
                     Liked = table.Column<int>(nullable: false),
                     Weight = table.Column<int>(nullable: false),
@@ -651,6 +705,11 @@
                 column: "IsDeleted");
 
             migrationBuilder.CreateIndex(
+                name: "IX_ContactMassage_IsDeleted",
+                table: "ContactMassage",
+                column: "IsDeleted");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_CoolingSystems_IsDeleted",
                 table: "CoolingSystems",
                 column: "IsDeleted");
@@ -806,6 +865,21 @@
                 column: "IsDeleted");
 
             migrationBuilder.CreateIndex(
+                name: "IX_UserMassage_ContactMassageId",
+                table: "UserMassage",
+                column: "ContactMassageId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UserMassage_IsDeleted",
+                table: "UserMassage",
+                column: "IsDeleted");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UserMassage_UserId",
+                table: "UserMassage",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Votes_MotorBikeId",
                 table: "Votes",
                 column: "MotorBikeId");
@@ -849,6 +923,9 @@
                 name: "Sales");
 
             migrationBuilder.DropTable(
+                name: "UserMassage");
+
+            migrationBuilder.DropTable(
                 name: "Votes");
 
             migrationBuilder.DropTable(
@@ -859,6 +936,9 @@
 
             migrationBuilder.DropTable(
                 name: "Extras");
+
+            migrationBuilder.DropTable(
+                name: "ContactMassage");
 
             migrationBuilder.DropTable(
                 name: "MotorBikes");

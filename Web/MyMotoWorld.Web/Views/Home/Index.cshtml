@@ -6,10 +6,30 @@
 }
 <head>
     <link href="~/css/homecss.css" rel="stylesheet" asp-append-version="true" />
+    <link href="https://fonts.googleapis.com/css2?family=Ultra&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Langar&display=swap" rel="stylesheet">
 </head>
 
 <div id="homebg" class="text-center">
-    <h1 id="welcomelogo" class="display-4 text-light">Welcome to <span>@GlobalConstants.SystemName</span>!</h1>
+    <div class="row" style="padding-left: 240px;">
+        <div>
+            <h1 id="welcomelogo" class="display-4 text-light">Welcome to</h1>
+            <h1 class="display-4 text-light"><span>@GlobalConstants.SystemName</span>!</h1>
+        </div>
+        <div class="mt-5" style="padding-left: 170px; padding-top: 35px;">
+            <img src="/images/logos/gifs/bd04e40639747bc61b2ef71067acb4e9.png" alt="Alternate Text" />
+        </div>
+        <div class="mt-5 text-light text-left" style="padding-left: 170px; padding-top: 115px; font-family: Langar, cursive;">
+            <h3>A PLACE FOR FREE PEOPLE</h3>
+            <h3>A SITE FOR FREE MINDS</h3>
+            <h3>A SHOP FOR HAPPINESS</h3>
+            <h3 style="color: orangered;">JOIN THE MOTO WORLD</h3>
+            <h3 style="color: orangered;">AND FEEL THE FREEDOM</h3>
+            <h3 style="color: orangered;">AS THOUSANDS MORE</h3>
+        </div>
+    </div>
+
 
     <a id="joinWorldButton" class="btn btn-primary" asp-controller="News" asp-action="Index">Join The World</a>
 

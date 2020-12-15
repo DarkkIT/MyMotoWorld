@@ -43,10 +43,18 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Store" asp-action="Index"><i class="fas fa-store"></i>Store</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="About" asp-action="index"><i class="fas fa-list"></i>About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy"><i class="fas fa-book-reader"></i>Privacy</a>
+
+                            <div class="dropdown">
+                                <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-list"></i>About
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="About" asp-action="index"><i class="fas fa-list"></i>About</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy"><i class="fas fa-book-reader"></i>Privacy</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Contacts" asp-action="index"><i class="fas fa-book-reader"></i>Contacts</a>
+                                </div>
+                            </div>
+
                         </li>
                         @if (this.User.Identity.IsAuthenticated)
                         {
@@ -75,7 +83,7 @@
             <div class="row">
 
                 <!-- Grid column -->
-                <div class="col-md-3 mt-5 ml-5">
+                <div class="col-md-3 mt-5 ml-5" style="color: orangered;">
 
                     <!-- Content -->
                     <h5 class="text-uppercase">Stay in touch</h5>

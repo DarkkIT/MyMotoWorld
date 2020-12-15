@@ -7,35 +7,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
+<div class="hide mt-5">
+    <p>MoveDown</p>
+</div>
 
 <h1 class="text-center">Admin Area</h1>
 
-<div class="ml-5 mt-5 mr-5 mb-5">
-    <div class="col-md-2 ml-5">
-        <h5>Manаge MotorBikes</h5>
-        <a class="btn btn-primary mr-5 mt-2 custom" asp-controller="Admin" asp-action="AddBike">Add Bike</a>
-        <a class="btn btn-primary mr-5 mt-2 custom" asp-controller="Admin" asp-action="AllBikes">Edit Bikes</a>
-        <a class="btn btn-danger mr-5 mt-2 custom" asp-controller="Admin" asp-action="AllBikes">Delete Bike</a>
+<div class="m-5">
+    <div class="row ml-5">
+        <div class="col-md-2">
+            <h5>Manаge MotorBikes</h5>
+            <a class="btn btn-primary mr-5 mt-2 custom" asp-controller="Admin" asp-action="AddBike">Add Bike</a>
+            <a class="btn btn-primary mr-5 mt-2 custom" asp-controller="Admin" asp-action="AllBikes">Edit Bikes</a>
+            <a class="btn btn-danger mr-5 mt-2 custom" asp-controller="Admin" asp-action="AllBikes">Delete Bike</a>
+        </div>
+
+        <div class="col-md-2">
+            <h5>Manаge News</h5>
+            <a class="btn btn-primary mr-5 mt-2 custom" asp-controller="Admin" asp-action="AddNews">Add News</a>
+            <a class="btn btn-primary mr-5 mt-2 custom" asp-controller="Admin" asp-action="AllNews">Edit News</a>
+            <a class="btn btn-danger mr-5 mt-2 custom" asp-controller="Admin" asp-action="AllNews">Delete News</a>
+        </div>
 
     </div>
 
     <hr />
 
-    <div class="col-md-2 ml-5 mt-3">
-        <h5>Manаge News</h5>
-        <a class="btn btn-primary mr-5 mt-2 custom" asp-controller="Admin" asp-action="AddNews">Add News</a>
-        <a class="btn btn-primary mr-5 mt-2 custom" asp-controller="Admin" asp-action="AllNews">Edit News</a>
-        <a class="btn btn-danger mr-5 mt-2 custom" asp-controller="Admin" asp-action="AllNews">Delete News</a>
+    <div class="row col-md-10 ml-5 mt-3">
+        <div class="col-md-2 p-0">
+            <h5>Massages</h5>
+            <a class="btn btn-primary mr-5 mt-2 custom" asp-controller="Admin" asp-action="AllMassages">All Massages</a>
+            <a class="btn btn-primary mr-5 mt-2 custom" asp-controller="Admin" asp-action="EditMassages">Edit Massage</a>
+            <a class="btn btn-danger mr-5 mt-2 custom" asp-controller="Admin" asp-action="DeleteMassages">Delete Massage</a>
+        </div>
 
+        <div class="card text-center col-md-2 mr-5 ml-5">
+
+            <h4>New Massages</h4>
+            <p>"Model.IsAnyNewMassages"</p>
+            <p>"NewMasage Or <br /> NoNewMassage"</p>
+
+        </div>
     </div>
 
     <hr />
 
-    <div class="col-md-2 ml-5 mt-3">
-        <h5>Other links</h5>
-        <a class="btn btn-primary mr-5 mt-2 custom" asp-controller="Home" asp-action="Index">Go Home</a>
-        <a class="btn btn-primary mr-5 mt-2 custom" asp-controller="Home" asp-action="Privacy">Go Privacy</a>
-        <a class="btn btn-primary mr-5 mt-2 custom" asp-controller="About" asp-action="Index">Go About</a>
+    <div class="row col-md-2 ml-5 mt-3">
+        <div>
+            <h5>Other links</h5>
+            <a class="btn btn-primary mr-5 mt-2 custom" asp-controller="Home" asp-action="Index">Go Home</a>
+            <a class="btn btn-primary mr-5 mt-2 custom" asp-controller="Home" asp-action="Privacy">Go Privacy</a>
+            <a class="btn btn-primary mr-5 mt-2 custom" asp-controller="About" asp-action="Index">Go About</a>
+        </div>
+        <div>
+
+        </div>
 
     </div>
 

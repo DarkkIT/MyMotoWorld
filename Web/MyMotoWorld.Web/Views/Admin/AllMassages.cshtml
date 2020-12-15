@@ -1,0 +1,58 @@
+﻿@model MyMotoWorld.Web.ViewModels.Massages.ContactMassagesListViewModel;
+
+@{
+    this.ViewData["Title"] = "EditAllMassages";
+}
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<h1 class="text-center">All Massages</h1>
+
+<div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col" style="width: 80px;">Name</th>
+                <th scope="col" style="width: 80px;">Email</th>
+                <th scope="col">Subject</th>
+                <th scope="col" style="width: 200px;">Massage</th>
+                <th scope="col" style="width: 80px;">Send Date</th>
+                <th scope="col">Status</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Answer</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+
+        @foreach (var massage in Model.ContactMassages)
+        {
+            <tbody>
+
+                <tr>
+
+                    <td>@massage.Name</td>
+                    <td>@massage.Email</td>
+                    <td>@massage.Subject</td>
+                    <td>@massage.Massage</td>
+                    <td>@massage.SendDate</td>
+                    <td>@massage.Status</td>
+                    <td>
+                        <a class="btn btn-primary" asp-controller="Admin" asp-action="EditMassage" asp-route-id="@massage.Id">Edit Massege</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-success" asp-controller="Admin" asp-action="Answer" asp-route-id="@massage.Id">Answer Massege</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-danger" asp-controller="Admin" asp-action="Delete" asp-route-id="@massage.Id">Delete Massege</a>
+                    </td>
+
+
+                </tr>
+
+            </tbody>
+        }
+    </table>
+</div>

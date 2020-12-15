@@ -17,6 +17,7 @@
     using MyMotoWorld.Data.Repositories;
     using MyMotoWorld.Data.Seeding;
     using MyMotoWorld.Services.Data;
+    using MyMotoWorld.Services.Data.Contacts;
     using MyMotoWorld.Services.Data.Favorite;
     using MyMotoWorld.Services.Data.Home;
     using MyMotoWorld.Services.Data.News;
@@ -80,6 +81,7 @@
             services.AddTransient<INewsService, NewsService>();
             services.AddTransient<IVotesService, VotesService>();
             services.AddTransient<IFavoriteService, FavoriteService>();
+            services.AddTransient<IContactsService, ContactsService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -8,8 +8,10 @@
     using Microsoft.AspNetCore.Mvc;
     using MyMotoWorld.Common;
     using MyMotoWorld.Services.Data;
+    using MyMotoWorld.Services.Data.Contacts;
     using MyMotoWorld.Services.Data.News;
     using MyMotoWorld.Web.ViewModels.Admins;
+    using MyMotoWorld.Web.ViewModels.Massages;
     using MyMotoWorld.Web.ViewModels.MotorBike;
     using MyMotoWorld.Web.ViewModels.News;
 
@@ -18,13 +20,15 @@
     {
         private readonly IMotorBikesService motorBikesService;
         private readonly INewsService newsService;
+        private readonly IContactsService contactsService;
         private readonly IWebHostEnvironment webHostEnvironment;
 
-        public AdminController(IWebHostEnvironment webHostEnvironment, IMotorBikesService motorBikesService, INewsService newsService)
+        public AdminController(IWebHostEnvironment webHostEnvironment, IMotorBikesService motorBikesService, INewsService newsService, IContactsService contactsService)
         {
             this.webHostEnvironment = webHostEnvironment;
             this.motorBikesService = motorBikesService;
             this.newsService = newsService;
+            this.contactsService = contactsService;
         }
 
         public IActionResult Index()
@@ -171,6 +175,14 @@
             await this.newsService.UnDeleteNews(id);
 
             return this.RedirectToAction(nameof(this.AllNews));
+        }
+
+        public IActionResult AllMassages()
+        {
+            var contactMassages = this.contactsService.GetAllContactMassages<ContactMassagesViewModel>(1, 1000);
+            var viewModel = new ContactMassagesListViewModel { ContactMassages = contactMassages, PageNumber = 1, MotorBikeCount = this.contactsService.GetCount(), ItemsPerPage = GlobalConstants.ItemsPerPage };
+
+            return this.View(viewModel);
         }
     }
 }

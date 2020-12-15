@@ -20,6 +20,7 @@ namespace MyMotoWorld.Data.Models
             this.Votes = new HashSet<Vote>();
             this.FavoriteBikes = new HashSet<FavoriteBikes>();
             this.FavoriteNews = new HashSet<FavoriteNews>();
+            this.UserMassages = new HashSet<UserMassage>();
         }
 
         public decimal TotalSpent { get; set; }
@@ -49,5 +50,7 @@ namespace MyMotoWorld.Data.Models
         public virtual ICollection<FavoriteBikes> FavoriteBikes { get; set; }
 
         public virtual ICollection<FavoriteNews> FavoriteNews { get; set; }
+
+        public virtual ICollection<UserMassage> UserMassages { get; set; }
     }
 }

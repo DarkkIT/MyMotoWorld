@@ -1,4 +1,5 @@
-﻿@{
+﻿@model MyMotoWorld.Web.ViewModels.Massages.NewMassageInputModel;
+@{
     this.ViewData["Title"] = "Contacts";
 }
 
@@ -25,21 +26,25 @@
         <div class="row col-md-12">
 
             <div class="col-md-5 mb-md-0 mb-5 ml-5">
-                <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+                <form id="contact-form"  method="post">
+
+                    <div asp-validation-summary="ModelOnly" class="text-danger col-md-12"></div>
 
                     <div class="row">
 
                         <div class="col-md-6">
                             <div class="md-form mb-0">
-                                <input type="text" id="name" name="name" class="form-control">
-                                <label for="name" class="">Your name</label>
+                                <input type="text" id="name" asp-for="Name" class="form-control">
+                                <label asp-for="Name">Your name</label>
+                                <span asp-validation-for="Name" class="text-danger"></span>
                             </div>
                         </div>
 
                         <div class="col-md-6">
                             <div class="md-form mb-0">
-                                <input type="text" id="email" name="email" class="form-control">
-                                <label for="email" class="">Your email</label>
+                                <input type="text" id="email" asp-for="Email" class="form-control">
+                                <label asp-for="Email">Your email</label>
+                                <span asp-validation-for="Email" class="text-danger"></span>
                             </div>
                         </div>
 
@@ -48,8 +53,9 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="md-form mb-0">
-                                <input type="text" id="subject" name="subject" class="form-control">
+                                <input type="text" id="subject" asp-for="Subject" class="form-control">
                                 <label for="subject" class="">Subject</label>
+                                <span asp-validation-for="Subject" class="text-danger"></span>
                             </div>
                         </div>
                     </div>
@@ -59,23 +65,23 @@
                         <div class="col-md-12">
 
                             <div class="md-form">
-                                <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
-                                <label for="message">Your message</label>
+                                <textarea type="text" id="message" asp-for="Massage" rows="2" class="form-control md-textarea"></textarea>
+                                <label asp-for="Massage">Your message</label>
+                                <span asp-validation-for="Massage" class="text-danger"></span>
                             </div>
 
                         </div>
                     </div>
 
-                </form>
+                    <div class="text-center text-md-center">
+                        <input class="btn btn-primary" type="submit" asp-controller="Contacts" asp-action="NewMassage" value="Send Massage"/>
+                    </div>
 
-                <div class="text-center text-md-center">
-                    <a class="btn btn-primary" asp-controller="Contacts" asp-action="NewMassage">Send Massage</a>
-                </div>
-                <div class="status"></div>
+                </form>               
 
             </div>
 
-            <div class="col-md-4 mb-5">
+            <div class="col-md-3 mb-5">
                 <img src="~/images/logos/suzukisketch.jpg" alt="SuzukiSketch" style="max-width: 450px;" />
             </div>
 
@@ -96,6 +102,10 @@
                         <p>mymotoworld@yahoo.com</p>
                     </li>
                 </ul>
+            </div>
+
+            <div class="col-md-1 mt-4">
+                <img src="/images/logos/logocontacts.png" alt="Alternate Text" />
             </div>
 
         </div>
