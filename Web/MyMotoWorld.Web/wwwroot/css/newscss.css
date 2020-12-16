@@ -1,4 +1,4 @@
-﻿#news :hover {
+﻿#cardnews :hover {
     transform: scale(1.01);
 }
 
@@ -9,10 +9,25 @@
 
 #newstitle {
     font-family: Ultra, serif;
+    
 }
 
-div.sticky {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
+
+#cardnews {
+    height: 530px;
+    overflow: hidden;
+    
 }
+
+* {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+    *:before,
+    *:after {
+        -webkit-box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        box-sizing: content-box;
+    }

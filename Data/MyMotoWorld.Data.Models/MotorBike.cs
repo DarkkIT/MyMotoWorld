@@ -16,6 +16,7 @@
             this.Images = new HashSet<Image>();
             this.Votes = new HashSet<Vote>();
             this.FavoriteBikes = new HashSet<FavoriteBikes>();
+            this.Carts = new HashSet<Cart>();
         }
 
         [Required]
@@ -33,6 +34,8 @@
 
         [Required]
         public int Weight { get; set; }
+
+        public int Quantity { get; set; }
 
         [Required]
         public int Length { get; set; }
@@ -84,5 +87,7 @@
         public virtual ICollection<Vote> Votes { get; set; }
 
         public virtual ICollection<FavoriteBikes> FavoriteBikes { get; set; }
+
+        public virtual ICollection<Cart> Carts { get; set; }
     }
 }

@@ -13,7 +13,7 @@
         {
             await this.Clients.All.SendAsync(
                 "NewMassage",
-                new Massage { User = this.Context.User.Identity.Name, Text = massage });
+                new Message { User = this.Context.User.Identity.Name, Text = massage });
         }
     }
 }

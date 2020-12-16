@@ -1,0 +1,128 @@
+﻿@model MyMotoWorld.Web.ViewModels.Cart.CombinedCartViewModel;
+
+@{
+    this.ViewData["Title"] = "Cart";
+}
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Ultra&display=swap" rel="stylesheet">
+</head>
+
+<div class="mt-5">
+    <p class="text-hide mt-5">MoveDown</p>
+</div>
+
+<h1 class="text-center" style="font-family: Ultra">Products</h1>
+
+<div class="container">
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col" class="font-italic">Image</th>
+                <th scope="col" class="font-italic">Name</th>
+                <th scope="col" class="font-italic">Quantity</th>
+                <th scope="col" class="font-italic">PricePerUnit</th>
+                <th scope="col" class="font-italic">Price</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+
+        @foreach (var bike in Model.MotorBikes.MotorBikes)
+        {
+            <tbody>
+
+                <tr>
+                    <td><img src="@bike.MainImagePath" style="max-height: 60px;" alt="image" /></td>
+                    <td class="font-weight-bold">@bike.Name @bike.Model</td>
+                    <td class="font-weight-bold">@bike.Quantity</td>
+                    <td class="font-weight-bold">@bike.Price</td>
+                    <td class="font-weight-bold">@(@bike.Price * @bike.Quantity)</td>
+                    <td>
+                        <a class="btn btn-primary" asp-controller="Cart" asp-action="RemoveFromCart" asp-route-id="@bike.Id">Remove</a>
+                    </td>
+
+                </tr>
+
+            </tbody>
+        }
+    </table>
+    <div class="row justify-content-between">
+        <div>
+
+        </div>
+        <div class="row mr-5">
+            <p class="text-black font-weight-bold ml-5 font" style="font-family: Ultra">Total Price / <span style="font-size: 25px;">@Model.MotorBikes.MotorBikes.Sum(x => x.PriceQuantity)<i class="fas fa-euro-sign"></i></span></p>
+        </div>
+    </div>
+
+    <div class="row">
+
+
+        <form class="col-md-6" method="post">
+            <div class="col-md-12 font-weight-bold">
+                <p class="">Address</p>
+            </div>
+
+            <div asp-validation-summary="ModelOnly" class="text-danger col-md-12"></div>
+
+            <div class="col-md-12">
+                <label asp-for="@Model.Input.Country"></label>
+                <input asp-for="@Model.Input.Country" class="form-control" />
+                <span asp-validation-for="@Model.Input.Country" class="text-danger"></span>
+            </div>
+
+            <div class="col-md-12">
+                <label asp-for="@Model.Input.City"></label>
+                <input asp-for="@Model.Input.City" class="form-control" />
+                <span asp-validation-for="@Model.Input.City" class="text-danger"></span>
+            </div>
+
+            <div class="col-md-12">
+                <label asp-for="@Model.Input.Street"></label>
+                <input asp-for="@Model.Input.Street" class="form-control" />
+                <span asp-validation-for="@Model.Input.Street" class="text-danger"></span>
+            </div>
+
+            <div class="col-md-12">
+                <label asp-for="@Model.Input.Number"></label>
+                <input asp-for="@Model.Input.Number" class="form-control" />
+                <span asp-validation-for="@Model.Input.Number" class="text-danger"></span>
+            </div>
+
+        </form>
+
+        <div class="col-md-6">
+            <div class="font-weight-bold">
+                <p class="">Credit Card Info</p>
+            </div>
+
+            <label>Credit Card Number</label>
+            <input class="form-control" />
+
+            <label>Expiry Date</label>
+            <input class="form-control" />
+
+            <label>CVC</label>
+            <input class="form-control" />
+
+            <div class="row justify-content-between">
+                <p class="ml-3">Check the card</p>
+                <p class="mr-3">Finalizing the order</p>
+            </div>
+            <div class=" row justify-content-between">
+                <button id="btnfacility" class="btn btn-primary ml-3" style="width: 110px;" value="Check Card">Check Card</button>
+                <a class="btn btn-primary mr-3" asp-controller="Cart" asp-action="NextStep" value="Send Order">Send Order</a>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+    $("#btnfacility").click(function () {
+        $(this).css({ "background-color": "green !important" });
+    });
+</script>

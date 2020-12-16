@@ -12,15 +12,18 @@
 </head>
 
 <div id="homebg" class="text-center">
-    <div class="row" style="padding-left: 240px;">
-        <div>
+    <div class="row justify-content-between mt-5">
+        <div class="text-hide col-md-1">
+            <p>MoveLeft</p>
+        </div>
+        <div class="col-md-3">
             <h1 id="welcomelogo" class="display-4 text-light">Welcome to</h1>
             <h1 class="display-4 text-light"><span>@GlobalConstants.SystemName</span>!</h1>
         </div>
-        <div class="mt-5" style="padding-left: 170px; padding-top: 35px;">
+        <div id="welcomelogo2" class="col-md-4">
             <img src="/images/logos/gifs/bd04e40639747bc61b2ef71067acb4e9.png" alt="Alternate Text" />
         </div>
-        <div class="mt-5 text-light text-left" style="padding-left: 170px; padding-top: 115px; font-family: Langar, cursive;">
+        <div id="welcomelogo3" class="text-light text-left col-md-4" font-family: Langar, cursive;">
             <h3>A PLACE FOR FREE PEOPLE</h3>
             <h3>A SITE FOR FREE MINDS</h3>
             <h3>A SHOP FOR HAPPINESS</h3>
@@ -28,12 +31,15 @@
             <h3 style="color: orangered;">AND FEEL THE FREEDOM</h3>
             <h3 style="color: orangered;">AS THOUSANDS MORE</h3>
         </div>
+        <div class="text-hide col-md-1">
+            <p>MoveRight</p>
+        </div>
     </div>
 
 
     <a id="joinWorldButton" class="btn btn-primary" asp-controller="News" asp-action="Index">Join The World</a>
 
-    <p class="text-light">Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <p class="text-light">Learn about <a href="https://www.suzuki.com">the official site of suzuki</a>.</p>
 </div>
 
 <div class="position-absolute">
@@ -64,16 +70,20 @@
 </div>
 
 <div class="row justify-content-md-center">
+    <div class="row justify-content-center">
 
-    <div class="col-md-2 menu ml-5 m-3 mt-5">
-        <ul class="list-grupe display-6 font-weight-bold">
-            <li>@Model.BikeInfo.MotorBikeCount - Bikes</li>
-            <li>@Model.BikeInfo.BikeTypeCount - BikeTypes</li>
-            <li>@Model.BikeInfo.EngineCount - Engines</li>
-            <li>@Model.BikeInfo.ExtrasCount - Extras</li>
-            <li>@Model.BikeInfo.MostLikedBike - MostLikedBike</li>
-            <li>@Model.BikeInfo.MostLikedType - MostLikedType</li>
-        </ul>
+        <div class="col-md-4 mt-4">
+            <img src="/images/logos/4be45629208324379f193c4044bcc62a.jpg" alt="Alternate Text" style="width: 300px;" />
+        </div>
+
+        <div id="bikesinfo" class="col-md-6 ml-5 m-3 mt-4" style="font-family: Ultra;">
+            <p id="bikesinfo" class="row justify-content-end">MostLikedBike - <span style="font-size: larger; ">@Model.BikeInfo.MostLikedBike</span></p>
+            <p id="bikesinfo" class="row justify-content-end mr-3">BikeTypes -<span style="font-size: larger; "> @Model.BikeInfo.BikeTypeCount</span></p>
+            <p id="bikesinfo" class="row justify-content-end mr-4">Engines - <span style="font-size: larger; ">@Model.BikeInfo.EngineCount</span></p>
+            <p id="bikesinfo" class="row justify-content-end mr-4">Extras - <span style="font-size: larger; ">@Model.BikeInfo.ExtrasCount</span></p>
+            <p id="bikesinfo" class="row justify-content-end mr-3">MotorBikes - <span style="font-size: larger; ">@Model.BikeInfo.MotorBikeCount</span></p>
+            <p id="bikesinfo" class="row justify-content-end">MostLikedType - <span style="font-size: larger; ">@Model.BikeInfo.MostLikedType</span></p>
+        </div>
     </div>
 
     <div class="mt-5">

@@ -1,4 +1,4 @@
-﻿@model MyMotoWorld.Web.ViewModels.Massages.ContactMassagesListViewModel;
+﻿@model MyMotoWorld.Web.ViewModels.Massages.ContactMessagesListViewModel;
 
 @{
     this.ViewData["Title"] = "EditAllMassages";
@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<h1 class="text-center">All Massages</h1>
+<h1 class="text-center">All Messages</h1>
 
 <div>
 
@@ -18,7 +18,7 @@
                 <th scope="col" style="width: 80px;">Name</th>
                 <th scope="col" style="width: 80px;">Email</th>
                 <th scope="col">Subject</th>
-                <th scope="col" style="width: 200px;">Massage</th>
+                <th scope="col" style="width: 200px;">Message</th>
                 <th scope="col" style="width: 80px;">Send Date</th>
                 <th scope="col">Status</th>
                 <th scope="col">Edit</th>
@@ -27,26 +27,26 @@
             </tr>
         </thead>
 
-        @foreach (var massage in Model.ContactMassages)
+        @foreach (var message in Model.ContactMessages)
         {
             <tbody>
 
                 <tr>
 
-                    <td>@massage.Name</td>
-                    <td>@massage.Email</td>
-                    <td>@massage.Subject</td>
-                    <td>@massage.Massage</td>
-                    <td>@massage.SendDate</td>
-                    <td>@massage.Status</td>
+                    <td>@message.Name</td>
+                    <td>@message.Email</td>
+                    <td>@message.Subject</td>
+                    <td>@message.Message</td>
+                    <td>@message.SendDate</td>
+                    <td>@message.Status</td>
                     <td>
-                        <a class="btn btn-primary" asp-controller="Admin" asp-action="EditMassage" asp-route-id="@massage.Id">Edit Massege</a>
+                        <a class="btn btn-primary" asp-controller="Admin" asp-action="EditMessage" asp-route-id="@message.Id">Edit Messege</a>
                     </td>
                     <td>
-                        <a class="btn btn-success" asp-controller="Admin" asp-action="Answer" asp-route-id="@massage.Id">Answer Massege</a>
+                        <a class="btn btn-success" asp-controller="Admin" asp-action="Answer" asp-route-id="@message.Id">Answer Messege</a>
                     </td>
                     <td>
-                        <a class="btn btn-danger" asp-controller="Admin" asp-action="Delete" asp-route-id="@massage.Id">Delete Massege</a>
+                        <a class="btn btn-danger" asp-controller="Admin" asp-action="Delete" asp-route-id="@message.Id">Delete Messege</a>
                     </td>
 
 

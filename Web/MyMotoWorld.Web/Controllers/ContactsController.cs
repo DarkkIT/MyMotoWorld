@@ -25,11 +25,11 @@
 
         [Authorize]
         [HttpPost]
-        public async Task<IActionResult> NewMassage(NewMassageInputModel input)
+        public async Task<IActionResult> NewMessage(NewMessageInputModel input)
         {
             var userId = this.User.FindFirst(ClaimTypes.NameIdentifier).Value;
 
-            await this.contactsService.AddMassageAsync(input, userId);
+            await this.contactsService.AddMessageAsync(input, userId);
 
             return this.RedirectToAction(nameof(this.Index));
         }

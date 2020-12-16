@@ -26,6 +26,14 @@
         {
         }
 
+        public virtual DbSet<ContactMessage> ContactMessages { get; set; }
+
+        public virtual DbSet<UserMessage> UserMessages { get; set; }
+
+        public virtual DbSet<Message> Messages { get; set; }
+
+        public virtual DbSet<Cart> Carts { get; set; }
+
         public virtual DbSet<FavoriteBikes> FavoriteBikes { get; set; }
 
         public virtual DbSet<FavoriteNews> FavoriteNews { get; set; }

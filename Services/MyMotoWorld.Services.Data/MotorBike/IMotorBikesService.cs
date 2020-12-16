@@ -32,5 +32,11 @@
         Task AddBikeToFavorit(int id, string userId);
 
         Task RemoveBikeFromFavorit(int id, string userId);
+
+        Task AddBikeToCart(int id, string userId);
+
+        Task RemoveBikeFromCart(int id, string userId);
+
+        IEnumerable<MotorBikeViewModel> GetAllCartBikes<T>(int page, int itemsPerPage, string userId);
     }
 }

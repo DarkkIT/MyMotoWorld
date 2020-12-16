@@ -9,9 +9,9 @@
 
     public interface IContactsService
     {
-        Task AddMassageAsync(NewMassageInputModel input, string userId);
+        Task AddMessageAsync(NewMessageInputModel input, string userId);
 
-        IEnumerable<ContactMassagesViewModel> GetAllContactMassages<T>(int page, int itemsPerPage);
+        IEnumerable<ContactMessagesViewModel> GetAllContactMessages<T>(int page, int itemsPerPage);
 
         int GetCount();
     }

@@ -3,9 +3,6 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using System.Security.Claims;
-    using System.Security.Cryptography.X509Certificates;
-    using System.Text;
     using System.Threading.Tasks;
 
     using MyMotoWorld.Data.Common.Repositories;
@@ -28,6 +25,8 @@
         private readonly IDeletableEntityRepository<Engine> engineRepositiry;
         private readonly IDeletableEntityRepository<CoolingSystem> coolingSystemRepository;
         private readonly IRepository<FavoriteBikes> favoriteBikesRepository;
+        private readonly IDeletableEntityRepository<Cart> cardRepository;
+        private readonly IDeletableEntityRepository<ApplicationUser> userRepository;
 
         public MotorBikesService(
             IDeletableEntityRepository<MotorBike> motorBikeRepository,
@@ -39,7 +38,9 @@
             IDeletableEntityRepository<RearBrake> rearBreakRepository,
             IDeletableEntityRepository<Engine> engineRepositiry,
             IDeletableEntityRepository<CoolingSystem> coolingSystemRepository,
-            IRepository<FavoriteBikes> favoriteBikesRepository)
+            IRepository<FavoriteBikes> favoriteBikesRepository,
+            IDeletableEntityRepository<Cart> cardRepository,
+            IDeletableEntityRepository<ApplicationUser> userRepository)
         {
             this.motorBikeRepository = motorBikeRepository;
             this.bikeTypeRepository = bikeTypeRepository;
@@ -51,6 +52,8 @@
             this.engineRepositiry = engineRepositiry;
             this.coolingSystemRepository = coolingSystemRepository;
             this.favoriteBikesRepository = favoriteBikesRepository;
+            this.cardRepository = cardRepository;
+            this.userRepository = userRepository;
         }
 
         public async Task AddBikeAsync(AddMotorBikeInputModel input)
@@ -211,8 +214,6 @@
         {
             await this.favoriteBikesRepository.AddAsync(new FavoriteBikes { MotorBikeId = id, UserId = userId });
 
-            var bike = this.motorBikeRepository.All().FirstOrDefault(x => x.Id == id);
-
             await this.motorBikeRepository.SaveChangesAsync();
             await this.favoriteBikesRepository.SaveChangesAsync();
         }
@@ -231,6 +232,59 @@
         public IEnumerable<MotorBikeViewModel> GetAllFavoriteBikes<T>(int page, int itemsPerPage, string userId)
         {
             var model = this.motorBikeRepository.All().Where(x => x.FavoriteBikes.Any(x => x.UserId == userId)).Skip((page - 1) * itemsPerPage).Take(itemsPerPage).To<MotorBikeViewModel>().ToList();
+
+            return model;
+        }
+
+        public async Task AddBikeToCart(int id, string userId)
+        {
+            if (this.cardRepository.All().Any(x => x.UserId == userId && x.MotorBikeId == id && x.IsDeleted == false))
+            {
+                var motorBike = this.motorBikeRepository.All().FirstOrDefault(x => x.Id == id);
+
+                motorBike.Quantity += 1;
+            }
+            else
+            {
+                await this.cardRepository.AddAsync(new Cart
+                {
+                    MotorBikeId = id,
+                    UserId = userId,
+                    Address = null,
+                });
+
+                var motorBike = this.motorBikeRepository.All().FirstOrDefault(x => x.Id == id);
+
+                motorBike.Quantity += 1;
+            }
+
+            await this.motorBikeRepository.SaveChangesAsync();
+            await this.cardRepository.SaveChangesAsync();
+        }
+
+        public async Task RemoveBikeFromCart(int id, string userId)
+        {
+            var cardItem = this.cardRepository.AllAsNoTracking().FirstOrDefault(x => x.MotorBikeId == id && x.UserId == userId && x.IsDeleted == false);
+
+            if (this.motorBikeRepository.All().FirstOrDefault(x => x.Id == id).Quantity <= 1)
+            {
+                this.cardRepository.Delete(cardItem);
+                this.motorBikeRepository.All().FirstOrDefault(x => x.Id == id).Quantity = 0;
+            }
+            else
+            {
+                this.motorBikeRepository.All().FirstOrDefault(x => x.Id == id).Quantity -= 1;
+            }
+
+            await this.motorBikeRepository.SaveChangesAsync();
+            await this.cardRepository.SaveChangesAsync();
+        }
+
+        public IEnumerable<MotorBikeViewModel> GetAllCartBikes<T>(int page, int itemsPerPage, string userId)
+        {
+            var model = this.motorBikeRepository.All()
+                .Where(x => x.Carts.Any(x => x.UserId == userId && x.IsDeleted == false))
+                .To<MotorBikeViewModel>().ToList();
 
             return model;
         }

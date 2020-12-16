@@ -59,9 +59,14 @@
             return this.RedirectToAction(nameof(this.Details), new { id = id });
         }
 
-        public IActionResult Chat()
+        [Authorize]
+        public async Task<IActionResult> AddToCart(int id)
         {
-            return this.View();
+            var userId = this.User.FindFirst(ClaimTypes.NameIdentifier).Value;
+
+            await this.motorBikeService.AddBikeToCart(id, userId);
+
+            return this.RedirectToAction(nameof(this.Details), new { id = id });
         }
     }
 }

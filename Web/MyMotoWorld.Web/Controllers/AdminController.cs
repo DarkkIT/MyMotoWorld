@@ -177,10 +177,10 @@
             return this.RedirectToAction(nameof(this.AllNews));
         }
 
-        public IActionResult AllMassages()
+        public IActionResult AllMessages()
         {
-            var contactMassages = this.contactsService.GetAllContactMassages<ContactMassagesViewModel>(1, 1000);
-            var viewModel = new ContactMassagesListViewModel { ContactMassages = contactMassages, PageNumber = 1, MotorBikeCount = this.contactsService.GetCount(), ItemsPerPage = GlobalConstants.ItemsPerPage };
+            var contactMessages = this.contactsService.GetAllContactMessages<ContactMessagesViewModel>(1, 1000);
+            var viewModel = new ContactMessagesListViewModel { ContactMessages = contactMessages, PageNumber = 1, MotorBikeCount = this.contactsService.GetCount(), ItemsPerPage = GlobalConstants.ItemsPerPage };
 
             return this.View(viewModel);
         }
