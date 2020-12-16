@@ -4,7 +4,7 @@
 
     using Microsoft.EntityFrameworkCore.Migrations;
 
-    public partial class InitialCreate : Migration
+    public partial class InitialCreat : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -76,7 +76,7 @@
                 });
 
             migrationBuilder.CreateTable(
-                name: "ContactMassage",
+                name: "ContactMessages",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -88,7 +88,7 @@
                     Name = table.Column<string>(maxLength: 75, nullable: false),
                     Email = table.Column<string>(nullable: false),
                     Subject = table.Column<string>(maxLength: 200, nullable: false),
-                    Massage = table.Column<string>(maxLength: 5000, nullable: false),
+                    Message = table.Column<string>(maxLength: 5000, nullable: false),
                     AnswerMassage = table.Column<string>(nullable: true),
                     Status = table.Column<string>(nullable: false),
                     SendDate = table.Column<DateTime>(nullable: false),
@@ -96,7 +96,7 @@
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ContactMassage", x => x.Id);
+                    table.PrimaryKey("PK_ContactMessages", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -165,6 +165,22 @@
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_FrontSuspensions", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Messages",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CreatedOn = table.Column<DateTime>(nullable: false),
+                    ModifiedOn = table.Column<DateTime>(nullable: true),
+                    User = table.Column<string>(nullable: true),
+                    Text = table.Column<string>(nullable: true),
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Messages", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -352,7 +368,7 @@
                 });
 
             migrationBuilder.CreateTable(
-                name: "UserMassage",
+                name: "UserMessages",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -366,15 +382,15 @@
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_UserMassage", x => x.Id);
+                    table.PrimaryKey("PK_UserMessages", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_UserMassage_ContactMassage_ContactMassageId",
+                        name: "FK_UserMessages_ContactMessages_ContactMassageId",
                         column: x => x.ContactMassageId,
-                        principalTable: "ContactMassage",
+                        principalTable: "ContactMessages",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_UserMassage_AspNetUsers_UserId",
+                        name: "FK_UserMessages_AspNetUsers_UserId",
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
@@ -452,6 +468,7 @@
                     Price = table.Column<decimal>(nullable: false),
                     Liked = table.Column<int>(nullable: false),
                     Weight = table.Column<int>(nullable: false),
+                    Quantity = table.Column<int>(nullable: false),
                     Length = table.Column<int>(nullable: false),
                     Height = table.Column<int>(nullable: false),
                     SeatHeight = table.Column<int>(nullable: false),
@@ -508,6 +525,41 @@
                         name: "FK_MotorBikes_Transmissions_TransmissionId",
                         column: x => x.TransmissionId,
                         principalTable: "Transmissions",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Carts",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CreatedOn = table.Column<DateTime>(nullable: false),
+                    ModifiedOn = table.Column<DateTime>(nullable: true),
+                    IsDeleted = table.Column<bool>(nullable: false),
+                    DeletedOn = table.Column<DateTime>(nullable: true),
+                    MotorBikeId = table.Column<int>(nullable: false),
+                    UserId = table.Column<string>(nullable: true),
+                    Price = table.Column<decimal>(nullable: false),
+                    Quantity = table.Column<int>(nullable: false),
+                    DeliveryPrice = table.Column<decimal>(nullable: false),
+                    FullPrice = table.Column<decimal>(nullable: false),
+                    Address = table.Column<string>(nullable: true),
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Carts", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Carts_MotorBikes_MotorBikeId",
+                        column: x => x.MotorBikeId,
+                        principalTable: "MotorBikes",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Carts_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -705,8 +757,23 @@
                 column: "IsDeleted");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ContactMassage_IsDeleted",
-                table: "ContactMassage",
+                name: "IX_Carts_IsDeleted",
+                table: "Carts",
+                column: "IsDeleted");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Carts_MotorBikeId",
+                table: "Carts",
+                column: "MotorBikeId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Carts_UserId",
+                table: "Carts",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ContactMessages_IsDeleted",
+                table: "ContactMessages",
                 column: "IsDeleted");
 
             migrationBuilder.CreateIndex(
@@ -865,18 +932,18 @@
                 column: "IsDeleted");
 
             migrationBuilder.CreateIndex(
-                name: "IX_UserMassage_ContactMassageId",
-                table: "UserMassage",
+                name: "IX_UserMessages_ContactMassageId",
+                table: "UserMessages",
                 column: "ContactMassageId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_UserMassage_IsDeleted",
-                table: "UserMassage",
+                name: "IX_UserMessages_IsDeleted",
+                table: "UserMessages",
                 column: "IsDeleted");
 
             migrationBuilder.CreateIndex(
-                name: "IX_UserMassage_UserId",
-                table: "UserMassage",
+                name: "IX_UserMessages_UserId",
+                table: "UserMessages",
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
@@ -908,6 +975,9 @@
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
+                name: "Carts");
+
+            migrationBuilder.DropTable(
                 name: "FavoriteBikes");
 
             migrationBuilder.DropTable(
@@ -917,13 +987,16 @@
                 name: "Images");
 
             migrationBuilder.DropTable(
+                name: "Messages");
+
+            migrationBuilder.DropTable(
                 name: "MotorBikeExtras");
 
             migrationBuilder.DropTable(
                 name: "Sales");
 
             migrationBuilder.DropTable(
-                name: "UserMassage");
+                name: "UserMessages");
 
             migrationBuilder.DropTable(
                 name: "Votes");
@@ -938,7 +1011,7 @@
                 name: "Extras");
 
             migrationBuilder.DropTable(
-                name: "ContactMassage");
+                name: "ContactMessages");
 
             migrationBuilder.DropTable(
                 name: "MotorBikes");

@@ -5,7 +5,6 @@ D:\VisualStudio\MyMotoWorld\Tests\MyMotoWorld.Web.Tests\bin\Debug\netcoreapp3.1\
 D:\VisualStudio\MyMotoWorld\Tests\MyMotoWorld.Web.Tests\bin\Debug\netcoreapp3.1\appsettings.json
 D:\VisualStudio\MyMotoWorld\Tests\MyMotoWorld.Web.Tests\bin\Debug\netcoreapp3.1\bundleconfig.json
 D:\VisualStudio\MyMotoWorld\Tests\MyMotoWorld.Web.Tests\bin\Debug\netcoreapp3.1\libman.json
-D:\VisualStudio\MyMotoWorld\Tests\MyMotoWorld.Web.Tests\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 D:\VisualStudio\MyMotoWorld\Tests\MyMotoWorld.Web.Tests\bin\Debug\netcoreapp3.1\MyMotoWorld.Web.StaticWebAssets.xml
 D:\VisualStudio\MyMotoWorld\Tests\MyMotoWorld.Web.Tests\bin\Debug\netcoreapp3.1\MyMotoWorld.Web.exe
 D:\VisualStudio\MyMotoWorld\Tests\MyMotoWorld.Web.Tests\bin\Debug\netcoreapp3.1\testhost.exe
@@ -527,3 +526,4 @@ D:\VisualStudio\MyMotoWorld\Tests\MyMotoWorld.Web.Tests\obj\Debug\netcoreapp3.1\
 D:\VisualStudio\MyMotoWorld\Tests\MyMotoWorld.Web.Tests\obj\Debug\netcoreapp3.1\MyMotoWorld.Web.Tests.genruntimeconfig.cache
 D:\VisualStudio\MyMotoWorld\Tests\MyMotoWorld.Web.Tests\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Features.dll
 D:\VisualStudio\MyMotoWorld\Tests\MyMotoWorld.Web.Tests\bin\Debug\netcoreapp3.1\System.Net.WebSockets.WebSocketProtocol.dll
+D:\VisualStudio\MyMotoWorld\Tests\MyMotoWorld.Web.Tests\obj\Debug\netcoreapp3.1\scopedcss\bundle\MyMotoWorld.Web.Tests.styles.css

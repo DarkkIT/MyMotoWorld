@@ -15,7 +15,7 @@ namespace MyMotoWorld.Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.9")
+                .HasAnnotation("ProductVersion", "3.1.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -246,7 +246,58 @@ namespace MyMotoWorld.Data.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("MyMotoWorld.Data.Models.ContactMassage", b =>
+            modelBuilder.Entity("MyMotoWorld.Data.Models.Cart", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<decimal>("DeliveryPrice")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("FullPrice")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("MotorBikeId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IsDeleted");
+
+                    b.HasIndex("MotorBikeId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Carts");
+                });
+
+            modelBuilder.Entity("MyMotoWorld.Data.Models.ContactMessage", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -272,7 +323,7 @@ namespace MyMotoWorld.Data.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<string>("Massage")
+                    b.Property<string>("Message")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasMaxLength(5000);
@@ -301,7 +352,7 @@ namespace MyMotoWorld.Data.Migrations
 
                     b.HasIndex("IsDeleted");
 
-                    b.ToTable("ContactMassage");
+                    b.ToTable("ContactMessages");
                 });
 
             modelBuilder.Entity("MyMotoWorld.Data.Models.FavoriteBikes", b =>
@@ -402,6 +453,30 @@ namespace MyMotoWorld.Data.Migrations
                     b.ToTable("Images");
                 });
 
+            modelBuilder.Entity("MyMotoWorld.Data.Models.Message", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Text")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("User")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Messages");
+                });
+
             modelBuilder.Entity("MyMotoWorld.Data.Models.News", b =>
                 {
                     b.Property<int>("Id")
@@ -486,7 +561,7 @@ namespace MyMotoWorld.Data.Migrations
                     b.ToTable("Sales");
                 });
 
-            modelBuilder.Entity("MyMotoWorld.Data.Models.UserMassage", b =>
+            modelBuilder.Entity("MyMotoWorld.Data.Models.UserMessage", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -519,7 +594,7 @@ namespace MyMotoWorld.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("UserMassage");
+                    b.ToTable("UserMessages");
                 });
 
             modelBuilder.Entity("MyMotoWorld.Data.Models.Vote", b =>
@@ -680,6 +755,9 @@ namespace MyMotoWorld.Data.Migrations
 
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
 
                     b.Property<int>("RearBrakesId")
                         .HasColumnType("int");
@@ -1018,6 +1096,19 @@ namespace MyMotoWorld.Data.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("MyMotoWorld.Data.Models.Cart", b =>
+                {
+                    b.HasOne("MyMotoWorld.Models.MotorBike", "MotorBike")
+                        .WithMany("Carts")
+                        .HasForeignKey("MotorBikeId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("MyMotoWorld.Data.Models.ApplicationUser", "User")
+                        .WithMany("Carts")
+                        .HasForeignKey("UserId");
+                });
+
             modelBuilder.Entity("MyMotoWorld.Data.Models.FavoriteBikes", b =>
                 {
                     b.HasOne("MyMotoWorld.Models.MotorBike", "MotorBike")
@@ -1073,9 +1164,9 @@ namespace MyMotoWorld.Data.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("MyMotoWorld.Data.Models.UserMassage", b =>
+            modelBuilder.Entity("MyMotoWorld.Data.Models.UserMessage", b =>
                 {
-                    b.HasOne("MyMotoWorld.Data.Models.ContactMassage", "ContactMassage")
+                    b.HasOne("MyMotoWorld.Data.Models.ContactMessage", "ContactMassage")
                         .WithMany("UserMassages")
                         .HasForeignKey("ContactMassageId")
                         .OnDelete(DeleteBehavior.Restrict)
