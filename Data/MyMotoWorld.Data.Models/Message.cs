@@ -2,7 +2,7 @@
 {
     using MyMotoWorld.Data.Common.Models;
 
-    public class Massage : BaseModel<int>
+    public class Message : BaseModel<int>
     {
         public string User { get; set; }
 

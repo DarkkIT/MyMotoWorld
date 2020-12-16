@@ -2,7 +2,6 @@ D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\bin\Debug\netcoreapp3.1\appsetti
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\bin\Debug\netcoreapp3.1\appsettings.json
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\bin\Debug\netcoreapp3.1\bundleconfig.json
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\bin\Debug\netcoreapp3.1\libman.json
-D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\bin\Debug\netcoreapp3.1\MyMotoWorld.Web.StaticWebAssets.xml
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\bin\Debug\netcoreapp3.1\MyMotoWorld.Web.exe
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\bin\Debug\netcoreapp3.1\MyMotoWorld.Web.deps.json
@@ -474,4 +473,7 @@ D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Debug\netcoreapp3.1\Razor\Vi
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Debug\netcoreapp3.1\Razor\Views\Favorites\Index.cshtml.g.cs
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Chat.cshtml.g.cs
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Debug\netcoreapp3.1\Razor\Views\Contacts\Index.cshtml.g.cs
-D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Debug\netcoreapp3.1\Razor\Views\Admin\AllMassages.cshtml.g.cs
+D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Debug\netcoreapp3.1\scopedcss\bundle\MyMotoWorld.Web.styles.css
+D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Debug\netcoreapp3.1\Razor\Views\Admin\AllMessages.cshtml.g.cs
+D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Debug\netcoreapp3.1\Razor\Views\Cart\Index.cshtml.g.cs
+D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Debug\netcoreapp3.1\Razor\Views\Cart\NextStep.cshtml.g.cs

@@ -6,11 +6,11 @@
 
     using MyMotoWorld.Data.Common.Models;
 
-    public class ContactMassage : BaseDeletableModel<int>
+    public class ContactMessage : BaseDeletableModel<int>
     {
-        public ContactMassage()
+        public ContactMessage()
         {
-            this.UserMassages = new HashSet<UserMassage>();
+            this.UserMassages = new HashSet<UserMessage>();
         }
 
         [Required]
@@ -27,7 +27,7 @@
 
         [Required]
         [MaxLength(5000)]
-        public string Massage { get; set; }
+        public string Message { get; set; }
 
         public string AnswerMassage { get; set; }
 
@@ -38,6 +38,6 @@
 
         public DateTime? AnswerDate { get; set; }
 
-        public virtual ICollection<UserMassage> UserMassages { get; set; }
+        public virtual ICollection<UserMessage> UserMassages { get; set; }
     }
 }

@@ -30,18 +30,18 @@
 
         @foreach (var news in Model.NewsList)
         {
-        <a class="text-dark" asp-controller="News" asp-action="NewsDetails" asp-route-id="@news.Id">
-            <div id="cardnews" class="card" style="width: 30rem;">
-                <div id="newsimage" class="thumbnail">
-                    <img class="card-img" src=@news.MainImagePath alt="News">
+            <a class="text-dark" asp-controller="News" asp-action="NewsDetails" asp-route-id="@news.Id">
+                <div id="cardnews" class="card" style="width: 30rem;">
+                    <div id="newsimage" class="thumbnail">
+                        <img class="card-img" src=@news.MainImagePath alt="News">
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">@news.Name</h4>
+                        <p class="card-text text-black-10">@news.Description</p>
+                    </div>
+                    <span class="badge badge-success">News</span>
                 </div>
-                <div class="card-body">
-                    <h4 class="card-title">@news.Name</h4>
-                    <p class="card-text text-black-10">@news.Description</p>
-                </div>
-                <span class="badge badge-success">News</span>
-            </div>
-        </a>
+            </a>
         }
 
     </div>
@@ -146,4 +146,7 @@
     <partial name="_PagingPartial" model="@Model" />
 </div>
 
-<script async type="text/javascript" charset="utf-8" src="https://world-weather.info/wwinformer.php?userid=989beb3ca417c470c546f29c4cf51204"></script>
+@section Scripts{
+
+    <script async type="text/javascript" charset="utf-8" src="https://world-weather.info/wwinformer.php?userid=989beb3ca417c470c546f29c4cf51204"></script>
+}

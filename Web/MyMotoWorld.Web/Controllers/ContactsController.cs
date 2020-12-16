@@ -5,7 +5,6 @@
 
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
-    using MyMotoWorld.Common;
     using MyMotoWorld.Services.Data.Contacts;
     using MyMotoWorld.Web.ViewModels.Massages;
 

@@ -184,5 +184,15 @@
 
             return this.View(viewModel);
         }
+
+        public IActionResult EditMessages()
+        {
+            return this.RedirectToAction(nameof(this.AllMessages));
+        }
+
+        public IActionResult DeleteMessages()
+        {
+            return this.RedirectToAction(nameof(this.AllMessages));
+        }
     }
 }
