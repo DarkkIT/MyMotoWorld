@@ -1,0 +1,33 @@
+﻿#cardnews :hover {
+    transform: scale(1.01);
+}
+
+#newsdesctiption {
+    height: 240px;
+    overflow: hidden;
+}
+
+#newstitle {
+    font-family: Ultra, serif;
+    
+}
+
+
+#cardnews {
+    height: 530px;
+    overflow: hidden;
+    
+}
+
+* {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+    *:before,
+    *:after {
+        -webkit-box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        box-sizing: content-box;
+    }

@@ -1,0 +1,12 @@
+D:\VisualStudio\MyMotoWorld\Data\MyMotoWorld.Data.Models\bin\Release\netstandard2.1\MyMotoWorld.Data.Models.deps.json
+D:\VisualStudio\MyMotoWorld\Data\MyMotoWorld.Data.Models\bin\Release\netstandard2.1\MyMotoWorld.Data.Models.dll
+D:\VisualStudio\MyMotoWorld\Data\MyMotoWorld.Data.Models\bin\Release\netstandard2.1\MyMotoWorld.Data.Models.pdb
+D:\VisualStudio\MyMotoWorld\Data\MyMotoWorld.Data.Models\bin\Release\netstandard2.1\MyMotoWorld.Data.Common.dll
+D:\VisualStudio\MyMotoWorld\Data\MyMotoWorld.Data.Models\bin\Release\netstandard2.1\MyMotoWorld.Data.Common.pdb
+D:\VisualStudio\MyMotoWorld\Data\MyMotoWorld.Data.Models\obj\Release\netstandard2.1\MyMotoWorld.Data.Models.csprojAssemblyReference.cache
+D:\VisualStudio\MyMotoWorld\Data\MyMotoWorld.Data.Models\obj\Release\netstandard2.1\MyMotoWorld.Data.Models.AssemblyInfoInputs.cache
+D:\VisualStudio\MyMotoWorld\Data\MyMotoWorld.Data.Models\obj\Release\netstandard2.1\MyMotoWorld.Data.Models.AssemblyInfo.cs
+D:\VisualStudio\MyMotoWorld\Data\MyMotoWorld.Data.Models\obj\Release\netstandard2.1\MyMotoWorld.Data.Models.csproj.CoreCompileInputs.cache
+D:\VisualStudio\MyMotoWorld\Data\MyMotoWorld.Data.Models\obj\Release\netstandard2.1\MyMotoWorld.Data.Models.csproj.CopyComplete
+D:\VisualStudio\MyMotoWorld\Data\MyMotoWorld.Data.Models\obj\Release\netstandard2.1\MyMotoWorld.Data.Models.dll
+D:\VisualStudio\MyMotoWorld\Data\MyMotoWorld.Data.Models\obj\Release\netstandard2.1\MyMotoWorld.Data.Models.pdb

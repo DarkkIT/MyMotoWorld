@@ -46,51 +46,52 @@
 
 </div>
 
-<div class="row justify-content-md-center">
+<div>
+    <div class="row justify-content-md-center">
 
-    @foreach (var news in Model.NewsInfo.NewsList)
-    {
-        <div id="newsHomeCard" class="card m-3 mt-5 col-md-3">
-            <div class="thumbnail">
-                <img class="card-img" src=@news.MainImagePath alt="news">
+        @foreach (var news in Model.NewsInfo.NewsList)
+        {
+            <div id="newsHomeCard" class="card m-3 mt-5 col-md-3">
+                <div class="thumbnail">
+                    <img class="card-img" src=@news.MainImagePath alt="news">
+                </div>
+                <div class="card-body">
+                    <span class="badge badge-success">News</span>
+                    <h4 class="card-title mt-2">@news.Name</h4>
+                    <p class="card-text">@news.Description</p>
+                </div>
+
+                <div class="card-footer row justify-content-md-end">
+                    <a class="btn btn-success" asp-controller="News" asp-action="NewsDetails" asp-route-id="@news.Id">Read More</a>
+                </div>
+
             </div>
-            <div class="card-body">
-                <span class="badge badge-success">News</span>
-                <h4 class="card-title mt-2">@news.Name</h4>
-                <p class="card-text">@news.Description</p>
-            </div>
+        }
 
-            <div class="card-footer row justify-content-md-end">
-                <a class="btn btn-success" asp-controller="News" asp-action="NewsDetails" asp-route-id="@news.Id">Read More</a>
-            </div>
-
-        </div>
-    }
-
-</div>
-
-<div class="row justify-content-md-center">
-    <div class="row justify-content-center">
-
-        <div class="col-md-4 mt-4">
-            <img src="/images/logos/4be45629208324379f193c4044bcc62a.jpg" alt="Alternate Text" style="width: 300px;" />
-        </div>
-
-        <div id="bikesinfo" class="col-md-6 ml-5 m-3 mt-4" style="font-family: Ultra;">
-            <p id="bikesinfo" class="row justify-content-end">MostLikedBike - <span style="font-size: larger; ">@Model.BikeInfo.MostLikedBike</span></p>
-            <p id="bikesinfo" class="row justify-content-end mr-3">BikeTypes -<span style="font-size: larger; "> @Model.BikeInfo.BikeTypeCount</span></p>
-            <p id="bikesinfo" class="row justify-content-end mr-4">Engines - <span style="font-size: larger; ">@Model.BikeInfo.EngineCount</span></p>
-            <p id="bikesinfo" class="row justify-content-end mr-4">Extras - <span style="font-size: larger; ">@Model.BikeInfo.ExtrasCount</span></p>
-            <p id="bikesinfo" class="row justify-content-end mr-3">MotorBikes - <span style="font-size: larger; ">@Model.BikeInfo.MotorBikeCount</span></p>
-            <p id="bikesinfo" class="row justify-content-end">MostLikedType - <span style="font-size: larger; ">@Model.BikeInfo.MostLikedType</span></p>
-        </div>
     </div>
 
-    <div class="mt-5">
-        <img class="img" src="~/images/commercial/Anything is possible.png" alt="image">
+    <div class="row justify-content-md-center">
+        <div class="row justify-content-center">
+
+            <div class="col-md-4 mt-4">
+                <img src="/images/logos/4be45629208324379f193c4044bcc62a.jpg" alt="Alternate Text" style="width: 300px;" />
+            </div>
+
+            <div id="bikesinfo" class="col-md-6 ml-5 m-3 mt-4" style="font-family: Ultra;">
+                <p id="bikesinfo" class="row justify-content-end">MostLikedBike - <span style="font-size: larger; ">@Model.BikeInfo.MostLikedBike</span></p>
+                <p id="bikesinfo" class="row justify-content-end mr-3">BikeTypes -<span style="font-size: larger; "> @Model.BikeInfo.BikeTypeCount</span></p>
+                <p id="bikesinfo" class="row justify-content-end mr-4">Engines - <span style="font-size: larger; ">@Model.BikeInfo.EngineCount</span></p>
+                <p id="bikesinfo" class="row justify-content-end mr-4">Extras - <span style="font-size: larger; ">@Model.BikeInfo.ExtrasCount</span></p>
+                <p id="bikesinfo" class="row justify-content-end mr-3">MotorBikes - <span style="font-size: larger; ">@Model.BikeInfo.MotorBikeCount</span></p>
+                <p id="bikesinfo" class="row justify-content-end">MostLikedType - <span style="font-size: larger; ">@Model.BikeInfo.MostLikedType</span></p>
+            </div>
+        </div>
+
+        <div class="mt-5">
+            <img class="img" src="~/images/commercial/Anything is possible.png" alt="image">
+        </div>
+
     </div>
 
 </div>
-
-
 

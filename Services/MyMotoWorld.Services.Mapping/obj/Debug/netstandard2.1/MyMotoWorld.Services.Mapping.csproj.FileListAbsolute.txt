@@ -1,9 +1,9 @@
 D:\VisualStudio\MyMotoWorld\Services\MyMotoWorld.Services.Mapping\bin\Debug\netstandard2.1\MyMotoWorld.Services.Mapping.deps.json
 D:\VisualStudio\MyMotoWorld\Services\MyMotoWorld.Services.Mapping\bin\Debug\netstandard2.1\MyMotoWorld.Services.Mapping.dll
 D:\VisualStudio\MyMotoWorld\Services\MyMotoWorld.Services.Mapping\bin\Debug\netstandard2.1\MyMotoWorld.Services.Mapping.pdb
-D:\VisualStudio\MyMotoWorld\Services\MyMotoWorld.Services.Mapping\obj\Debug\netstandard2.1\MyMotoWorld.Services.Mapping.csprojAssemblyReference.cache
 D:\VisualStudio\MyMotoWorld\Services\MyMotoWorld.Services.Mapping\obj\Debug\netstandard2.1\MyMotoWorld.Services.Mapping.AssemblyInfoInputs.cache
 D:\VisualStudio\MyMotoWorld\Services\MyMotoWorld.Services.Mapping\obj\Debug\netstandard2.1\MyMotoWorld.Services.Mapping.AssemblyInfo.cs
 D:\VisualStudio\MyMotoWorld\Services\MyMotoWorld.Services.Mapping\obj\Debug\netstandard2.1\MyMotoWorld.Services.Mapping.csproj.CoreCompileInputs.cache
 D:\VisualStudio\MyMotoWorld\Services\MyMotoWorld.Services.Mapping\obj\Debug\netstandard2.1\MyMotoWorld.Services.Mapping.dll
 D:\VisualStudio\MyMotoWorld\Services\MyMotoWorld.Services.Mapping\obj\Debug\netstandard2.1\MyMotoWorld.Services.Mapping.pdb
+D:\VisualStudio\MyMotoWorld\Services\MyMotoWorld.Services.Mapping\obj\Debug\netstandard2.1\MyMotoWorld.Services.Mapping.csprojAssemblyReference.cache

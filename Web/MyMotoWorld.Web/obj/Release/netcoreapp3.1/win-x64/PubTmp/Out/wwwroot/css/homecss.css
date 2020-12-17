@@ -1,0 +1,138 @@
+﻿div section:nth-child(1) h1 {
+    color: white;
+    margin: auto;
+    margin-top: 160px;
+    width: 700px;
+}
+
+div div section {
+    display: inline-block;
+}
+
+section.a {
+    position: absolute;
+    left: auto;
+}
+
+div h1 span {
+    color: orangered;
+}
+
+#welcomelogo {
+    padding-top: 150px;
+}
+
+#welcomelogo2 {
+    padding-top: 20px;
+}
+
+#welcomelogo3 {
+    padding-top: 100px;
+}
+
+div#homebg {
+    background: url(../images/wallpaper_road_mountains.jpg);
+    height: 900px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    padding: 10rem;
+    padding-left: 0px;
+    padding-right: 0px;
+    margin: 0px;
+    margin-top: 0px;
+}
+
+div a button:hover {
+    background: #e38e34;
+}
+#joinWorldButton {
+    background: orangered;
+    color: white;
+    border: none;
+    padding-left: 18px;
+    padding-right: 18px;
+    margin-top: 120px;
+}
+
+div.a div {
+    display: inline-block;
+}
+
+div.a {
+    position: relative;
+    width: auto;
+    height: 500px;
+    border: 3px solid red;
+}
+
+div.c {
+    position: relative;
+    left: 500px;
+    width: 1400px;
+    height: 500px;
+    border: 3px solid green;
+}
+
+.menu p {
+    border: 3px solid #282727;
+}
+
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    padding: 8px;
+    margin-bottom: 7px;
+    background-color: #FFFFFF;
+    color: #282727;
+    font-family: Cooper Black;
+    font-size: 20px;
+}
+
+.menu li:hover {
+    background-color: #FFFFFF;
+}
+
+.aside {
+    background-color: #33b5e5;
+    padding: 0px;
+    color: #ffffff;
+    text-align: center;
+    font-size: 14px;
+}
+
+.card {
+    font-family: Verdana Pro;
+}
+
+#newsHomeCard {
+    height: 550px;
+    overflow: hidden;
+}
+
+.card {
+    border: none;
+}
+
+#bikesinfo :hover {
+    transform: scale(1.1);
+}
+
+#welcomelogo2 :hover {
+    transform: scale(1.1);
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-footer {
+    background: #FFFFFF;
+}
+
+

@@ -1,0 +1,9 @@
+D:\VisualStudio\MyMotoWorld\Services\MyMotoWorld.Services\bin\Release\netstandard2.1\MyMotoWorld.Services.deps.json
+D:\VisualStudio\MyMotoWorld\Services\MyMotoWorld.Services\bin\Release\netstandard2.1\MyMotoWorld.Services.dll
+D:\VisualStudio\MyMotoWorld\Services\MyMotoWorld.Services\bin\Release\netstandard2.1\MyMotoWorld.Services.pdb
+D:\VisualStudio\MyMotoWorld\Services\MyMotoWorld.Services\obj\Release\netstandard2.1\MyMotoWorld.Services.csprojAssemblyReference.cache
+D:\VisualStudio\MyMotoWorld\Services\MyMotoWorld.Services\obj\Release\netstandard2.1\MyMotoWorld.Services.AssemblyInfoInputs.cache
+D:\VisualStudio\MyMotoWorld\Services\MyMotoWorld.Services\obj\Release\netstandard2.1\MyMotoWorld.Services.AssemblyInfo.cs
+D:\VisualStudio\MyMotoWorld\Services\MyMotoWorld.Services\obj\Release\netstandard2.1\MyMotoWorld.Services.csproj.CoreCompileInputs.cache
+D:\VisualStudio\MyMotoWorld\Services\MyMotoWorld.Services\obj\Release\netstandard2.1\MyMotoWorld.Services.dll
+D:\VisualStudio\MyMotoWorld\Services\MyMotoWorld.Services\obj\Release\netstandard2.1\MyMotoWorld.Services.pdb
