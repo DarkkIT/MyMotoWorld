@@ -124,10 +124,10 @@
                 motorBike.RearBrakes = new RearBrake { Name = input.RearBrakes };
             }
 
-            if (!this.coolingSystemRepository.All().Any(x => x.Name == input.CoolingSystem))
-            {
-                await this.coolingSystemRepository.AddAsync(new CoolingSystem { Name = input.CoolingSystem });
-            }
+            ////if (!this.coolingSystemRepository.All().Any(x => x.Name == input.CoolingSystem))
+            ////{
+            ////    await this.coolingSystemRepository.AddAsync(new CoolingSystem { Name = input.CoolingSystem });
+            ////}
 
             if (this.engineRepositiry.All().Any(x => x.Name == input.EngineName))
             {
@@ -135,7 +135,13 @@
             }
             else
             {
-                motorBike.Engine = new Engine { Name = input.EngineName, EngineCapacity = input.EngineCapacity, EnginePower = input.EnginePower, CoolingSystem = this.coolingSystemRepository.All().Where(x => x.Name == input.CoolingSystem).First() };
+                motorBike.Engine = new Engine
+                {
+                    Name = input.EngineName,
+                    EngineCapacity = input.EngineCapacity,
+                    EnginePower = input.EnginePower,
+                    CoolingSystem = new CoolingSystem { Name = input.CoolingSystem },
+                };
             }
 
             await this.motorBikeRepository.AddAsync(motorBike);
@@ -187,6 +193,13 @@
         public IEnumerable<MotorBikeViewModel> GetAllBikes<T>(int page, int itemsPerPage)
         {
             var model = this.motorBikeRepository.All().OrderByDescending(x => x.Id).Skip((page - 1) * itemsPerPage).Take(itemsPerPage).To<MotorBikeViewModel>().ToList();
+
+            return model;
+        }
+
+        public IEnumerable<MotorBikeViewModel> GetAllSearchedBikes<T>(int page, int itemsPerPage, string searchString)
+        {
+            var model = this.motorBikeRepository.All().Where(x => x.Name.Contains(searchString) || x.Model.Contains(searchString)).OrderByDescending(x => x.Id).Skip((page - 1) * itemsPerPage).Take(itemsPerPage).To<MotorBikeViewModel>().ToList();
 
             return model;
         }

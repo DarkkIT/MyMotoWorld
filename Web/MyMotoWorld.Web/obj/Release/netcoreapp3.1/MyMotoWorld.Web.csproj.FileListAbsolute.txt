@@ -340,7 +340,6 @@ D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\bin\Release\netcoreapp3.1\System
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\bin\Release\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\bin\Release\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\bin\Release\netcoreapp3.1\System.IO.Pipelines.dll
-D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\bin\Release\netcoreapp3.1\System.Net.WebSockets.WebSocketProtocol.dll
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\bin\Release\netcoreapp3.1\System.Runtime.Caching.dll
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\bin\Release\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\bin\Release\netcoreapp3.1\System.Text.Json.dll
@@ -481,3 +480,4 @@ D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Release\netcoreapp3.1\MyMoto
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Release\netcoreapp3.1\MyMotoWorld.Web.dll
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Release\netcoreapp3.1\MyMotoWorld.Web.pdb
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Release\netcoreapp3.1\MyMotoWorld.Web.genruntimeconfig.cache
+D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Release\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Login.cshtml.g.cs

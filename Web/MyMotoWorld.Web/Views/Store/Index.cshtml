@@ -24,6 +24,22 @@
         <div class="ml-5">
             <h1>Filters</h1>
         </div>
+
+        <form asp-action="Index" method="get">
+            <div class="form-actions no-color col justify-content-center">
+                <p class="ml-5">Find by name</p>
+                <p>
+                    <input type="text" name="SearchString" value="@ViewData["CurrentFilter"]" />
+                </p>
+                <p>
+                    <input type="submit" value="Search" class="btn btn-default" /> |
+                    <a asp-action="Index">Back to Full List</a>
+                </p>
+            </div>
+        </form>
+
+        <hr />
+
         <div class="ml-5">
             <div class="custom-control custom-checkbox my-2">
                 <input type="checkbox" class="custom-control-input" id="customCheck1">
@@ -63,7 +79,7 @@
                 <label class="custom-control-label" for="customCheck8">Colore</label>
             </div>
 
-            <a class="btn btn-success" asp-controller="News" asp-action="NewsDetails" asp-route-id="">Searche</a>
+            <a class="btn btn-success" asp-controller="Store" asp-action="GetAllSportBikesFilter" asp-route-id="filter">Searche</a>
         </div>
     </div>
 
@@ -82,7 +98,7 @@
                         <p class="card-text text-black-10"><i class="fas fa-euro-sign"></i>@bike.Price</p>
                     </div>
                     <div class="card-footer">
-                        <a class="btn btn-link" asp-controller="Store" asp-action="AddLike">Like</a>
+                        <a class="btn btn-link text-black-10">@bike.BikeType</a>
                     </div>
                 </div>
             </a>
@@ -92,12 +108,34 @@
 
     <div class="col-md-2 right mt-5">
         <div class="aside">
-            <h2>What?</h2>
-            <p>Chania is a city on the island of Crete.</p>
-            <h2>Where?</h2>
-            <p>Crete is a Greek island in the Mediterranean Sea.</p>
-            <h2>How?</h2>
-            <p>You can reach Chania airport from all over Europe.</p>
+            <div  class="thumbnail">
+                <img class="card-img" src="/images/logos/gifs/0fd7ac130d0d05fefc578eb84b91ec15.gif" alt="Alternate Text" />
+            </div>
+            <p>“You don’t stop riding when you get old, you get old when you stop riding.”</p>
+            <div class="thumbnail">
+                <img class="card-img" src="/images/logos/12swesd233ed.png" alt="Alternate Text" />
+            </div>
+            <p>“I don’t really feel like going for a ride today. Said no motorcycle rider ever.”</p>
+            <div class="thumbnail">
+                <img class="card-img" src="/images/logos/12swesd233ed.png" alt="Alternate Text" />
+            </div>
+            <p>“The only thing better than a streetbike.. is a woman riding one.”</p>
+            <div class="thumbnail">
+                <img class="card-img" src="/images/logos/12swesd233ed.png" alt="Alternate Text" />
+            </div>
+            <p>
+                “Four wheels move the body,
+                Two wheels move the soul.”
+            </p>
+            <div class="thumbnail">
+                <img class="card-img" src="/images/logos/12swesd233ed.png" alt="Alternate Text" />
+            </div>
+            <p>“Only a biker knows why a dog sticks his head out of a car window.”</p>
+
+        </div>
+
+        <div class="thumbnail">
+            <img class="card-img" src="/images/logos/4be45629208324379f193c4044bcc62a.jpg" alt="Alternate Text" />
         </div>
     </div>
 

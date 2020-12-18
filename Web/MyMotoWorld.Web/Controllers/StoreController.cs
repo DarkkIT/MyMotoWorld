@@ -1,5 +1,7 @@
 ﻿namespace MyMotoWorld.Web.Controllers
 {
+    using System;
+    using System.Collections.Generic;
     using System.Security.Claims;
     using System.Threading.Tasks;
 
@@ -21,9 +23,22 @@
             this.favoriteService = favoriteService;
         }
 
-        public IActionResult Index(int id = 1)
+        public IActionResult Index(string searchType, string searchString, int id = 1)
         {
-            var motorBikes = this.motorBikeService.GetAllBikes<MotorBikeViewModel>(id, 6);
+            this.ViewData["CurrentFilter"] = searchString;
+            this.ViewData["TypeFilter"] = searchType;
+
+            IEnumerable<MotorBikeViewModel> motorBikes = null;
+
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                motorBikes = this.motorBikeService.GetAllSearchedBikes<MotorBikeViewModel>(id, 6, searchString);
+            }
+            else
+            {
+                motorBikes = this.motorBikeService.GetAllBikes<MotorBikeViewModel>(id, 6);
+            }
 
             var viewModel = new MotorBikeListViewModel { MotorBikes = motorBikes, PageNumber = id, MotorBikeCount = this.motorBikeService.GetCount(), ItemsPerPage = GlobalConstants.ItemsPerPage };
 

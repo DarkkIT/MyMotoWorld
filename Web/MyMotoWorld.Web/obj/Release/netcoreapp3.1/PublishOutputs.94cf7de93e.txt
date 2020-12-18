@@ -28,17 +28,26 @@ D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Release\netcoreapp3.1\PubTmp
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\bikes\Hayabusa1300-1.jpg
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\bikes\logo.png
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\bikes\SV650650-1.jpg
+D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\bikes\Test1000-1.jpg
+D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\bikes\Test111-1.jpg
+D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\bikes\Test1111-1.jpg
+D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\bikes\Test2000-1.jpg
+D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\bikes\TestTest1111-1.jpg
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\bikes\V-Strom1000-1.jpg
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\bikes\V-Strom1000-2.jpg
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\commercial\1234956.jpg
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\commercial\1607576.jpg
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\commercial\Anything is possible.png
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\commercial\commercial.png
+D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\logos\12swesd233ed.png
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\logos\4be45629208324379f193c4044bcc62a.jpg
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\logos\ducati-hypermotard-hyperstrada-512-2019-le-1440x2960.jpg
+D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\logos\gifs\0fd7ac130d0d05fefc578eb84b91ec15.gif
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\logos\gifs\148271-transport-cars-suzuki-logo.gif
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\logos\gifs\91f56adfc89e5430a178b58ca366e238.png
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\logos\gifs\bd04e40639747bc61b2ef71067acb4e9.png
+D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\logos\Login.png
+D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\logos\Login2.png
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\logos\Logo.png
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\logos\logocontacts.png
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\logos\Success.png
@@ -267,7 +276,6 @@ D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Release\netcoreapp3.1\PubTmp
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Release\netcoreapp3.1\PubTmp\Out\refs\System.Net.WebProxy.dll
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Release\netcoreapp3.1\PubTmp\Out\refs\System.Net.WebSockets.Client.dll
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Release\netcoreapp3.1\PubTmp\Out\refs\System.Net.WebSockets.dll
-D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Release\netcoreapp3.1\PubTmp\Out\refs\System.Net.WebSockets.WebSocketProtocol.dll
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Release\netcoreapp3.1\PubTmp\Out\refs\System.Numerics.dll
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Release\netcoreapp3.1\PubTmp\Out\refs\System.Numerics.Vectors.dll
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Release\netcoreapp3.1\PubTmp\Out\refs\System.ObjectModel.dll
@@ -423,7 +431,6 @@ D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Release\netcoreapp3.1\PubTmp
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Release\netcoreapp3.1\PubTmp\Out\System.Diagnostics.DiagnosticSource.dll
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Release\netcoreapp3.1\PubTmp\Out\System.IdentityModel.Tokens.Jwt.dll
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Release\netcoreapp3.1\PubTmp\Out\System.IO.Pipelines.dll
-D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Release\netcoreapp3.1\PubTmp\Out\System.Net.WebSockets.WebSocketProtocol.dll
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Release\netcoreapp3.1\PubTmp\Out\System.Runtime.Caching.dll
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Release\netcoreapp3.1\PubTmp\Out\System.Security.Cryptography.ProtectedData.dll
 D:\VisualStudio\MyMotoWorld\Web\MyMotoWorld.Web\obj\Release\netcoreapp3.1\PubTmp\Out\System.Text.Json.dll

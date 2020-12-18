@@ -3,7 +3,7 @@
     using MyMotoWorld.Data.Common.Models;
     using MyMotoWorld.Models;
 
-    public class FavoriteBikes : BaseModel<int>
+    public class FavoriteBikes : BaseDeletableModel<int>
     {
         public int MotorBikeId { get; set; }
 

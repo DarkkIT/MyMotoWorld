@@ -17,6 +17,8 @@
 
         IEnumerable<MotorBikeViewModel> GetAllBikes<T>(int page, int itemsPerPage);
 
+        IEnumerable<MotorBikeViewModel> GetAllSearchedBikes<T>(int page, int itemsPerPage, string searchString);
+
         IEnumerable<MotorBikeViewModel> GetAllFavoriteBikes<T>(int page, int itemsPerPage, string userId);
 
         IEnumerable<MotorBikeViewModel> GetAllBikesWithDeleted<T>(int page, int itemsPerPage);
