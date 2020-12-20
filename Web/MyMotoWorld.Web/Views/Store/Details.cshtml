@@ -240,7 +240,7 @@
                     data: JSON.stringify(data),
                     headers: { 'X-CSRT-TOKEN': antiForgeryToken },
                     success: function (data) {
-                        $('#avarageVoteValue').html(data.avarageVotes.toFixed(1));
+                        $('#avarageVoteValue').text(data.avarageVotes.toFixed(1));
                     },
                     contentType: 'application/json',
                 });

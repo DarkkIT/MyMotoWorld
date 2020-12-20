@@ -1,4 +1,5 @@
 ﻿@using MyMotoWorld.Common
+@using System;
 @using MyMotoWorld.Data.Models
 @using Microsoft.AspNetCore.Identity
 @inject SignInManager<ApplicationUser> SignInManager
@@ -12,7 +13,7 @@
     @if (this.SignInManager.IsSignedIn(this.User))
     {
         <li class="nav-item">
-            <a class="nav-link text-dark ml-5" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" style="font-family: Ultra">Hello @(this.User.Identity.Name)!</a>
+            <a class="nav-link text-dark ml-5" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" style="font-family: Ultra">Hello @((this.User.Identity.Name).Substring(0, (this.User.Identity.Name).IndexOf("@")))!</a>
         </li>
         if (this.User.IsInRole(GlobalConstants.AdministratorRoleName))
         {

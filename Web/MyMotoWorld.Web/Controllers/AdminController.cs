@@ -1,5 +1,6 @@
 ﻿namespace MyMotoWorld.Web.Controllers
 {
+    using System.Text;
     using System.IO;
     using System.Threading.Tasks;
 
@@ -15,7 +16,7 @@
     using MyMotoWorld.Web.ViewModels.MotorBike;
     using MyMotoWorld.Web.ViewModels.News;
 
-    [Authorize(Roles = "Master")]
+    [Authorize(Roles = "Administrator")]
     public class AdminController : Controller
     {
         private readonly IMotorBikesService motorBikesService;
@@ -109,6 +110,7 @@
         }
 
         [HttpPost]
+        [Authorize(Roles = "Master")]
         public async Task<IActionResult> EditBike(EditBikeInputModel input, int id)
         {
             if (!this.ModelState.IsValid)
@@ -137,6 +139,7 @@
         }
 
         [HttpPost]
+        [Authorize(Roles = "Master")]
         public async Task<IActionResult> EditNews(EditNewsInputModel input, int id)
         {
             if (!this.ModelState.IsValid)
@@ -190,6 +193,7 @@
             return this.RedirectToAction(nameof(this.AllMessages));
         }
 
+        [Authorize(Roles = "Master")]
         public IActionResult DeleteMessages()
         {
             return this.RedirectToAction(nameof(this.AllMessages));

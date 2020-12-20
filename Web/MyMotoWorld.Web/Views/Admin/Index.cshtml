@@ -13,9 +13,9 @@
 
 <h1 class="text-center">Admin Area</h1>
 
-<div class="m-5">
+<div class="row justify-content-center m-5">
     <div class="row ml-5">
-        <div class="col-md-2">
+        <div class="col-md-2 mr-4">
             <h5>Manаge MotorBikes</h5>
             <a class="btn btn-primary mr-5 mt-2 custom" asp-controller="Admin" asp-action="AddBike">Add Bike</a>
             <a class="btn btn-primary mr-5 mt-2 custom" asp-controller="Admin" asp-action="AllBikes">Edit Bikes</a>
@@ -29,38 +29,30 @@
             <a class="btn btn-danger mr-5 mt-2 custom" asp-controller="Admin" asp-action="AllNews">Delete News</a>
         </div>
 
-    </div>
+        <div class="row col-md-3 border ml-5 mr-5">
 
-    <hr />
+            <div class="col-md-6">
+                <h5>Massages</h5>
+                <a class="btn btn-primary mr-5 mt-2 custom" asp-controller="Admin" asp-action="AllMessages">All Mеssages</a>
+                <a class="btn btn-primary mr-5 mt-2 custom" asp-controller="Admin" asp-action="EditMessages">Edit Mеssage</a>
+                <a class="btn btn-danger mr-5 mt-2 custom" asp-controller="Admin" asp-action="DeleteMessages">Delete Massage</a>
+            </div>
 
-    <div class="row col-md-10 ml-5 mt-3">
-        <div class="col-md-2 p-0">
-            <h5>Massages</h5>
-            <a class="btn btn-primary mr-5 mt-2 custom" asp-controller="Admin" asp-action="AllMessages">All Mеssages</a>
-            <a class="btn btn-primary mr-5 mt-2 custom" asp-controller="Admin" asp-action="EditMessages">Edit Mеssage</a>
-            <a class="btn btn-danger mr-5 mt-2 custom" asp-controller="Admin" asp-action="DeleteMessages">Delete Massage</a>
+            <div class="col-md-6">
+
+                <h5>New Massages</h5>
+                <p>"Model.IsAnyNewMassages"</p>
+                <p>"NewMasage Or <br /> NoNewMassage"</p>
+
+            </div>
+
         </div>
 
-        <div class="card text-center col-md-2 mr-5 ml-5">
-
-            <h4>New Massages</h4>
-            <p>"Model.IsAnyNewMassages"</p>
-            <p>"NewMasage Or <br /> NoNewMassage"</p>
-
-        </div>
-    </div>
-
-    <hr />
-
-    <div class="row col-md-2 ml-5 mt-3">
-        <div>
+        <div class="col-md-2 ml-5">
             <h5>Other links</h5>
             <a class="btn btn-primary mr-5 mt-2 custom" asp-controller="Home" asp-action="Index">Go Home</a>
             <a class="btn btn-primary mr-5 mt-2 custom" asp-controller="Home" asp-action="Privacy">Go Privacy</a>
             <a class="btn btn-primary mr-5 mt-2 custom" asp-controller="About" asp-action="Index">Go About</a>
-        </div>
-        <div>
-
         </div>
 
     </div>
