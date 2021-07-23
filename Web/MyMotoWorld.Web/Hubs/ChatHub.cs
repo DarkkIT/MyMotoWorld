@@ -1,5 +1,6 @@
 ﻿namespace MyMotoWorld.Web.Hubs
 {
+    using System;
     using System.Security.Claims;
     using System.Threading.Tasks;
 
