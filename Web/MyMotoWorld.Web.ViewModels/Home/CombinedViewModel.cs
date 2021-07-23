@@ -7,5 +7,7 @@
         public IndexViewModel BikeInfo { get; set; }
 
         public NewsListViewModel NewsInfo { get; set; }
+
+        public string UserId { get; set; }
     }
 }

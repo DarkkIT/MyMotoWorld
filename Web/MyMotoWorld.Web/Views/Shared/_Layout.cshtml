@@ -59,12 +59,13 @@
                             </div>
 
                         </li>
-                        @if (this.User.Identity.IsAuthenticated)
-                        {
-                            <li class="nav-item">
-                                <a class="nav-link text-danger" asp-area="" asp-controller="Admin" asp-action="Index"><i class="fas fa-wrench"></i>Admin</a>
-                            </li>
-                        }
+
+                        @*@if (this.User.Identity.IsAuthenticated)
+                            {*@
+                        <li class="nav-item">
+                            <a class="nav-link text-danger" asp-area="" asp-controller="Admin" asp-action="Index"><i class="fas fa-wrench"></i>Admin</a>
+                        </li>
+                        @*}*@
                     </ul>
 
                 </div>
@@ -75,6 +76,7 @@
     <div class="mt-5">
         @this.RenderBody()
     </div>
+
 
 
     <hr />
@@ -149,7 +151,7 @@
     </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js" asp-append-version="true"></script>
-    <script src="~/lib/signalr/dist/browser/signalr.min.js"></script>
+    <script src="~/js/signalr/dist/browser/signalr.js" asp-append-version="true"></script>
     <script src="~/lib/jquery-validation/dist/jquery.validate.min.js" asp-append-version="true"></script>
     <script src="~/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.js" asp-append-version="true"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.min.js" asp-append-version="true"></script>

@@ -50,4 +50,6 @@
   <ItemGroup>
     <Folder Include="Areas\Administration\Views\Dashboard\" />
   </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties libman_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
 </Project>

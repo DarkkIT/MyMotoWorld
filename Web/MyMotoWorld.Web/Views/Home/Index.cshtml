@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Ultra&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Langar&display=swap" rel="stylesheet">
+    <link href="~/css/chatwindowcss.css" rel="stylesheet" asp-append-version="true" />
 </head>
 
 <div id="homebg" class="text-center">
@@ -94,4 +95,28 @@
     </div>
 
 </div>
+@if (this.User.Identity.IsAuthenticated)
+{
+    <button class="openChatBtn" onclick="openForm()">Chat</button>
+    <div class="openChat">
+        <form id="chatForm">
+            <h5 id="chatTitle">Chat</h5>
+            <div id="divChatWindow" placeholder="Chat window.." required></div>
+            <input id="messageInput" placeholder="Type message.." required>
+            <button id="sendButton" type="button" class="btn" data-userid="@Model.UserId">Send</button>
+            <button class="btn close" onclick="closeForm()">Close</button>
+        </form>
+    </div>
+}
+
+
+
+<script src="~/js/chatwindow.js" asp-append-version="true"></script>
+
+
+@section scripts{
+
+    <script type="module" src="~/js/chatlogic.js" asp-append-version="true"></script>
+}
+
 

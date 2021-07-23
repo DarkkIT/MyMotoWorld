@@ -54,7 +54,7 @@
                         options.MinimumSameSitePolicy = SameSiteMode.None;
                     });
 
-            services.AddSignalR();
+            services.AddSignalR(option => { option.EnableDetailedErrors = true; });
 
             services.AddControllersWithViews(
                 options =>
@@ -120,7 +120,7 @@
             app.UseEndpoints(
                 endpoints =>
                     {
-                        endpoints.MapHub<ChatHub>("/store/chat");
+                        endpoints.MapHub<ChatHub>("/chathub");
                         endpoints.MapControllerRoute("areaRoute", "{area:exists}/{controller=Home}/{action=Index}/{id?}");
                         endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
                         endpoints.MapRazorPages();

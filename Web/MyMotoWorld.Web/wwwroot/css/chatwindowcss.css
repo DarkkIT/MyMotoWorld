@@ -1,0 +1,101 @@
+﻿{
+    box-sizing: border-box;
+}
+
+.openChatBtn {
+    background-color: rgb(34, 197, 107);
+    color: white;
+    padding: 16px 20px;
+    border: unset;
+    font-weight: 500;
+    font-size: 18px;
+    cursor: pointer;
+    opacity: 0.6;
+    position: fixed;
+    bottom: 123px;
+    right: 28px;
+    width: 160px;
+    border-radius: 4%;
+}
+
+.openChat {
+    display: none;
+    position: fixed;
+    bottom: 100px;
+    right: 15px;
+    /*border: 3px solid #ff08086b;*/
+    z-index: 99999;
+}
+
+#chatForm {
+    max-width: 300px;
+    padding: 8px;
+    background-color: white;
+    border-radius: 2%;
+}
+
+    #chatForm textarea {
+        width: 100%;
+        font-size: 18px;
+        padding: 10px;
+        margin: 5px 0 22px 0;
+        border: none;
+        font-weight: 500;
+        background: #d5e7ff;
+        color: rgb(0, 0, 0);
+        resize: none;
+        min-height: 200px;
+        border-radius: 2%;
+    }
+
+    #chatForm input {
+        width: 100%;
+        font-size: 18px;
+        padding: 10px;
+        margin: 5px 0 22px 0;
+        border: none;
+        font-weight: 500;
+        background: #d5e7ff;
+        color: rgb(0, 0, 0);
+        resize: none;
+        min-height: 18px;
+        border-radius: 2%;
+    }
+
+        #chatForm textarea:focus {
+            background-color: rgb(219, 255, 252);
+            outline: none;
+        }
+
+    #chatForm .btn {
+        background-color: rgb(34, 197, 107);
+        color: white;
+        padding: 16px 20px;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+        width: 48%;
+        margin-bottom: 10px;
+        opacity: 0.8;
+    }
+
+    #chatForm .close {
+        background-color: rgb(217, 60, 60);
+        color: white;
+        padding: 16px 20px;
+        font: 100;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+        width: 48%;
+        margin-bottom: 10px;
+        opacity: 0.8;
+    }
+
+    #chatForm .btn:hover, .openChatBtn:hover {
+        opacity: 1;
+    }
+
+#chatTitle {
+    position: center;
+}

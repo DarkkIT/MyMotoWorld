@@ -30,7 +30,7 @@ div h1 span {
     padding-top: 100px;
 }
 
-div#homebg {
+#homebg {
     background: url(../images/wallpaper_road_mountains.jpg);
     height: 900px;
     background-position: center;

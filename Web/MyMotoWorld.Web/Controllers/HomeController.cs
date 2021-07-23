@@ -1,7 +1,7 @@
 ﻿namespace MyMotoWorld.Web.Controllers
 {
     using System.Diagnostics;
-
+    using System.Security.Claims;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
     using MyMotoWorld.Services.Data.Home;
@@ -35,6 +35,11 @@
                 BikeInfo = bikeModel,
                 NewsInfo = newsListModel,
             };
+
+            if (this.User.Identity.IsAuthenticated)
+            {
+                viewModel.UserId = this.User.FindFirst(ClaimTypes.NameIdentifier).Value;
+            }
 
             return this.View(viewModel);
         }
