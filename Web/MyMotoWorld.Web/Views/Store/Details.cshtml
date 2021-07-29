@@ -35,7 +35,7 @@
 
         <div>
             <ul class="row list-unstyled mt-3">
-                @if (Model.AverageVote > 0.4)
+                @if (Model.AverageVote > 0)
                 {
                     <li id="star" class="star-fill ml-2" data-vote="1"><i class="fas fa-star fa-2x" style="color: #e8cd1c"></i></li>
                 }
@@ -44,7 +44,7 @@
                     <li id="star" class="star-fill ml-2" data-vote="1"><i class="fas fa-star fa-2x"></i></li>
                 }
 
-                @if (Model.AverageVote > 1.4)
+                @if (Model.AverageVote > 1)
                 {
                     <li id="star" class="star-fill ml-2" data-vote="2"><i class="fas fa-star fa-2x" style="color: #e8cd1c"></i></li>
                 }
@@ -53,7 +53,7 @@
                     <li id="star" class="star-fill ml-2" data-vote="2"><i class="fas fa-star fa-2x"></i></li>
                 }
 
-                @if (Model.AverageVote > 2.4)
+                @if (Model.AverageVote > 2)
                 {
                     <li id="star" class="star-fill ml-2" data-vote="3"><i class="fas fa-star fa-2x" style="color: #e8cd1c"></i></li>
                 }
@@ -62,7 +62,7 @@
                     <li id="star" class="star-fill ml-2" data-vote="3"><i class="fas fa-star fa-2x"></i></li>
                 }
 
-                @if (Model.AverageVote > 3.4)
+                @if (Model.AverageVote > 3)
                 {
                     <li id="star" class="star-fill ml-2" data-vote="4"><i class="fas fa-star fa-2x" style="color: #e8cd1c"></i></li>
                 }
@@ -71,7 +71,7 @@
                     <li id="star" class="star-fill ml-2" data-vote="4"><i class="fas fa-star fa-2x"></i></li>
                 }
 
-                @if (Model.AverageVote > 4.8)
+                @if (Model.AverageVote > 4)
                 {
                     <li id="star" class="star-fill ml-2" data-vote="5"><i class="fas fa-star fa-2x" style="color: #e8cd1c"></i></li>
                 }
@@ -229,18 +229,19 @@
 
         $("li[data-vote]").each(function (el) {
             $(this).click(function () {
-                var vote = $(this).attr("data-vote");
-                var value = parseInt(vote);
-                var motorBikeId = @Model.Id;
-                var antiForgeryToken = $('#antiForgeryForm input[name=__RequestVerificationToken]').val();
-                var data = { motorBikeId: motorBikeId, value: value };
+                let vote = $(this).attr("data-vote");
+                let value = parseInt(vote);
+                let motorBikeId = @Model.Id;
+                let antiForgeryToken = $('#antiForgeryForm input[name=__RequestVerificationToken]').val();
+                let data = { motorBikeId: motorBikeId, value: value };
                 $.ajax({
                     type: "POST",
                     url: "/api/Votes",
                     data: JSON.stringify(data),
                     headers: { 'X-CSRT-TOKEN': antiForgeryToken },
                     success: function (data) {
-                        $('#avarageVoteValue').text(data.avarageVotes.toFixed(1));
+                        console.log(data);
+                        $('#avarageVoteValue').text(data.averageVotes);
                     },
                     contentType: 'application/json',
                 });

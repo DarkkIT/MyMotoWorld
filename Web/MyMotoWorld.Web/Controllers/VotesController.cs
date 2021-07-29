@@ -1,5 +1,6 @@
 ﻿namespace MyMotoWorld.Web.Controllers
 {
+    using System;
     using System.Security.Claims;
     using System.Threading.Tasks;
 
@@ -26,6 +27,7 @@
             var userId = this.User.FindFirst(ClaimTypes.NameIdentifier).Value;
             await this.votesService.SetVoteAsync(input.MotorBikeId, userId, input.Value);
             var averageVotes = this.votesService.GetAverageVotes(input.MotorBikeId);
+
             return new PostVoteViewModel { AverageVote = averageVotes };
         }
     }

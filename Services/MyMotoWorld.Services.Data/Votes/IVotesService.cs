@@ -6,6 +6,6 @@
     {
         Task SetVoteAsync(int motorBikeId, string userId, byte value);
 
-        double GetAverageVotes(int motorBikeId);
+        int GetAverageVotes(int motorBikeId);
     }
 }

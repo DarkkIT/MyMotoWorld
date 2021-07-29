@@ -1,5 +1,6 @@
 ﻿namespace MyMotoWorld.Services.Data.Votes
 {
+    using System;
     using System.Linq;
     using System.Threading.Tasks;
 
@@ -15,9 +16,9 @@
             this.voteRepository = voteRepository;
         }
 
-        public double GetAverageVotes(int motorBikeId)
+        public int GetAverageVotes(int motorBikeId)
         {
-            double avarageVotes = this.voteRepository.All().Where(x => x.MotorBikeId == motorBikeId).Average(x => x.Value);
+            int avarageVotes = Convert.ToInt32(this.voteRepository.All().Where(x => x.MotorBikeId == motorBikeId).Average(x => x.Value));
 
             return avarageVotes;
         }

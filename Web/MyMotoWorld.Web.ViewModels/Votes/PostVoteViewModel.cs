@@ -2,6 +2,6 @@
 {
     public class PostVoteViewModel
     {
-        public double AverageVote { get; set; }
+        public int AverageVote { get; set; }
     }
 }
