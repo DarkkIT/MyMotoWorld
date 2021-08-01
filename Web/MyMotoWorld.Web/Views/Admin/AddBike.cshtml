@@ -54,7 +54,9 @@
     </div>
 
     <div class="col-md-7">
+
         <label asp-for="BikeType"></label>
+
         <select asp-for="BikeType" class="form-control">
             <option value="Naked">Naked</option>
             <option value="Cruiser">Cruiser</option>
@@ -64,7 +66,9 @@
             <option value="Grom">Grom</option>
             <option value="Sport">Sport</option>
         </select>
+
         <span asp-validation-for="BikeType" class="text-danger"></span>
+
     </div>
 
     <div class="col-md-7">
@@ -138,7 +142,6 @@
         <input asp-for="Image" class="form-control"/>
         <span asp-validation-for="Image" class="text-danger"></span>
     </div>
-
 
     <input type="submit" class="btn btn-primary mt-4" />
 
